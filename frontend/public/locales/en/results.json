@@ -1,0 +1,38 @@
+{
+  "title": "Your Prakriti Profile",
+  "subtitle": "Based on your responses, here is your Guna balance and Prakriti type.",
+  "gunaBreakdown": "Guna Breakdown",
+  "sattvaBala": "Sattva Bala",
+  "recommendations": "Recommendations",
+  "insights": "AI Insights",
+  "types": {
+    "vata": {
+      "name": "Vata",
+      "archetype": "The Creative Visionary"
+    },
+    "pitta": {
+      "name": "Pitta",
+      "archetype": "The Determined Leader"
+    },
+    "kapha": {
+      "name": "Kapha",
+      "archetype": "The Steady Nurturer"
+    },
+    "vata-pitta": {
+      "name": "Vata-Pitta",
+      "archetype": "The Dynamic Innovator"
+    },
+    "pitta-kapha": {
+      "name": "Pitta-Kapha",
+      "archetype": "The Resilient Achiever"
+    },
+    "vata-kapha": {
+      "name": "Vata-Kapha",
+      "archetype": "The Adaptable Guardian"
+    },
+    "tridoshic": {
+      "name": "Tridoshic",
+      "archetype": "The Balanced Harmonizer"
+    }
+  }
+}

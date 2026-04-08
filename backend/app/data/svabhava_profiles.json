@@ -1,0 +1,43 @@
+{
+  "svabhava_profiles": {
+    "sattva": {
+      "bhavas": [
+        {"tag": "ahimsa", "name": "Non-violence", "description": "Compassion and respect for all living beings"},
+        {"tag": "satya", "name": "Truthfulness", "description": "Commitment to speaking and living the truth"},
+        {"tag": "asteya", "name": "Non-stealing", "description": "Respect for what belongs to others"},
+        {"tag": "dharma", "name": "Righteousness", "description": "Faithful performance of one's duties"},
+        {"tag": "astikya", "name": "Faith", "description": "Belief in karma and cosmic order"},
+        {"tag": "kshama", "name": "Forgiveness", "description": "Ability to remain calm and forgiving"},
+        {"tag": "dhairya", "name": "Patience", "description": "Endurance and steadfastness"},
+        {"tag": "achara", "name": "Good conduct", "description": "Discipline and adherence to ethical behaviour"},
+        {"tag": "anahamkara", "name": "Egolessness", "description": "Humility and absence of pride"},
+        {"tag": "medha", "name": "Intellect", "description": "Strong retention, memory, and learning"},
+        {"tag": "tyaga", "name": "Selfless service", "description": "Generosity without expectation of return"},
+        {"tag": "shaucha", "name": "Purity", "description": "Cleanliness of mind, body, and environment"}
+      ]
+    },
+    "rajas": {
+      "bhavas": [
+        {"tag": "amarsha", "name": "Impatience", "description": "Restlessness when results are delayed"},
+        {"tag": "mana", "name": "Pride", "description": "Attachment to personal achievements"},
+        {"tag": "ahamkara", "name": "Ego", "description": "Strong sense of self-importance"},
+        {"tag": "aishwarya", "name": "Materialism", "description": "Desire for possessions and luxury"},
+        {"tag": "krodha", "name": "Anger", "description": "Frustration and irritability"},
+        {"tag": "spardhā", "name": "Competitiveness", "description": "Constant comparison and desire to outperform"},
+        {"tag": "shathya", "name": "Cunning", "description": "Preference for shortcuts and manipulation"},
+        {"tag": "mada", "name": "Stubbornness", "description": "Insistence on having things one's own way"},
+        {"tag": "vitatha", "name": "Exaggeration", "description": "Tendency to overstate experiences"},
+        {"tag": "krodha_bahya", "name": "Outward aggression", "description": "Loud expression of frustration and anger"}
+      ]
+    },
+    "tamas": {
+      "bhavas": [
+        {"tag": "nidra", "name": "Excess sleep", "description": "Preference for sleeping over productive activity"},
+        {"tag": "alasya", "name": "Laziness", "description": "Habitual missing of commitments and deadlines"},
+        {"tag": "amedha", "name": "Lack of intellect", "description": "Avoidance of learning and intellectual growth"},
+        {"tag": "buddhi_nasha", "name": "Mental avoidance", "description": "Avoidance of creative or effortful thinking"},
+        {"tag": "smriti_nasha", "name": "Forgetfulness", "description": "Chronic forgetfulness and poor memory"}
+      ]
+    }
+  }
+}

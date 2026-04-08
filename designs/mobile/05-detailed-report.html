@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#f3f0ef",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "outline-variant": "#d3c5ae",
+              "primary": "#795900",
+              "inverse-primary": "#f6be39",
+              "surface-container-high": "#eae7e7",
+              "primary-fixed-dim": "#f6be39",
+              "surface": "#fcf9f8",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#0d1d2a",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#817662",
+              "error-container": "#ffdad6",
+              "secondary": "#466729",
+              "on-surface-variant": "#4f4634",
+              "background": "#fcf9f8",
+              "secondary-container": "#c6efa1",
+              "on-primary-fixed": "#261a00",
+              "on-tertiary-fixed-variant": "#394856",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "surface-container-low": "#f6f3f2",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#d4e4f6",
+              "on-error": "#ffffff",
+              "surface-dim": "#dcd9d9",
+              "inverse-surface": "#313030",
+              "surface-container-highest": "#e5e2e1",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#4c6e2f",
+              "surface-bright": "#fcf9f8",
+              "primary-container": "#d4a017",
+              "surface-container": "#f0eded",
+              "on-tertiary-container": "#2f3f4d",
+              "on-primary-fixed-variant": "#5c4300",
+              "secondary-fixed": "#c6efa1",
+              "on-surface": "#1c1b1b",
+              "on-error-container": "#93000a",
+              "tertiary": "#50606f",
+              "surface-variant": "#e5e2e1",
+              "tertiary-container": "#9aaabb",
+              "surface-tint": "#795900",
+              "primary-fixed": "#ffdfa0",
+              "on-primary-container": "#503a00",
+              "secondary-fixed-dim": "#abd288",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#0c2000",
+              "on-background": "#1c1b1b"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-guna-gradient {
+            background: linear-gradient(135deg, #795900 0%, #d4a017 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 no-border tonal-transition bg-[#fcf9f8] dark:bg-stone-950 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-[#795900] dark:text-[#d4a017] hover:opacity-80 transition-opacity scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-plus-jakarta text-[#1c1b1b] dark:text-[#f6f3f2] font-bold text-2xl tracking-tight text-[#795900] dark:text-[#d4a017]">Anantayu</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-container/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="portrait of a calm middle-aged man with short dark hair in a serene setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkSOZHloTUZUDVGB5FOB3s_ex4S3T0cq9jctM8ZoHG_JY_l1Vls5QoPubldUSpfSa1LUg1XaVJC-hngdooiRzdG_NpnViKD9kgmAbYAJltHfDtwdgamLwchPkGa3vh82hLKLl3ihmY1LDiHx2CkNFsgiC95wCJ3nbQHtJqtq7nB0c1sSyFR_DKTRklcJ-JPyMAdZjEQQlfoFgswSKRBbMlboqVEGiJghk5Qvm2oumvKLzX3xYGDWVej9uFtu5c0_zhJpqRcZrdqw"/>
+</div>
+</header>
+<main class="pb-32 px-6 max-w-lg mx-auto">
+<!-- Hero Section: What is your Prakriti? -->
+<section class="pt-8 pb-12 text-center">
+<span class="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">Your Digital Dosha</span>
+<h2 class="font-headline text-4xl font-extrabold text-on-background leading-tight mb-6">Pitta-Vata Mastery</h2>
+<div class="relative w-64 h-64 mx-auto flex items-center justify-center">
+<!-- Guna Radial Donut (Simplified for HTML/CSS) -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#eae7e7" stroke-width="8"></circle>
+<!-- Sattva (Secondary) -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#466729" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-width="12"></circle>
+<!-- Rajas (Primary Container) -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#d4a017" stroke-dasharray="251.2" stroke-dashoffset="150.72" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-on-surface-variant text-sm font-medium">Dominant</span>
+<span class="font-headline text-2xl font-bold text-on-surface">Pitta</span>
+</div>
+</div>
+<p class="mt-8 text-on-surface-variant leading-relaxed text-lg">
+                Your Prakriti reflects a dynamic blend of fire and air. You possess high cognitive speed with an intense focus on precision and transformation.
+            </p>
+</section>
+<!-- Strengths: Bento Grid Style -->
+<section class="space-y-6 mb-16">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-2xl font-bold">Inherent Strengths</h3>
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-surface-container-low p-6 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="bolt">bolt</span>
+<h4 class="font-bold mb-2">Decisive Intellect</h4>
+<p class="text-sm text-on-surface-variant">Ability to cut through complex information and make swift, accurate decisions under pressure.</p>
+</div>
+<div class="bg-primary-container/10 p-6 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-3" data-icon="lightbulb">lightbulb</span>
+<h4 class="font-bold mb-2">Visionary</h4>
+<p class="text-xs text-on-surface-variant">Natural capacity for spotting future trends and creative patterns.</p>
+</div>
+<div class="bg-secondary-container/10 p-6 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-3" data-icon="fitness_center">fitness_center</span>
+<h4 class="font-bold mb-2">Resilient</h4>
+<p class="text-xs text-on-surface-variant">Strong metabolic fire translates into physical endurance and recovery.</p>
+</div>
+</div>
+</section>
+<!-- AI Personalized Insight: Glassmorphism Card -->
+<section class="mb-16">
+<div class="relative overflow-hidden bg-guna-gradient rounded-xl p-8 text-on-primary shadow-xl shadow-primary/10">
+<div class="absolute -right-10 -top-10 opacity-20">
+<span class="material-symbols-outlined text-[160px]" data-icon="psychology">psychology</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="text-xs font-bold tracking-widest uppercase">AI Wisdom Synthesis</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-4">The Cooling Mandate</h3>
+<p class="text-white/90 leading-relaxed font-medium">
+                        "Your current Rajas level is peaking. To prevent burnout, favor sweet, cooling liquids today. Your peak productivity window is 10 AM to 2 PM; use the late afternoon for meditative 'slow-work' to ground your Vata air."
+                    </p>
+<button class="mt-6 bg-white/20 backdrop-blur-md border border-white/30 px-6 py-2 rounded-full text-sm font-bold hover:bg-white/30 transition-all">
+                        Deep Dive
+                    </button>
+</div>
+</div>
+</section>
+<!-- Growth Areas: List Tonal Transitions -->
+<section class="mb-16">
+<h3 class="font-headline text-2xl font-bold mb-6">Growth Areas</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-5 bg-surface-container-lowest rounded-lg">
+<div class="w-12 h-12 rounded-full bg-error-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error" data-icon="thermostat">thermostat</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Thermal Irritability</h4>
+<p class="text-xs text-on-surface-variant">Tendency toward heat-related skin and digestive flare-ups.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-5 bg-surface-container-lowest rounded-lg">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary" data-icon="waves">waves</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Scattered Focus</h4>
+<p class="text-xs text-on-surface-variant">Vata imbalance leading to multiple unfinished projects.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Practices: Editorial Style -->
+<section class="mb-16">
+<h3 class="font-headline text-2xl font-bold mb-6">Daily Rituals</h3>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar -mx-6 px-6">
+<!-- Ritual 1 -->
+<div class="min-w-[280px] bg-surface-container-low rounded-xl overflow-hidden group">
+<div class="h-40 overflow-hidden">
+<img alt="Morning Yoga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="peaceful morning yoga scene in a minimalist studio with soft sunlight streaming through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJocgexMQEpdfbr1xIgRSVqOqKH3NBHrLbDIyN4IhJhdoH_7JIL5jFZw_JR8PpxyN3wEFiYbEZ-sBl_DVoY18rXX_2wpxaSewP5a7FUpT_j4gsP04lCbY6_CTRZH2VVu8mCj6N-WnchG9MMsupJSYNbB3lpv7KvouPV9eVScivg6doveQEE3FJUTgZQw6ZRcr82Y3CeojEFTGhR12zHbmHUw9uvp3KXZ58GYqPhB1bBCxxxq_8J44Si4oDPgCgCBDq8BkM_iOF7Q"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold">Surya Namaskar</h4>
+<span class="text-xs font-bold text-primary">06:00 AM</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2">A sequence of 12 powerful yoga poses to balance Pitta fire with fluid movement.</p>
+</div>
+</div>
+<!-- Ritual 2 -->
+<div class="min-w-[280px] bg-surface-container-low rounded-xl overflow-hidden group">
+<div class="h-40 overflow-hidden">
+<img alt="Nutritional Meal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="vibrant healthy Buddha bowl with fresh vegetables, quinoa and avocados on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdLg5YxPE8qodtnc_A36VJgN0JuPJnookZeWcA0QLxcw2LvY9CCfUKAEOUmBZXq9JFJQtZXL3RmSNELd7nBPtr29xibZN1m_-g2VSaP4Dq0CYKoMU-0yXsbHVJbYdgi5W7Ji7DeLsqRBKoNAOoPHx06gFepK5lPTX6EXSF9svdqaxdv_07QV_J-WYUsQoN1LJzQijsKhkhfu0mWYVo66BjBzPzD8BcqwMioTYHvkPEQTNg0uEFnFgnb5CoRpfeS05PZ4SCX8STjA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold">Alkaline Lunch</h4>
+<span class="text-xs font-bold text-primary">12:30 PM</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2">Cooling grains and steamed greens to pacify your midday digestive heat.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#fcf9f8]/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-8px_40px_rgba(28,27,27,0.04)] pb-safe rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-400 px-5 py-2 hover:text-[#795900] dark:hover:text-[#d4a017]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#e5e2e1] dark:bg-stone-800 text-[#1c1b1b] dark:text-white rounded-full px-5 py-2 spring-300ms scale-110" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="quiz">quiz</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Assessment</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-400 px-5 py-2 hover:text-[#795900] dark:hover:text-[#d4a017]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-400 px-5 py-2 hover:text-[#795900] dark:hover:text-[#d4a017]" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

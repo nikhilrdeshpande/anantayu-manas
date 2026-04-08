@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#f3f0ef",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "outline-variant": "#d3c5ae",
+              "primary": "#795900",
+              "inverse-primary": "#f6be39",
+              "surface-container-high": "#eae7e7",
+              "primary-fixed-dim": "#f6be39",
+              "surface": "#fcf9f8",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#0d1d2a",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#817662",
+              "error-container": "#ffdad6",
+              "secondary": "#466729",
+              "on-surface-variant": "#4f4634",
+              "background": "#fcf9f8",
+              "secondary-container": "#c6efa1",
+              "on-primary-fixed": "#261a00",
+              "on-tertiary-fixed-variant": "#394856",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "surface-container-low": "#f6f3f2",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#d4e4f6",
+              "on-error": "#ffffff",
+              "surface-dim": "#dcd9d9",
+              "inverse-surface": "#313030",
+              "surface-container-highest": "#e5e2e1",
+              "on-tertiary": "#ffffff",
+              "on-secondary-container": "#4c6e2f",
+              "surface-bright": "#fcf9f8",
+              "primary-container": "#d4a017",
+              "surface-container": "#f0eded",
+              "on-tertiary-container": "#2f3f4d",
+              "on-primary-fixed-variant": "#5c4300",
+              "secondary-fixed": "#c6efa1",
+              "on-surface": "#1c1b1b",
+              "on-error-container": "#93000a",
+              "tertiary": "#50606f",
+              "surface-variant": "#e5e2e1",
+              "tertiary-container": "#9aaabb",
+              "surface-tint": "#795900",
+              "primary-fixed": "#ffdfa0",
+              "on-primary-container": "#503a00",
+              "secondary-fixed-dim": "#abd288",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#0c2000",
+              "on-background": "#1c1b1b"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .guna-radial {
+            background: conic-gradient(
+                #466729 0% 65%, 
+                #d4a017 65% 90%, 
+                #50606f 90% 100%
+            );
+        }
+        .premium-card-gradient {
+            background: linear-gradient(145deg, #1A1A1A 0%, #262626 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Anchor -->
+<header class="w-full top-0 sticky bg-[#fcf9f8] dark:bg-stone-950 flex justify-between items-center px-6 py-4 z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#d4a017]">menu</span>
+<h1 class="font-headline text-2xl font-bold tracking-tight text-[#795900] dark:text-[#d4a017]">Anantayu</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="portrait of a calm man with a slight smile and kind eyes, soft warm studio lighting, professional headshot style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC8LYCdK9Q13HPARt4e1_fFirW0boSlj9oLjOf1wp5p41ygdezgpYDTPtYbieKXiDumnPtDw6fDm_-EGB-Yv_G5veMeSuNYxnKruErasBcHYuz7Lfqro9m5J9IKil_5Y4ms_75sqvIvnH3fr687sARdDfeqiUYkAuj5E7lTHfHEqlXkv_cV25zKSwfwnuOCBstdjV0xeR4ury-kF4PKkt4WE3pAJR59Nq6NsL60SuU_jCYyaf_DbUaw3LJN4PMY1yNBEzpGOpDwA"/>
+</div>
+</header>
+<main class="min-h-screen pb-32 pt-6 px-4 max-w-md mx-auto">
+<!-- Result Profile Card -->
+<section class="premium-card-gradient rounded-xl p-8 shadow-2xl relative overflow-hidden">
+<!-- Decorative Grain Texture (Simulated via overlay) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]"></div>
+<div class="relative z-10">
+<!-- Header Section -->
+<div class="text-center mb-8">
+<span class="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary-fixed-dim text-[10px] font-bold tracking-widest uppercase mb-4">Ayurvedic Guna Profile</span>
+<h2 class="font-headline text-3xl font-extrabold text-white tracking-tight leading-tight">SATTVIKA-RAJASIKA</h2>
+<p class="text-stone-400 text-sm mt-2 font-medium">Harmonious Balance with Creative Drive</p>
+</div>
+<!-- Radial Donut Chart -->
+<div class="flex justify-center mb-10">
+<div class="relative w-56 h-56 flex items-center justify-center">
+<!-- Outer Guna Ring -->
+<div class="guna-radial w-full h-full rounded-full flex items-center justify-center">
+<!-- Inner Cutout -->
+<div class="bg-[#1A1A1A] w-[82%] h-[82%] rounded-full flex flex-col items-center justify-center text-center p-4">
+<span class="text-white font-headline text-4xl font-bold tracking-tighter">65%</span>
+<span class="text-secondary font-semibold text-xs tracking-widest uppercase">Sattva</span>
+</div>
+</div>
+<!-- Floating Data Points -->
+<div class="absolute -top-2 -right-4 bg-surface-container-highest/10 backdrop-blur-md px-3 py-2 rounded-lg border border-white/5">
+<p class="text-[10px] text-stone-300 uppercase tracking-tighter">Dominant</p>
+<p class="text-secondary font-bold text-sm">Purity</p>
+</div>
+</div>
+</div>
+<!-- Percentage Bars -->
+<div class="space-y-6 mb-10">
+<!-- Sattva -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="text-stone-300 text-xs font-semibold tracking-wider uppercase">Sattva</span>
+<span class="text-white text-sm font-bold">65%</span>
+</div>
+<div class="h-1.5 w-full bg-stone-800 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[65%] rounded-full"></div>
+</div>
+</div>
+<!-- Rajas -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="text-stone-300 text-xs font-semibold tracking-wider uppercase">Rajas</span>
+<span class="text-white text-sm font-bold">25%</span>
+</div>
+<div class="h-1.5 w-full bg-stone-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[25%] rounded-full"></div>
+</div>
+</div>
+<!-- Tamas -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="text-stone-300 text-xs font-semibold tracking-wider uppercase">Tamas</span>
+<span class="text-white text-sm font-bold">10%</span>
+</div>
+<div class="h-1.5 w-full bg-stone-800 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[10%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Insight Quote -->
+<div class="bg-white/5 border border-white/10 rounded-lg p-5 mb-8 italic text-stone-300 text-sm leading-relaxed text-center">
+                    "Your mind is primarily clear and calm, fueled by a healthy ambition to manifest your purpose into reality."
+                </div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-primary hover:opacity-90 transition-opacity text-white font-bold py-4 rounded-lg text-sm tracking-wide">
+                        View Rituals
+                    </button>
+<button class="bg-white/10 hover:bg-white/20 transition-all text-white font-bold py-4 rounded-lg text-sm tracking-wide border border-white/10">
+                        Detailed Report
+                    </button>
+</div>
+</div>
+</section>
+<!-- Social Share Section -->
+<section class="mt-8 text-center">
+<p class="text-on-surface-variant text-xs font-semibold uppercase tracking-[0.2em] mb-4">Share your wisdom</p>
+<div class="flex justify-center gap-6">
+<button class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#fcf9f8]/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-8px_40px_rgba(28,27,27,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-400 px-5 py-2 hover:text-[#795900] transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-400 px-5 py-2 hover:text-[#795900] transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Assessment</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#e5e2e1] dark:bg-stone-800 text-[#1c1b1b] dark:text-white rounded-full px-5 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-400 px-5 py-2 hover:text-[#795900] transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-plus-jakarta text-[11px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+</body></html>

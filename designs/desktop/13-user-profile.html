@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f6f3f2",
+              "inverse-surface": "#313030",
+              "background": "#fcf9f8",
+              "secondary-fixed": "#c6efa1",
+              "primary-fixed-dim": "#f6be39",
+              "secondary": "#466729",
+              "outline": "#817662",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#eae7e7",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#d4e4f6",
+              "error": "#ba1a1a",
+              "surface-container": "#f0eded",
+              "surface-tint": "#795900",
+              "secondary-fixed-dim": "#abd288",
+              "primary": "#795900",
+              "error-container": "#ffdad6",
+              "outline-variant": "#d3c5ae",
+              "on-secondary-fixed": "#0c2000",
+              "tertiary": "#50606f",
+              "secondary-container": "#c6efa1",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#4f4634",
+              "surface-container-highest": "#e5e2e1",
+              "surface-dim": "#dcd9d9",
+              "on-surface": "#1c1b1b",
+              "on-primary-fixed-variant": "#5c4300",
+              "inverse-primary": "#f6be39",
+              "surface-variant": "#e5e2e1",
+              "on-tertiary-fixed": "#0d1d2a",
+              "on-background": "#1c1b1b",
+              "primary-fixed": "#ffdfa0",
+              "on-tertiary-fixed-variant": "#394856",
+              "tertiary-container": "#9aaabb",
+              "primary-container": "#d4a017",
+              "on-secondary-container": "#4c6e2f",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#503a00",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-container": "#2f3f4d",
+              "surface": "#fcf9f8",
+              "on-primary-fixed": "#261a00",
+              "inverse-on-surface": "#f3f0ef"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .guna-donut {
+            background: conic-gradient(
+                #466729 0% 65%, 
+                #d4a017 65% 85%, 
+                #50606f 85% 100%
+            );
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f8] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4 mx-auto sticky top-0 z-40">
+<div class="text-2xl font-bold text-[#1c1b1b] dark:text-[#f6f3f2] tracking-tighter font-headline">Anantayu</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#e5e2e1] dark:hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-[#795900] dark:text-[#d4a017]">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-xl mx-auto px-6 pt-8 pb-32">
+<!-- Profile Header -->
+<section class="mb-12 flex flex-col items-center text-center">
+<div class="relative mb-6">
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface-container-low shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a serene woman with natural skin and a gentle smile, soft studio lighting, high-end editorial wellness aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMoSBl95XJBHRJvRcvpGEFAK_GP-JU-vHPDjQBD7etqHxr-Bho394CwOahpusqtRZy1GtIE0qUvXkVgGPN7R5LPXMmd9RYetvLuG6U6fugtGMGFHubV9uqroTg4jgxiPC6CUR4MNwjUV7Kud0Y-9gVl0FCI3jSsK-I2Ztml1qs_chZtAFVPwE7luAsCBmLrLGsxGKP7HmprC1K0SDqzBS_LgaYeiuISCjm5ChCfq3QX3wp5TlVgXUtRBQx1acmmbIMu3lsVJxifA"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-2 border-background">
+<span class="material-symbols-outlined text-sm block">edit</span>
+</div>
+</div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-1">Aria Sharma</h1>
+<p class="text-on-surface-variant font-medium tracking-wide flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">spa</span>
+                My Prakriti Journey
+            </p>
+</section>
+<!-- Current Balance / Guna Card -->
+<section class="mb-12">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_40px_rgba(28,27,27,0.04)] relative overflow-hidden">
+<div class="flex items-start justify-between mb-8">
+<div>
+<h2 class="font-headline text-xl font-bold text-on-surface mb-2">Current Balance</h2>
+<p class="text-on-surface-variant text-sm max-w-[180px]">Your inner harmony as of March 2026</p>
+</div>
+<!-- Guna Donut -->
+<div class="relative w-24 h-24 flex items-center justify-center">
+<div class="guna-donut w-full h-full rounded-full absolute"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded-full z-10 flex items-center justify-center">
+<span class="font-headline text-xs font-bold text-secondary">Sattva</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center p-3 rounded-lg bg-surface-container-low">
+<div class="w-2 h-2 rounded-full bg-secondary mb-2"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Sattva</span>
+<span class="font-headline text-lg font-bold text-on-surface">65%</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-lg bg-surface-container-low">
+<div class="w-2 h-2 rounded-full bg-primary-container mb-2"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Rajas</span>
+<span class="font-headline text-lg font-bold text-on-surface">20%</span>
+</div>
+<div class="flex flex-col items-center p-3 rounded-lg bg-surface-container-low">
+<div class="w-2 h-2 rounded-full bg-tertiary mb-2"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Tamas</span>
+<span class="font-headline text-lg font-bold text-on-surface">15%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Wellness Insights Teaser (Bento Style) -->
+<section class="mb-12">
+<h3 class="font-headline text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 px-1">Wellness Insights</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 bg-secondary-container/30 rounded-lg p-6 flex flex-col justify-between aspect-[16/7] relative overflow-hidden group">
+<div class="z-10">
+<h4 class="font-headline text-xl font-bold text-on-secondary-container mb-2">Morning Rituals</h4>
+<p class="text-sm text-on-secondary-container/80 max-w-[200px]">Optimal vitality for your Sattva dominant state.</p>
+</div>
+<div class="flex justify-end z-10">
+<span class="material-symbols-outlined text-on-secondary-container group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+<img class="absolute top-0 right-0 w-1/2 h-full object-cover opacity-20 mask-linear-gradient" data-alt="Minimalist wooden table with a ceramic mug of herbal tea and fresh herbs, warm morning sunlight, peaceful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlNtYk4Jb0zHHxRcyjqBmytzFLHigNvQq17yzED3iKnU7Fwgqmi1YLKhdvICF8PHkY2dAt6NKdAOLv9eF_Ma8KiPkQaXiiBY-l1_mI1MVlkdDHD09A_nqFPsa9CMEXhp3kj1GnnB6CLmYGqlZ24DO0KE4_AoIoWBk8zkpRCXgrvHxuIJMBAiq-27Rplsoqef4Ip-PdbjY3KGV7OsbBRAR3LISD5BR-klYYWu2ScJV0XhHbGMEwcGNyedbtb7RePCv3194YLEXw_g"/>
+</div>
+</div>
+</section>
+<!-- Assessment History -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6 px-1">
+<h3 class="font-headline text-sm font-bold uppercase tracking-widest text-on-surface-variant">Assessment History</h3>
+<button class="text-primary text-sm font-semibold hover:underline">View All</button>
+</div>
+<div class="space-y-3">
+<!-- History Item 1 -->
+<div class="flex items-center gap-4 p-5 bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<div class="flex-1">
+<div class="font-headline font-bold text-on-surface">Quick Quiz</div>
+<div class="text-xs text-on-surface-variant font-medium">Mar 12, 2026 • 2 min read</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<!-- History Item 2 -->
+<div class="flex items-center gap-4 p-5 bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<div class="font-headline font-bold text-on-surface">Deep Assessment</div>
+<div class="text-xs text-on-surface-variant font-medium">Jan 24, 2026 • 15 min read</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<!-- History Item 3 -->
+<div class="flex items-center gap-4 p-5 bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">pulse_alert</span>
+</div>
+<div class="flex-1">
+<div class="font-headline font-bold text-on-surface">Seasonal Check-in</div>
+<div class="text-xs text-on-surface-variant font-medium">Dec 02, 2025 • 5 min read</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-8 pt-4 bg-[#fcf9f8]/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_-8px_40px_rgba(28,27,27,0.04)] rounded-t-[3rem]">
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:opacity-80 transition-opacity active:scale-90 duration-300 ease-spring" href="#">
+<span class="material-symbols-outlined mb-1">spa</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">Sanctuary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:opacity-80 transition-opacity active:scale-90 duration-300 ease-spring" href="#">
+<span class="material-symbols-outlined mb-1">quiz</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">Assess</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:opacity-80 transition-opacity active:scale-90 duration-300 ease-spring" href="#">
+<span class="material-symbols-outlined mb-1">history</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">History</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#795900] to-[#d4a017] text-white rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity active:scale-90 duration-300 ease-spring" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#0c2000",
+              "surface-container-low": "#f6f3f2",
+              "surface-container-high": "#eae7e7",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#4c6e2f",
+              "inverse-surface": "#313030",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "secondary-fixed-dim": "#abd288",
+              "surface-container": "#f0eded",
+              "on-tertiary-container": "#2f3f4d",
+              "on-tertiary-fixed-variant": "#394856",
+              "background": "#fcf9f8",
+              "on-primary-fixed": "#261a00",
+              "error-container": "#ffdad6",
+              "primary-container": "#d4a017",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#fcf9f8",
+              "on-error-container": "#93000a",
+              "secondary": "#466729",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#5c4300",
+              "on-primary-container": "#503a00",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#9aaabb",
+              "secondary-container": "#c6efa1",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdfa0",
+              "inverse-on-surface": "#f3f0ef",
+              "tertiary-fixed": "#d4e4f6",
+              "surface-container-highest": "#e5e2e1",
+              "on-background": "#1c1b1b",
+              "surface-tint": "#795900",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#c6efa1",
+              "surface": "#fcf9f8",
+              "inverse-primary": "#f6be39",
+              "surface-dim": "#dcd9d9",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "outline-variant": "#d3c5ae",
+              "on-surface": "#1c1b1b",
+              "outline": "#817662",
+              "tertiary": "#50606f",
+              "primary-fixed-dim": "#f6be39",
+              "surface-variant": "#e5e2e1",
+              "primary": "#795900",
+              "on-surface-variant": "#4f4634",
+              "on-tertiary-fixed": "#0d1d2a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .guna-donut {
+            background: conic-gradient(
+                #466729 0% 72%, 
+                #d4a017 72% 82%, 
+                #50606f 82% 100%
+            );
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="bg-[#fcf9f8] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto tonal-transition no-border">
+<div class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-2xl text-[#1c1b1b] dark:text-[#fcf9f8]">
+            Anantayu
+        </div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#4f4634] dark:text-stone-400 cursor-pointer hover:bg-[#e5e2e1] dark:hover:bg-stone-800 transition-colors duration-300 p-2 rounded-full" data-icon="language">language</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-6 py-12">
+<!-- Result Profile Card -->
+<div class="w-full max-w-[420px] bg-[#1a1a1a] rounded-xl shadow-[0_40px_80px_rgba(0,0,0,0.4)] overflow-hidden relative border border-white/5">
+<!-- Subtle Texture Overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" data-alt="subtle organic paper grain texture for high-end tactile feel" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqtjDyi4akTSEqDkScXWQI441vQDn3n-ocF45jUcpLYGSXUtoIbt6Xw9jNTrflnLBKZTsbKnr7LEowJw1Wzfg3hxm8q1lJDUMbOe-bBjIGfLXK2ekmK7qW3m7TyosTZpyRQrYgooVnvsGVbWsvPLg9poMczM0wOAbem44AAKNjlpScwOqQBEucJw_ctEF1fNyWL1ZUEGq_iwt2wDyRE-9_eaCSNsKp-N8xm_UkSW8lmCRegjwxx6KolN7O6GIfo0LnMYaWwrr1aA');"></div>
+<div class="relative z-10 p-8 flex flex-col items-center text-center">
+<!-- Card Header -->
+<div class="mb-8">
+<div class="flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="tempest" style="font-variation-settings: 'FILL' 1;">storm</span>
+</div>
+<p class="font-headline font-extrabold tracking-[0.2em] text-primary-container text-[10px] uppercase">Manas Prakriti</p>
+</div>
+<!-- Centerpiece: Radial Guna Chart -->
+<div class="relative w-48 h-48 mb-8 flex items-center justify-center">
+<!-- Outer Donut -->
+<div class="absolute inset-0 guna-donut rounded-full opacity-90 blur-[1px]"></div>
+<!-- Inner Mask -->
+<div class="absolute inset-4 bg-[#1a1a1a] rounded-full flex flex-col items-center justify-center">
+<span class="font-headline font-bold text-3xl text-[#fcf9f8]">72%</span>
+<span class="text-[10px] tracking-widest text-primary-container font-medium uppercase mt-1">Sattva</span>
+</div>
+</div>
+<!-- Identity Section -->
+<div class="mb-10">
+<h2 class="font-headline font-extrabold text-2xl text-[#fcf9f8] tracking-tight mb-1 uppercase">Sattvika-Rajasika</h2>
+<h3 class="font-headline font-medium text-primary-container text-lg italic mb-4">The Wise Leader</h3>
+<div class="flex items-center justify-center gap-2">
+<span class="text-[11px] text-[#fcf9f8]/60 px-3 py-1 rounded-full border border-white/10 uppercase tracking-tighter">Calm</span>
+<span class="text-[11px] text-[#fcf9f8]/60 px-3 py-1 rounded-full border border-white/10 uppercase tracking-tighter">Driven</span>
+<span class="text-[11px] text-[#fcf9f8]/60 px-3 py-1 rounded-full border border-white/10 uppercase tracking-tighter">Thoughtful</span>
+</div>
+</div>
+<!-- Percentage Bars -->
+<div class="w-full space-y-5 mb-8">
+<!-- Sattva -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Sattva</span>
+<span class="text-[10px] text-white/50">72%</span>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Rajas -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-primary-container uppercase tracking-widest">Rajas</span>
+<span class="text-[10px] text-white/50">56%</span>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 56%"></div>
+</div>
+</div>
+<!-- Tamas -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-end">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Tamas</span>
+<span class="text-[10px] text-white/50">18%</span>
+</div>
+<div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 18%"></div>
+</div>
+</div>
+</div>
+<!-- Strength Badge -->
+<div class="bg-primary-container/10 border border-primary-container/20 px-6 py-3 rounded-lg mb-8">
+<p class="text-[11px] font-bold text-primary-container uppercase tracking-[0.15em]">Mental Strength: Pravara</p>
+</div>
+<!-- Card Footer -->
+<div class="pt-6 border-t border-white/5 w-full">
+<p class="text-[10px] text-white/30 font-medium tracking-widest uppercase">anantayu.com/prakriti</p>
+</div>
+</div>
+</div>
+<!-- Social Share Section -->
+<div class="mt-12 text-center">
+<p class="font-headline font-bold text-on-surface-variant text-sm tracking-widest uppercase mb-6">Share your Prakriti</p>
+<div class="flex gap-5">
+<button class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface transition-all active:scale-90 hover:bg-primary-container hover:text-white group">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface transition-all active:scale-90 hover:bg-primary-container hover:text-white group">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface transition-all active:scale-90 hover:bg-primary-container hover:text-white group">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface transition-all active:scale-90 hover:bg-primary-container hover:text-white group">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Shell Implementation) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#fcf9f8]/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-8px_40px_rgba(28,27,27,0.04)] md:hidden">
+<div class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:text-[#795900] dark:hover:text-[#d4a017]">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#d4a017] text-white rounded-full p-3 scale-90 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Prakriti</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:text-[#795900] dark:hover:text-[#d4a017]">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:text-[#795900] dark:hover:text-[#d4a017]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

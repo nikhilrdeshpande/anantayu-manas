@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - Join the Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f6f3f2",
+              "inverse-surface": "#313030",
+              "background": "#fcf9f8",
+              "secondary-fixed": "#c6efa1",
+              "primary-fixed-dim": "#f6be39",
+              "secondary": "#466729",
+              "outline": "#817662",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#eae7e7",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#d4e4f6",
+              "error": "#ba1a1a",
+              "surface-container": "#f0eded",
+              "surface-tint": "#795900",
+              "secondary-fixed-dim": "#abd288",
+              "primary": "#795900",
+              "error-container": "#ffdad6",
+              "outline-variant": "#d3c5ae",
+              "on-secondary-fixed": "#0c2000",
+              "tertiary": "#50606f",
+              "secondary-container": "#c6efa1",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#4f4634",
+              "surface-container-highest": "#e5e2e1",
+              "surface-dim": "#dcd9d9",
+              "on-surface": "#1c1b1b",
+              "on-primary-fixed-variant": "#5c4300",
+              "inverse-primary": "#f6be39",
+              "surface-variant": "#e5e2e1",
+              "on-tertiary-fixed": "#0d1d2a",
+              "on-background": "#1c1b1b",
+              "primary-fixed": "#ffdfa0",
+              "on-tertiary-fixed-variant": "#394856",
+              "tertiary-container": "#9aaabb",
+              "primary-container": "#d4a017",
+              "on-secondary-container": "#4c6e2f",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "on-error-container": "#93000a",
+              "on-primary-container": "#503a00",
+              "surface-bright": "#fcf9f8",
+              "on-tertiary-container": "#2f3f4d",
+              "surface": "#fcf9f8",
+              "on-primary-fixed": "#261a00",
+              "inverse-on-surface": "#f3f0ef"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.bg-lotus-pattern {
+    background-color: #fcf9f8;
+    background-image: radial-gradient(#d3c5ae 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    position: relative
+    }
+.bg-lotus-pattern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBKRU4IGcrfonNnXZ-mSLMl6aX08wAz0uW7pbieMU2V0Ct-h2MzV9-8hp4xQgTU9cWGqSWT3kEYO_a_itOfADdFEOkFeTlGUtTYmK8Q-qapk6_dMCblkZWFFUJ-Y-w-K5wl8hKj4hLB2BFBF9HgrlL5hS7IeJSNESw_2YOK3uEU_Pm13by6970AVIhjMVyeqzMNA2WzzLKCCcLGMsB1CbOE4iMmpInPRZX94MetfSVnQxYQFd4rYaLaiGXk_ByHxzth1i1Di2-CAw);
+    opacity: 0.03;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Main Navigation (Suppressed per shell mandate for transactional screens) -->
+<main class="min-h-screen flex flex-col items-center justify-center p-6 bg-lotus-pattern" data-alt="Soft parchment background with a very subtle and elegant hand-drawn lotus pattern and warm lighting">
+<!-- Language Switcher (Glassmorphism) -->
+<div class="fixed top-8 right-8 z-50">
+<div class="flex items-center gap-2 p-1.5 bg-surface-container-lowest/80 backdrop-blur-xl rounded-full shadow-sm border border-outline-variant/15">
+<button class="px-5 py-2 text-xs font-label font-semibold tracking-widest uppercase bg-surface-container-lowest text-primary rounded-full shadow-sm">EN</button>
+<button class="px-5 py-2 text-xs font-label font-semibold tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors">SA</button>
+</div>
+</div>
+<!-- Signup Card -->
+<div class="w-full max-w-[480px] bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0_8px_40px_rgba(28,27,27,0.04)] border border-outline-variant/10 relative overflow-hidden">
+<!-- Brand Anchor -->
+<div class="text-center mb-12">
+<h1 class="font-headline text-3xl font-extrabold tracking-tighter text-on-surface mb-2">Anantayu</h1>
+<p class="font-body text-on-surface-variant text-sm tracking-wide">Begin your journey to Manas Prakriti</p>
+</div>
+<form class="space-y-8">
+<!-- Name Field -->
+<div class="relative group">
+<label class="block font-label text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors" for="name">Full Name</label>
+<div class="flex items-center border-b border-outline-variant/30 group-focus-within:border-primary transition-all pb-2">
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-primary transition-colors mr-3" data-icon="person">person</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-on-surface placeholder:text-outline-variant/60 font-medium" id="name" placeholder="Arjun Sharma" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="relative group">
+<label class="block font-label text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors" for="email">Email Address</label>
+<div class="flex items-center border-b border-outline-variant/30 group-focus-within:border-primary transition-all pb-2">
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-primary transition-colors mr-3" data-icon="mail">mail</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-on-surface placeholder:text-outline-variant/60 font-medium" id="email" placeholder="arjun@sanctuary.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="relative group">
+<label class="block font-label text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 group-focus-within:text-primary transition-colors" for="password">Create Password</label>
+<div class="flex items-center border-b border-outline-variant/30 group-focus-within:border-primary transition-all pb-2">
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-primary transition-colors mr-3" data-icon="lock">lock</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-on-surface placeholder:text-outline-variant/60 font-medium" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full py-5 px-8 rounded-full bg-gradient-to-br from-primary to-primary-container text-white font-headline font-bold text-lg shadow-[0_8px_24px_rgba(121,89,0,0.2)] hover:scale-[1.02] active:scale-95 transition-all duration-300">
+                        Create Sanctuary Account
+                    </button>
+</div>
+</form>
+<!-- Footer Links -->
+<div class="mt-12 text-center">
+<p class="text-on-surface-variant text-sm font-medium">
+                    Already a member? 
+                    <a class="text-primary font-bold ml-1 hover:underline underline-offset-4 decoration-2" href="#">Login</a>
+</p>
+</div>
+<!-- Aesthetic Layering Decor -->
+<div class="absolute -bottom-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -top-12 -left-12 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Decorative Image Context (Asymmetric Layout Hint) -->
+<div class="mt-16 max-w-lg text-center px-4">
+<div class="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-surface-container-low/50 border border-outline-variant/10">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-surface shadow-sm" data-alt="Close-up portrait of a serene woman with natural lighting and soft skin tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMv8xA_kwQALpaJP9Hp8-mmocS26FomNhBSaG8xef44BFXmzLBVi89p7ZzGJkfe9l1GFT-IQF6hz_SdBK2sSzJTA99QYQugjjytqIUVEKaHnFzO9cA8maCcOZe-QyOGYmttiGWSp6a6ecSLRWP_1W3FCymIkBCa-Gx_mJDqPzL4TE1lUUjk6UqHKVVYAgBjEl4Hi0klIPRe8yPnvTeuIlaWimVYgpQ32cWBwzaI7lhYciMlHu-viY1XfR1g-iF5V0N_vy728d8WQ"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface shadow-sm" data-alt="Portrait of a mindful man in a light linen shirt against a soft bokeh nature background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMyfqH32atIgAIxutTtFpWYTPtLdFp9b5aJmw9nSlpgi1J63qhSaBT1SCE2RCemwA3yHQ36cBVx9c9fMnAMoLm_cnj4nmVMkxp13rdwMWX9CzWnii8iRP6FhzuKxgxShXtGRB8IJWzd6chR1UOTQydhzP3W3w9o81UOfRWUvFP5G4q0kLAlLS0lJExKJeHF-BsI7saizJMGe8nxgTP2ZXIJE5cS5NEaIyWzWG9DWuBxBqRiX0gg0RPl1zNPFHylcNjgwvfP65gjA"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface shadow-sm" data-alt="Relaxed young woman with closed eyes in a meditative state with warm sunlight flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk4lVO8K3QkDitEEajCvw_YlkbWvpD9qtdMTVAbmZq-W5vb6WKXDVfM9YL4UP3WPlMADSJh0QyYdBv3GFAGlm33miUHRb1rYzEXikSLmghKiRM1PpeBtYPmYlRpac-5m11uVsvLo7MaLLauRQTXOMJuWM-az-i6O-o6D9dpaYHXw3hA7W54MWGjHYzVifReDAllqARTTG-CBvdl6WKaNK_gcejYYmLDm-gj0LBv6sYiNQCETbtyQeCIigrsVHPaiFXc84BsXK2xQ"/>
+</div>
+<p class="text-xs font-label font-bold tracking-widest text-on-surface-variant uppercase">Join 12,000+ Seekers</p>
+</div>
+</div>
+</main>
+<!-- Footer Meta -->
+<footer class="fixed bottom-8 w-full text-center px-6">
+<p class="text-[10px] font-label font-bold uppercase tracking-[0.2em] text-outline-variant/60">
+            Guided by Ancient Ayurvedic Wisdom • Crafted for the Modern Mind
+        </p>
+</footer>
+</body></html>

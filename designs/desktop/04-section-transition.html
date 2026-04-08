@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - Transition</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#795900",
+              "surface-dim": "#dcd9d9",
+              "tertiary-container": "#9aaabb",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#394856",
+              "secondary-fixed-dim": "#abd288",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "surface-bright": "#fcf9f8",
+              "on-surface": "#1c1b1b",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#d4e4f6",
+              "on-background": "#1c1b1b",
+              "inverse-on-surface": "#f3f0ef",
+              "surface-variant": "#e5e2e1",
+              "on-secondary-fixed": "#0c2000",
+              "on-primary-fixed": "#261a00",
+              "on-tertiary-fixed": "#0d1d2a",
+              "inverse-surface": "#313030",
+              "primary-fixed-dim": "#f6be39",
+              "surface": "#fcf9f8",
+              "surface-container-high": "#eae7e7",
+              "on-primary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#c6efa1",
+              "on-primary-container": "#503a00",
+              "on-secondary-container": "#4c6e2f",
+              "secondary-fixed": "#c6efa1",
+              "surface-container-highest": "#e5e2e1",
+              "primary-container": "#d4a017",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#50606f",
+              "secondary": "#466729",
+              "on-error": "#ffffff",
+              "surface-container": "#f0eded",
+              "primary-fixed": "#ffdfa0",
+              "surface-container-low": "#f6f3f2",
+              "on-tertiary-container": "#2f3f4d",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "background": "#fcf9f8",
+              "outline": "#817662",
+              "on-primary": "#ffffff",
+              "surface-tint": "#795900",
+              "on-surface-variant": "#4f4634",
+              "inverse-primary": "#f6be39",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "outline-variant": "#d3c5ae"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .breathing-pulse {
+            box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.4);
+            animation: pulse 3s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 30px rgba(212, 160, 23, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 160, 23, 0); }
+        }
+        .editorial-gradient {
+            background: radial-gradient(circle at top right, #fcf9f8 0%, #f6f3f2 50%, #fdf6e3 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed antialiased">
+<!-- Transition Interstitial Canvas -->
+<main class="relative min-h-screen w-full flex flex-col items-center justify-center editorial-gradient overflow-hidden">
+<!-- Abstract Layering for Texture -->
+<div class="absolute inset-0 pointer-events-none opacity-40">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-secondary-container blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] bg-primary-container/20 blur-[150px] rounded-full"></div>
+</div>
+<!-- Top Navigation (Contextual Suppression Active: No Nav Shell for Focused Journey) -->
+<header class="absolute top-0 left-0 w-full p-8 flex justify-between items-center z-10">
+<div class="flex items-center gap-2">
+<span class="text-xl font-headline font-extrabold tracking-tighter text-on-surface">Anantayu</span>
+</div>
+<!-- Glassmorphism Progress Indicator -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl px-6 py-2.5 rounded-full shadow-sm border border-outline-variant/10">
+<span class="text-on-surface-variant font-label text-sm font-medium tracking-wide">PHASE 02 / 03</span>
+</div>
+</header>
+<!-- Centered Transition Content -->
+<section class="relative z-10 max-w-2xl px-6 text-center">
+<!-- The Animated Guna Anchor -->
+<div class="mb-12 relative flex justify-center">
+<!-- Rajas Colored Circle (Gold) -->
+<div class="w-32 h-32 md:w-40 md:h-40 bg-primary-container rounded-full flex items-center justify-center breathing-pulse relative z-10">
+<span class="material-symbols-outlined text-white text-5xl md:text-6xl" data-icon="bolt">bolt</span>
+</div>
+<!-- Decorative Ring -->
+<div class="absolute inset-0 w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border border-primary-container/20 scale-125"></div>
+</div>
+<!-- Typography Content -->
+<div class="space-y-6">
+<h1 class="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-[1.1] tracking-tight">
+                    Now, let's explore your <br/> <span class="text-primary italic">active nature...</span>
+</h1>
+<p class="text-[#1A1A1A]/70 text-lg md:text-xl font-body max-w-md mx-auto leading-relaxed">
+                    5 questions remaining
+                </p>
+</div>
+<!-- Footer Meta Actions -->
+<div class="mt-16 pt-16">
+<button class="group flex flex-col items-center gap-4 mx-auto transition-transform active:scale-95 duration-300">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant/60 font-semibold group-hover:text-primary transition-colors">Beginning Rajas Segment</span>
+<div class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white" data-icon="arrow_downward">arrow_downward</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Background Image for Textural Depth (Low Opacity) -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl opacity-10 pointer-events-none">
+<img alt="" class="w-full h-auto object-cover mask-image-linear" data-alt="soft focus close-up of incense smoke swirling gently in a warm sunlit room with minimal stone textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT6XNw9ahLcu11mopeMqDBpt-ctcbjxpOvKWxU1HvSWL0p8qGM9yZc2jv6Taz0PMnladQfEgo3XtWDMACjOShTOCmlyvE4awon8HM0Qh0gmviF1mltcfpJo7Nm-m_P6Zd3xEixlJwkgg9qzUmN9Wvvo9zpudlnFrHyL2FWF7HyWvbMAXhM2bUG0fLsycnezo-HBFi4QES3PvWE5AiIEK8PgG2yR3AstRK8k35tg0Blq3PqgbVLrrY3zLrVPWQzdZ66hU-q35kXPg"/>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Suppressed as per Task-Focused/Linear Journey Rule) -->
+<!-- FAB Suppressed as per Detail/Focused screen rule -->
+</body></html>

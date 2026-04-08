@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "sattva": "Sattva",
+    "rajas": "Rajas",
+    "tamas": "Tamas"
+  },
+  "instructions": {
+    "title": "Prakriti Assessment",
+    "subtitle": "Answer 30 questions to discover your unique mind-body constitution.",
+    "howTo": "For each question, choose the response that best reflects your natural tendencies — not how you wish to be, but how you typically are.",
+    "timeEstimate": "About 5-7 minutes",
+    "quickLabel": "Quick Assessment",
+    "deepLabel": "Deep Assessment"
+  },
+  "answers": {
+    "yes": "Yes",
+    "no": "No",
+    "sometimes": "Sometimes"
+  },
+  "progress": {
+    "section": "Section {{current}} of {{total}}",
+    "question": "Question {{current}} of {{total}}"
+  }
+}

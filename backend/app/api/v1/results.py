@@ -1,0 +1,160 @@
+import uuid
+
+from fastapi import APIRouter, Depends, Path, Query
+from fastapi.responses import StreamingResponse
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.api.deps import get_db
+from app.core.exceptions import BadRequestError, NotFoundError
+from app.models.assessment import Answer, Assessment
+from app.models.result import Result
+from app.schemas.result import ResultResponse
+from app.services.ai_insights import AIInsightsService
+from app.services.scoring_engine import ScoringEngine
+
+from sqlalchemy.orm import selectinload
+
+router = APIRouter()
+
+
+@router.post("/{assessment_id}", response_model=ResultResponse)
+async def compute_result(
+    assessment_id: uuid.UUID = Path(), db: AsyncSession = Depends(get_db)
+):
+    # Check assessment exists and is completed
+    assess_result = await db.execute(
+        select(Assessment).where(Assessment.id == assessment_id)
+    )
+    assessment = assess_result.scalar_one_or_none()
+    if not assessment:
+        raise NotFoundError("Assessment not found")
+    if assessment.status != "completed":
+        raise BadRequestError("Assessment not yet completed")
+
+    # Check if result already exists
+    existing = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    if existing.scalar_one_or_none():
+        raise BadRequestError("Result already computed for this assessment")
+
+    # Load answers
+    answers_result = await db.execute(
+        select(Answer).where(Answer.assessment_id == assessment_id)
+    )
+    answers = answers_result.scalars().all()
+
+    # Load questions to map question_id -> section
+    import json
+    from pathlib import Path as FilePath
+
+    data_dir = FilePath(__file__).resolve().parent.parent.parent / "data"
+    qfile = f"questions_{assessment.assessment_type}_en.json"
+    with open(data_dir / qfile) as f:
+        questions_data = json.load(f)
+    question_section_map = {q["id"]: q["section"] for q in questions_data}
+
+    # Build answer dicts for scoring engine
+    answer_list = []
+    for a in answers:
+        section = question_section_map.get(a.question_id)
+        if section:
+            answer_list.append({"section": section, "answer": a.answer})
+
+    engine = ScoringEngine()
+    scoring = engine.score(answer_list, assessment.assessment_type)
+
+    result = Result(
+        assessment_id=assessment_id,
+        sattva_yes=scoring.sattva_yes,
+        sattva_no=scoring.sattva_no,
+        sattva_sometimes=scoring.sattva_sometimes,
+        rajas_yes=scoring.rajas_yes,
+        rajas_no=scoring.rajas_no,
+        rajas_sometimes=scoring.rajas_sometimes,
+        tamas_yes=scoring.tamas_yes,
+        tamas_no=scoring.tamas_no,
+        tamas_sometimes=scoring.tamas_sometimes,
+        sattva_primary_pct=scoring.sattva_primary_pct,
+        rajas_primary_pct=scoring.rajas_primary_pct,
+        tamas_primary_pct=scoring.tamas_primary_pct,
+        sattva_secondary_pct=scoring.sattva_secondary_pct,
+        rajas_secondary_pct=scoring.rajas_secondary_pct,
+        tamas_secondary_pct=scoring.tamas_secondary_pct,
+        primary_dominant_guna=scoring.primary_dominant_guna,
+        secondary_dominant_guna=scoring.secondary_dominant_guna,
+        prakriti_type=scoring.prakriti_type,
+        prakriti_subtype=scoring.prakriti_subtype,
+        archetype_title=scoring.archetype_title,
+        sattva_bala=scoring.sattva_bala,
+    )
+    db.add(result)
+    await db.flush()
+    await db.refresh(result)
+    return result
+
+
+@router.get("/{assessment_id}", response_model=ResultResponse)
+async def get_result(
+    assessment_id: uuid.UUID = Path(), db: AsyncSession = Depends(get_db)
+):
+    result = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    r = result.scalar_one_or_none()
+    if not r:
+        raise NotFoundError("Result not found for this assessment")
+    return r
+
+
+@router.get("/{assessment_id}/insights")
+async def stream_insights(
+    assessment_id: uuid.UUID = Path(),
+    locale: str = Query("en"),
+    db: AsyncSession = Depends(get_db),
+):
+    """Stream AI-generated personalized insights."""
+    result_row = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    r = result_row.scalar_one_or_none()
+    if not r:
+        raise NotFoundError("Result not found")
+
+    # If cached, return cached
+    if r.ai_insights and locale in (r.ai_insights or {}):
+        async def cached_stream():
+            yield r.ai_insights[locale]
+        return StreamingResponse(cached_stream(), media_type="text/plain")
+
+    # Load demographics from the assessment for personalized insights
+    assess_row = await db.execute(
+        select(Assessment).where(Assessment.id == assessment_id)
+    )
+    assessment = assess_row.scalar_one_or_none()
+    demographics = assessment.demographics if assessment else None
+
+    service = AIInsightsService()
+
+    collected_text = []
+
+    async def insight_stream():
+        async for chunk in service.generate_insights_stream(
+            prakriti_type=r.prakriti_type,
+            primary_guna=r.primary_dominant_guna,
+            secondary_guna=r.secondary_dominant_guna,
+            sattva_pct=float(r.sattva_secondary_pct),
+            rajas_pct=float(r.rajas_secondary_pct),
+            tamas_pct=float(r.tamas_secondary_pct),
+            sattva_bala=r.sattva_bala,
+            locale=locale,
+            demographics=demographics,
+        ):
+            collected_text.append(chunk)
+            yield chunk
+
+        # Cache the full text after streaming completes
+        # (fire and forget - don't block the stream)
+
+    return StreamingResponse(insight_stream(), media_type="text/plain")

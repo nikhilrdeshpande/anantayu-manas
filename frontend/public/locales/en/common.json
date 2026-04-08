@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Home",
+    "assessment": "Assessment",
+    "results": "Results",
+    "profile": "Profile",
+    "login": "Log In",
+    "signup": "Sign Up"
+  },
+  "buttons": {
+    "start": "Begin Assessment",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "share": "Share Results",
+    "download": "Download Report",
+    "tryAgain": "Take Again",
+    "learnMore": "Learn More",
+    "goDeep": "Go Deeper"
+  },
+  "generic": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again",
+    "appName": "Anantayu",
+    "tagline": "Discover your Prakriti through Ayurvedic wisdom"
+  }
+}

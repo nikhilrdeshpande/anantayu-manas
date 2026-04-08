@@ -1,0 +1,170 @@
+{
+  "prakriti_types": [
+    {
+      "type": "Sattvika",
+      "archetype_title": "The Harmoniser",
+      "description": "Predominantly Sattvika individuals are characterized by clarity, wisdom, and inner harmony. They have a natural inclination towards truth, compassion, and selfless service.",
+      "strengths": [
+        "Strong moral compass and ethical foundation",
+        "Natural leadership through wisdom and example",
+        "Excellent retention and learning ability",
+        "Deep empathy and compassion for all beings",
+        "Consistent discipline and self-regulation"
+      ],
+      "growth_areas": [
+        "May be overly idealistic, needing to balance with practical reality",
+        "Could benefit from assertiveness in certain situations",
+        "Risk of spiritual bypassing or avoiding necessary conflict"
+      ],
+      "daily_practices": [
+        "Morning meditation (20 minutes) and pranayama",
+        "Sattvic diet: fresh fruits, vegetables, whole grains, milk",
+        "Regular study of uplifting literature",
+        "Practice of gratitude journaling before sleep",
+        "Seva (selfless service) in the community"
+      ]
+    },
+    {
+      "type": "Rajasika",
+      "archetype_title": "The Dynamo",
+      "description": "Predominantly Rajasika individuals are driven, ambitious, and energetic. They thrive on activity, achievement, and competition, but may struggle with restlessness and impatience.",
+      "strengths": [
+        "High energy and strong drive to achieve goals",
+        "Natural ability to lead and motivate others",
+        "Quick decision-making and action-oriented mindset",
+        "Competitive spirit that pushes boundaries",
+        "Resilience in the face of challenges"
+      ],
+      "growth_areas": [
+        "Learning patience and emotional regulation",
+        "Cultivating contentment alongside ambition",
+        "Developing deeper listening and empathy skills"
+      ],
+      "daily_practices": [
+        "Cooling pranayama (Sheetali, Chandrabhedana) morning and evening",
+        "Moderate exercise followed by relaxation (yoga nidra)",
+        "Reduce stimulants (caffeine, spicy food); favour cooling foods",
+        "Practice active listening in one conversation daily",
+        "Evening journaling to process emotions constructively"
+      ]
+    },
+    {
+      "type": "Tamasika",
+      "archetype_title": "The Anchor",
+      "description": "Predominantly Tamasika individuals value stability and comfort. They tend towards routine and familiarity, but may need to cultivate more energy, motivation, and engagement.",
+      "strengths": [
+        "Grounded and steady presence",
+        "Ability to remain unfazed by external chaos",
+        "Deep capacity for rest and recovery",
+        "Loyalty and consistency in relationships",
+        "Comfort with solitude and introspection"
+      ],
+      "growth_areas": [
+        "Building motivation and initiative",
+        "Developing a regular exercise routine",
+        "Cultivating curiosity and openness to new experiences"
+      ],
+      "daily_practices": [
+        "Wake before sunrise; avoid daytime sleeping",
+        "Energising pranayama (Kapalabhati, Bhastrika) each morning",
+        "Light, warm, freshly cooked meals; avoid heavy and processed foods",
+        "Set one small achievable goal daily and celebrate completion",
+        "Engage in social activity or community involvement weekly"
+      ]
+    },
+    {
+      "type": "Sattva-Rajasika",
+      "archetype_title": "The Enlightened Leader",
+      "description": "A blend of wisdom and drive. Sattva-Rajasika individuals combine ethical clarity with the ambition to make things happen, making them effective and principled leaders.",
+      "strengths": [
+        "Ethical leadership with practical execution",
+        "Balance of vision and action",
+        "Ability to inspire and uplift teams",
+        "Strong moral foundation paired with competitive edge",
+        "Effective communication and persuasion"
+      ],
+      "growth_areas": [
+        "Managing the tension between idealism and ambition",
+        "Avoiding burnout from trying to do too much"
+      ],
+      "daily_practices": [
+        "Morning meditation (15 min) followed by a brisk walk or yoga",
+        "Balance sattvic base diet with moderate rajasic foods for energy",
+        "Alternate between achievement-focused and service-focused activities",
+        "Practice delegation and trust-building weekly",
+        "End day with reflective journaling on impact vs. ego"
+      ]
+    },
+    {
+      "type": "Sattva-Tamasika",
+      "archetype_title": "The Reflective Sage",
+      "description": "A combination of inner wisdom and deep inward focus. Sattva-Tamasika individuals are thoughtful and contemplative, though they may need to work on translating insight into action.",
+      "strengths": [
+        "Deep philosophical and contemplative nature",
+        "Ability to see beyond surface-level issues",
+        "Calm and composed under pressure",
+        "Strong intuition and inner knowing",
+        "Patience and tolerance"
+      ],
+      "growth_areas": [
+        "Converting insights into practical action",
+        "Building physical energy and vitality",
+        "Engaging more actively with the external world"
+      ],
+      "daily_practices": [
+        "Gentle morning yoga followed by meditation",
+        "Light sattvic meals; include warming spices (ginger, turmeric)",
+        "One action item daily to translate a thought into reality",
+        "Regular walks in nature to maintain grounding and energy",
+        "Weekly social engagement to stay connected"
+      ]
+    },
+    {
+      "type": "Rajo-Sattvika",
+      "archetype_title": "The Passionate Visionary",
+      "description": "High energy tempered with ethical awareness. Rajo-Sattvika individuals are passionate about their goals while maintaining a sense of fairness and concern for others.",
+      "strengths": [
+        "Passionate pursuit of meaningful goals",
+        "Ability to rally others around a vision",
+        "Creative problem-solving with ethical boundaries",
+        "High energy with moments of deep reflection",
+        "Adaptable and resourceful"
+      ],
+      "growth_areas": [
+        "Learning to slow down and listen more",
+        "Cultivating deeper patience and stillness"
+      ],
+      "daily_practices": [
+        "Morning pranayama (alternate nostril breathing) and brief meditation",
+        "Moderate diet balancing energy needs with calming foods",
+        "Schedule daily quiet time (15 min) for reflection",
+        "Channel competitive energy into collaborative projects",
+        "Practice gratitude to counter restless dissatisfaction"
+      ]
+    },
+    {
+      "type": "Rajo-Tamasika",
+      "archetype_title": "The Restless Warrior",
+      "description": "A mix of intense drive and deep inertia. Rajo-Tamasika individuals oscillate between bursts of energy and periods of withdrawal, requiring balance and structure.",
+      "strengths": [
+        "Intense focus during periods of motivation",
+        "Resilience through diverse emotional states",
+        "Ability to understand both action and rest",
+        "Pragmatic and realistic worldview",
+        "Can thrive under pressure"
+      ],
+      "growth_areas": [
+        "Creating consistent daily routines",
+        "Managing emotional swings between activity and lethargy",
+        "Building sustainable energy rather than boom-bust cycles"
+      ],
+      "daily_practices": [
+        "Fixed wake-up time with light exercise (walking or stretching)",
+        "Three regular meals at consistent times; reduce processed foods",
+        "Alternate between stimulating and calming activities throughout the day",
+        "Practice mindful breathing when feeling either restless or lethargic",
+        "Set micro-goals to build consistency and confidence"
+      ]
+    }
+  ]
+}

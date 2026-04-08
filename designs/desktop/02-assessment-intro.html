@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - Manas Prakriti Assessment</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#0c2000",
+              "surface-container-low": "#f6f3f2",
+              "surface-container-high": "#eae7e7",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#4c6e2f",
+              "inverse-surface": "#313030",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "secondary-fixed-dim": "#abd288",
+              "surface-container": "#f0eded",
+              "on-tertiary-container": "#2f3f4d",
+              "on-tertiary-fixed-variant": "#394856",
+              "background": "#fcf9f8",
+              "on-primary-fixed": "#261a00",
+              "error-container": "#ffdad6",
+              "primary-container": "#d4a017",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#fcf9f8",
+              "on-error-container": "#93000a",
+              "secondary": "#466729",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#5c4300",
+              "on-primary-container": "#503a00",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#9aaabb",
+              "secondary-container": "#c6efa1",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdfa0",
+              "inverse-on-surface": "#f3f0ef",
+              "tertiary-fixed": "#d4e4f6",
+              "surface-container-highest": "#e5e2e1",
+              "on-background": "#1c1b1b",
+              "surface-tint": "#795900",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#c6efa1",
+              "surface": "#fcf9f8",
+              "inverse-primary": "#f6be39",
+              "surface-dim": "#dcd9d9",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "outline-variant": "#d3c5ae",
+              "on-surface": "#1c1b1b",
+              "outline": "#817662",
+              "tertiary": "#50606f",
+              "primary-fixed-dim": "#f6be39",
+              "surface-variant": "#e5e2e1",
+              "primary": "#795900",
+              "on-surface-variant": "#4f4634",
+              "on-tertiary-fixed": "#0d1d2a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fcf9f8;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f8] dark:bg-stone-950 sticky top-0 z-50 tonal-transition">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold text-[#1c1b1b] dark:text-[#fcf9f8] font-['Plus_Jakarta_Sans'] tracking-tight">
+                Anantayu
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#4f4634] dark:text-stone-400 font-medium hover:bg-[#e5e2e1] dark:hover:bg-stone-800 transition-colors duration-300 px-3 py-1 rounded-full" href="#">Home</a>
+<a class="text-[#795900] dark:text-[#d4a017] font-semibold hover:bg-[#e5e2e1] dark:hover:bg-stone-800 transition-colors duration-300 px-3 py-1 rounded-full" href="#">Prakriti</a>
+<a class="text-[#4f4634] dark:text-stone-400 font-medium hover:bg-[#e5e2e1] dark:hover:bg-stone-800 transition-colors duration-300 px-3 py-1 rounded-full" href="#">Insights</a>
+<a class="text-[#4f4634] dark:text-stone-400 font-medium hover:bg-[#e5e2e1] dark:hover:bg-stone-800 transition-colors duration-300 px-3 py-1 rounded-full" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<!-- Pill Language Selector -->
+<div class="bg-surface-container-low/80 backdrop-blur-xl rounded-full p-1 flex items-center shadow-sm border border-outline-variant/10">
+<button class="px-4 py-1.5 rounded-full text-sm font-medium bg-surface-container-lowest shadow-sm text-primary transition-all duration-300">English</button>
+<button class="px-4 py-1.5 rounded-full text-sm font-medium text-on-surface-variant hover:text-primary transition-all duration-300">हिन्दी</button>
+</div>
+<button class="material-symbols-outlined text-[#795900] dark:text-[#d4a017] p-2 rounded-full hover:bg-[#e5e2e1] transition-all" data-icon="language">language</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-4 py-12 md:py-20 bg-[#FAFAF5]">
+<!-- Centered Assessment Intro Card -->
+<div class="max-w-2xl w-full bg-surface-container-lowest rounded-xl shadow-[0_8px_40px_rgba(28,27,27,0.04)] p-8 md:p-12 relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+<!-- Card Header -->
+<div class="relative z-10 space-y-4 mb-10 text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary/5 rounded-full mb-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
+                    About This Assessment
+                </h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-md mx-auto font-body">
+                    Answer 25 questions about your natural tendencies. No right or wrong answers, just be honest.
+                </p>
+</div>
+<!-- Guna Indicators (Bento-style layout) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 relative z-10">
+<!-- Sattva -->
+<div class="bg-surface-container-low rounded-lg p-6 flex flex-col items-center text-center transition-all hover:bg-surface-container duration-300">
+<div class="w-4 h-4 rounded-full bg-secondary mb-3 shadow-sm shadow-secondary/20"></div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-1">Part 1</span>
+<span class="text-sm font-semibold text-on-surface">Calm nature</span>
+</div>
+<!-- Rajas -->
+<div class="bg-surface-container-low rounded-lg p-6 flex flex-col items-center text-center transition-all hover:bg-surface-container duration-300">
+<div class="w-4 h-4 rounded-full bg-primary-container mb-3 shadow-sm shadow-primary-container/20"></div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-primary-container mb-1">Part 2</span>
+<span class="text-sm font-semibold text-on-surface">Active nature</span>
+</div>
+<!-- Tamas -->
+<div class="bg-surface-container-low rounded-lg p-6 flex flex-col items-center text-center transition-all hover:bg-surface-container duration-300">
+<div class="w-4 h-4 rounded-full bg-tertiary mb-3 shadow-sm shadow-tertiary/20"></div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-tertiary-container mb-1">Part 3</span>
+<span class="text-sm font-semibold text-on-surface">Steady nature</span>
+</div>
+</div>
+<!-- Illustration Area -->
+<div class="mb-12 rounded-lg overflow-hidden h-48 md:h-64 relative bg-surface-container-high">
+<img alt="Meditation" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Serene person meditating in a minimalist sun-drenched room with organic textures and soft shadows, evoking a sense of calm and clarity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2xFQD1Jop_FpXDG2h6YuhDNqe-VqYtt2TJU9cHL9KJ1NGshjtzYoV8ymNW9V5-sKSwMy47rC0kjXbuOJaLzTey5-_KK9YpC4zLRnx6YQzqfqGo4VFDuBqV50J3AmJEoolnV7KmW5KsEChURYC8RhcDD-QJDDkPrDqL_SB-YZv5e7i3K5FCSGP_p52yy4mcZZGpC0cjvamnXIHtySSnk52RMvagttJQN1gT6fH98yltiOlFfTPt3rDoSMvF9j4pd3WC27jn4n0Sw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+</div>
+<!-- CTA -->
+<div class="relative z-10">
+<button class="group w-full h-[56px] bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
+                    Begin
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-on-surface-variant/60 mt-4 uppercase tracking-widest font-medium">
+                    Takes approximately 5-7 minutes
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#fcf9f8]/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-8px_40px_rgba(28,27,27,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:text-[#795900] transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#d4a017] text-white rounded-full p-3 shadow-md scale-110 -translate-y-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Prakriti</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:text-[#795900] transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_stories">auto_stories</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4f4634] dark:text-stone-500 p-3 hover:text-[#795900] transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

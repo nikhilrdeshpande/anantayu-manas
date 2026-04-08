@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - Analyzing Your Prakriti</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#0c2000",
+              "surface-container-low": "#f6f3f2",
+              "surface-container-high": "#eae7e7",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#4c6e2f",
+              "inverse-surface": "#313030",
+              "on-secondary-fixed-variant": "#2f4f13",
+              "secondary-fixed-dim": "#abd288",
+              "surface-container": "#f0eded",
+              "on-tertiary-container": "#2f3f4d",
+              "on-tertiary-fixed-variant": "#394856",
+              "background": "#fcf9f8",
+              "on-primary-fixed": "#261a00",
+              "error-container": "#ffdad6",
+              "primary-container": "#d4a017",
+              "on-tertiary": "#ffffff",
+              "surface-bright": "#fcf9f8",
+              "on-error-container": "#93000a",
+              "secondary": "#466729",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#5c4300",
+              "on-primary-container": "#503a00",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#9aaabb",
+              "secondary-container": "#c6efa1",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdfa0",
+              "inverse-on-surface": "#f3f0ef",
+              "tertiary-fixed": "#d4e4f6",
+              "surface-container-highest": "#e5e2e1",
+              "on-background": "#1c1b1b",
+              "surface-tint": "#795900",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#c6efa1",
+              "surface": "#fcf9f8",
+              "inverse-primary": "#f6be39",
+              "surface-dim": "#dcd9d9",
+              "tertiary-fixed-dim": "#b8c8d9",
+              "outline-variant": "#d3c5ae",
+              "on-surface": "#1c1b1b",
+              "outline": "#817662",
+              "tertiary": "#50606f",
+              "primary-fixed-dim": "#f6be39",
+              "surface-variant": "#e5e2e1",
+              "primary": "#795900",
+              "on-surface-variant": "#4f4634",
+              "on-tertiary-fixed": "#0d1d2a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .bg-deep-charcoal {
+        background-color: #1A1A1A;
+      }
+      .text-parchment {
+        color: #FAFAF5;
+      }
+      /* Custom pulse and rotation for the sanctuary vibe */
+      @keyframes soft-pulse {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+      .animate-soft-pulse {
+        animation: soft-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes slow-rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-slow-rotate {
+        animation: slow-rotate 60s linear infinite;
+      }
+    </style>
+</head>
+<body class="bg-deep-charcoal text-parchment font-body min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Mandala Motif -->
+<div class="fixed inset-0 flex items-center justify-center pointer-events-none opacity-10">
+<div class="w-[150vw] h-[150vw] max-w-none animate-slow-rotate border-[0.5px] border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-[80%] h-[80%] border-[0.5px] border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-[60%] h-[60%] border-[0.5px] border-outline-variant rounded-full flex items-center justify-center">
+<div class="w-[40%] h-[40%] border-[0.5px] border-outline-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-xl px-6 flex flex-col items-center text-center">
+<!-- Concentric Breathing Circles -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center mb-16">
+<!-- Outer Circle: Slate Blue (Tamas/Stability) -->
+<div class="absolute w-full h-full rounded-full border-4 border-tertiary/30 animate-soft-pulse" style="animation-delay: 0s;"></div>
+<!-- Middle Circle: Ayurvedic Gold (Rajas/Energy) -->
+<div class="absolute w-[75%] h-[75%] rounded-full border-4 border-primary-container/40 animate-soft-pulse" style="animation-delay: 0.5s;"></div>
+<!-- Inner Circle: Sage Green (Sattva/Balance) -->
+<div class="absolute w-[50%] h-[50%] rounded-full border-4 border-secondary/50 animate-soft-pulse" style="animation-delay: 1s;"></div>
+<!-- Core Glow -->
+<div class="absolute w-4 h-4 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.8)]"></div>
+</div>
+<!-- Typography: Editorial Authority -->
+<div class="space-y-6">
+<h1 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-parchment animate-soft-pulse">
+                Analyzing your responses...
+            </h1>
+<p class="font-body text-lg text-parchment/60 leading-relaxed max-w-sm mx-auto">
+                Mapping your mental landscape to determine your unique Manas Prakriti profile.
+            </p>
+</div>
+<!-- Progress Indicator (Minimalist) -->
+<div class="mt-20 w-48 h-[1px] bg-parchment/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-1/2 bg-primary-container/60 blur-[1px] animate-[slide_3s_infinite_linear]"></div>
+</div>
+<style>
+            @keyframes slide {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(200%); }
+            }
+        </style>
+</main>
+<!-- Subtle Subtle Texture Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDz_QLYtLNHU0BQE10vpw6EhAd0rqElfCfaLp2GQt9-F3LDOQgQZ_cZGqQb5HXo415JIkxYnkbJhQDvt-rQhVjNX9r4dfTin8JapXJY_BXCwipYHBWsRS7Q-cd_ASjMR6AKuTvQVESmUMsdbJakDk88G9WzqFnGHqxqfwQclj1QUjWtgCxqOJVdyKDq9Kec97xLjsUPb9X91hF-TS888YkKuU6ul3RPnexu0514F8rvXYiSjuUzypR6D2RVAGbO6s65XbnbzJQlnw');">
+</div>
+<!-- Navigation Shell Suppression: As per mandate for transactional/processing screens, 
+         TopAppBar and BottomNavBar are suppressed to focus on the content canvas. -->
+<!-- Decorative Corner Accents -->
+<div class="fixed top-12 left-12 opacity-20 hidden md:block">
+<span class="material-symbols-outlined text-4xl" data-icon="local_florist">local_florist</span>
+</div>
+<div class="fixed bottom-12 right-12 opacity-20 hidden md:block">
+<span class="material-symbols-outlined text-4xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<!-- Footnote -->
+<footer class="fixed bottom-8 w-full text-center px-6">
+<p class="font-label text-[10px] tracking-[0.2em] uppercase text-parchment/30">
+            Ancient Wisdom • Modern Science • Personal Insight
+        </p>
+</footer>
+</body></html>

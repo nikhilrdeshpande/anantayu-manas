@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "section": "sattva",
+    "question_number": 1,
+    "text_en": "Do you believe in the thought, 'live and let live'?",
+    "bhava_tag": "ahimsa",
+    "bhava_description_en": "compassion"
+  },
+  {
+    "id": 2,
+    "section": "sattva",
+    "question_number": 2,
+    "text_en": "Do you always speak the truth?",
+    "bhava_tag": "satya",
+    "bhava_description_en": "truthfulness"
+  },
+  {
+    "id": 3,
+    "section": "sattva",
+    "question_number": 3,
+    "text_en": "Do you perform your duties religiously?",
+    "bhava_tag": "dharma",
+    "bhava_description_en": "righteousness"
+  },
+  {
+    "id": 4,
+    "section": "sattva",
+    "question_number": 4,
+    "text_en": "Do you believe that whatever happens, happens because of one's own deeds (karma)?",
+    "bhava_tag": "astikya",
+    "bhava_description_en": "faith in karma"
+  },
+  {
+    "id": 5,
+    "section": "sattva",
+    "question_number": 5,
+    "text_en": "Are you always patient when waiting in a queue?",
+    "bhava_tag": "kshama",
+    "bhava_description_en": "patience"
+  },
+  {
+    "id": 6,
+    "section": "sattva",
+    "question_number": 6,
+    "text_en": "Do you follow traffic rules strictly even when no one is watching?",
+    "bhava_tag": "achara",
+    "bhava_description_en": "discipline"
+  },
+  {
+    "id": 7,
+    "section": "sattva",
+    "question_number": 7,
+    "text_en": "Do you avoid taking credit for your team's work?",
+    "bhava_tag": "anahamkara",
+    "bhava_description_en": "humility"
+  },
+  {
+    "id": 8,
+    "section": "sattva",
+    "question_number": 8,
+    "text_en": "Do you easily retain what you have learned?",
+    "bhava_tag": "medha",
+    "bhava_description_en": "intellect and retention"
+  },
+  {
+    "id": 9,
+    "section": "sattva",
+    "question_number": 9,
+    "text_en": "Do you like to do humanitarian work without expecting any reward?",
+    "bhava_tag": "tyaga",
+    "bhava_description_en": "selfless service"
+  },
+  {
+    "id": 10,
+    "section": "sattva",
+    "question_number": 10,
+    "text_en": "Do you believe that development should not come at the cost of destroying nature?",
+    "bhava_tag": "shaucha",
+    "bhava_description_en": "environmental consciousness"
+  },
+  {
+    "id": 11,
+    "section": "rajas",
+    "question_number": 1,
+    "text_en": "Do you become impatient when your work takes longer than expected?",
+    "bhava_tag": "amarsha",
+    "bhava_description_en": "impatience"
+  },
+  {
+    "id": 12,
+    "section": "rajas",
+    "question_number": 2,
+    "text_en": "Do you feel proud when you achieve a goal?",
+    "bhava_tag": "mana",
+    "bhava_description_en": "pride in achievement"
+  },
+  {
+    "id": 13,
+    "section": "rajas",
+    "question_number": 3,
+    "text_en": "Do you express your pride openly to others?",
+    "bhava_tag": "ahamkara",
+    "bhava_description_en": "ego expression"
+  },
+  {
+    "id": 14,
+    "section": "rajas",
+    "question_number": 4,
+    "text_en": "Do you enjoy shopping and acquiring new things?",
+    "bhava_tag": "aishwarya",
+    "bhava_description_en": "material desire"
+  },
+  {
+    "id": 15,
+    "section": "rajas",
+    "question_number": 5,
+    "text_en": "Do you get angry when you fail to complete your work on time?",
+    "bhava_tag": "krodha",
+    "bhava_description_en": "anger"
+  },
+  {
+    "id": 16,
+    "section": "rajas",
+    "question_number": 6,
+    "text_en": "Do you always try to perform better than your colleagues?",
+    "bhava_tag": "spardhā",
+    "bhava_description_en": "competitiveness"
+  },
+  {
+    "id": 17,
+    "section": "rajas",
+    "question_number": 7,
+    "text_en": "Do you prefer shortcuts to achieve your goals faster?",
+    "bhava_tag": "shathya",
+    "bhava_description_en": "cunning"
+  },
+  {
+    "id": 18,
+    "section": "rajas",
+    "question_number": 8,
+    "text_en": "Do you insist on doing things your way?",
+    "bhava_tag": "mada",
+    "bhava_description_en": "stubbornness"
+  },
+  {
+    "id": 19,
+    "section": "rajas",
+    "question_number": 9,
+    "text_en": "Do you tend to exaggerate your experiences when telling others?",
+    "bhava_tag": "vitatha",
+    "bhava_description_en": "exaggeration"
+  },
+  {
+    "id": 20,
+    "section": "rajas",
+    "question_number": 10,
+    "text_en": "Do you express your frustration loudly?",
+    "bhava_tag": "krodha_bahya",
+    "bhava_description_en": "outward aggression"
+  },
+  {
+    "id": 21,
+    "section": "tamas",
+    "question_number": 1,
+    "text_en": "Do you prefer sleeping in your spare time?",
+    "bhava_tag": "nidra",
+    "bhava_description_en": "excess sleep"
+  },
+  {
+    "id": 22,
+    "section": "tamas",
+    "question_number": 2,
+    "text_en": "Do you often miss deadlines?",
+    "bhava_tag": "alasya",
+    "bhava_description_en": "laziness"
+  },
+  {
+    "id": 23,
+    "section": "tamas",
+    "question_number": 3,
+    "text_en": "Do you avoid learning new subjects or skills?",
+    "bhava_tag": "amedha",
+    "bhava_description_en": "disinterest in learning"
+  },
+  {
+    "id": 24,
+    "section": "tamas",
+    "question_number": 4,
+    "text_en": "Do you avoid taking responsibility that requires creative thinking?",
+    "bhava_tag": "buddhi_nasha",
+    "bhava_description_en": "avoidance of mental effort"
+  },
+  {
+    "id": 25,
+    "section": "tamas",
+    "question_number": 5,
+    "text_en": "Do you have a forgetful nature?",
+    "bhava_tag": "smriti_nasha",
+    "bhava_description_en": "forgetfulness"
+  }
+]
