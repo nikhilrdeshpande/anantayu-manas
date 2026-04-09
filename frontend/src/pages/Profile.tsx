@@ -149,7 +149,7 @@ export default function Profile() {
                       </p>
                       <div className="flex items-center gap-3 mt-1">
                         <span className="text-xs text-[#817662]">
-                          {formatDate(item.completed_at)}
+                          {item.completed_at ? formatDate(item.completed_at) : ''}
                         </span>
                         {item.sattva_bala && (
                           <span className="flex items-center gap-1 text-xs text-[#466729]">

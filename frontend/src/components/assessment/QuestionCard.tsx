@@ -43,7 +43,7 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
 
   const sectionConfig = assessmentType === 'deep' ? DEEP_SECTION_CONFIG : SECTION_CONFIG;
   const section = currentSection();
-  const sectionIdx = currentSectionIndex();
+  currentSectionIndex(); // keep reactive
   const progress = sectionProgress();
   const total = SECTION_ORDER.reduce((sum, s) => sum + sectionConfig[s].questions, 0);
   const question = questions[currentQuestionIndex];
