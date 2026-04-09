@@ -27,6 +27,26 @@ GUNA_COLORS = {
 }
 
 
+def sanitize_text(text: str) -> str:
+    """Replace Unicode characters that Helvetica can't render."""
+    replacements = {
+        "\u2018": "'", "\u2019": "'",  # curly single quotes
+        "\u201c": '"', "\u201d": '"',  # curly double quotes
+        "\u2013": "-", "\u2014": "-",  # en-dash, em-dash
+        "\u2026": "...",               # ellipsis
+        "\u00a0": " ",                 # non-breaking space
+        "\u2022": "*",                 # bullet
+        "\u00b7": "*",                 # middle dot
+        "\u2012": "-",                 # figure dash
+        "\u2015": "-",                 # horizontal bar
+        "\u200b": "",                  # zero-width space
+    }
+    for char, replacement in replacements.items():
+        text = text.replace(char, replacement)
+    # Strip any remaining non-latin1 characters
+    return text.encode("latin-1", errors="replace").decode("latin-1")
+
+
 class ManasReportPDF(FPDF):
     """Custom PDF with Anantayu branding."""
 
@@ -52,7 +72,7 @@ class ManasReportPDF(FPDF):
         self.ln(4)
         self.set_font("Helvetica", "B", 13)
         self.set_text_color(*color)
-        self.cell(0, 8, title, new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 8, sanitize_text(title), new_x="LMARGIN", new_y="NEXT")
         self.set_draw_color(*color)
         self.line(10, self.get_y(), 80, self.get_y())
         self.ln(4)
@@ -60,16 +80,16 @@ class ManasReportPDF(FPDF):
     def body_text(self, text: str):
         self.set_font("Helvetica", "", 10)
         self.set_text_color(*TEXT_DARK)
-        self.multi_cell(0, 5.5, text)
+        self.multi_cell(0, 5.5, sanitize_text(text))
         self.ln(2)
 
     def label_value(self, label: str, value: str, label_color=TEXT_LIGHT, value_color=TEXT_DARK):
         self.set_font("Helvetica", "", 8)
         self.set_text_color(*label_color)
-        self.cell(45, 5, label)
+        self.cell(45, 5, sanitize_text(label))
         self.set_font("Helvetica", "B", 10)
         self.set_text_color(*value_color)
-        self.cell(0, 5, value, new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 5, sanitize_text(value), new_x="LMARGIN", new_y="NEXT")
 
     def guna_bar(self, label: str, percent: float, color: tuple):
         y = self.get_y()
@@ -97,7 +117,7 @@ class ManasReportPDF(FPDF):
         self.set_x(x + 6)
         self.set_font("Helvetica", "", 9)
         self.set_text_color(*TEXT_DARK)
-        self.multi_cell(0, 5, text)
+        self.multi_cell(0, 5, sanitize_text(text))
         self.ln(1)
 
     def check_item(self, text: str, positive: bool = True):
@@ -108,7 +128,7 @@ class ManasReportPDF(FPDF):
         self.cell(6, 5, symbol)
         self.set_font("Helvetica", "", 9)
         self.set_text_color(*TEXT_DARK)
-        self.multi_cell(0, 5, text)
+        self.multi_cell(0, 5, sanitize_text(text))
         self.ln(1)
 
 
