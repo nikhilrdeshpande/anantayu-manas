@@ -184,6 +184,13 @@ export const manas = {
   hasAccess: (userId: string, product = 'deep_assessment') =>
     api.get<{ has_access: boolean }>(`/api/v1/payments/has-access/${userId}/${product}`),
 
+  // PDF download
+  downloadQuickPdf: (assessmentId: string) =>
+    `${API_BASE_URL}/api/v1/results/${assessmentId}/pdf`,
+
+  downloadDeepPdf: (assessmentId: string, userId: string) =>
+    `${API_BASE_URL}/api/v1/results/${assessmentId}/deep-pdf?user_id=${userId}`,
+
   // Subtype profile
   getSubtypeProfile: (assessmentId: string) =>
     api.get<{ has_profile: boolean; subtype_key?: string; profile?: Record<string, unknown> }>(

@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Share2, MessageCircle, Check, Loader2 } from 'lucide-react';
+import { ArrowLeft, Share2, MessageCircle, Check, Loader2, Download } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { GunaChart } from '../components/results/GunaChart';
 import { GunaBar } from '../components/results/GunaBar';
@@ -293,13 +293,22 @@ export default function DeepResults() {
         {/* Sticky bottom bar */}
         {reportData && (
           <div className="sticky bottom-0 bg-white/95 backdrop-blur border-t border-[#d3c5ae] px-4 py-3">
-            <div className="max-w-2xl mx-auto flex gap-3">
+            <div className="max-w-2xl mx-auto flex gap-2">
+              {user && result.assessment_id && (
+                <a
+                  href={manas.downloadDeepPdf(result.assessment_id, user.id)}
+                  className="py-2.5 px-4 rounded-full border border-[#d3c5ae] text-[#795900] font-medium text-sm flex items-center justify-center gap-1.5"
+                >
+                  <Download size={14} />
+                  PDF
+                </a>
+              )}
               <button
                 onClick={() => shareResults(window.location.href, `My Manas Prakriti: ${result.prakriti_type}`, '')}
                 className="flex-1 py-2.5 rounded-full border border-[#d3c5ae] text-[#795900] font-medium text-sm flex items-center justify-center gap-2"
               >
                 <Share2 size={16} />
-                Share Report
+                Share
               </button>
               <a
                 href={whatsappUrl}
@@ -308,7 +317,7 @@ export default function DeepResults() {
                 className="flex-1 py-2.5 rounded-full bg-[#25D366] text-white font-medium text-sm flex items-center justify-center gap-2"
               >
                 <MessageCircle size={16} />
-                Book Consultation
+                Consult
               </a>
             </div>
           </div>

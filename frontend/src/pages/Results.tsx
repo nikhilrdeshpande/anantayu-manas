@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Download } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { PrakritiCard } from '../components/results/PrakritiCard';
 import { ShareButtons } from '../components/results/ShareButtons';
@@ -174,8 +174,19 @@ export default function Results() {
           />
         </div>
 
-        {/* Share buttons */}
-        <ShareButtons prakritiType={result.prakritiType} />
+        {/* Share + Download */}
+        <div className="flex flex-col items-center gap-3">
+          <ShareButtons prakritiType={result.prakritiType} />
+          {assessmentId && assessmentId !== 'local' && (
+            <a
+              href={manas.downloadQuickPdf(assessmentId)}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#d3c5ae] text-[#795900] text-sm font-medium hover:bg-[#fdf6e3] transition-colors"
+            >
+              <Download size={14} />
+              Download PDF Report
+            </a>
+          )}
+        </div>
 
         {/* Detailed Report */}
         <DetailedReport result={result} prakritiInfo={prakritiInfo} />

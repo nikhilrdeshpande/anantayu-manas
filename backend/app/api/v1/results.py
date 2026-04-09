@@ -3,7 +3,7 @@ import uuid
 from pathlib import Path as FilePath
 
 from fastapi import APIRouter, Depends, Path, Query
-from fastapi.responses import StreamingResponse
+from fastapi.responses import Response, StreamingResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -275,3 +275,120 @@ async def stream_deep_insights(
             await db.commit()
 
     return StreamingResponse(deep_stream(), media_type="text/plain")
+
+
+@router.get("/{assessment_id}/pdf")
+async def download_quick_pdf(
+    assessment_id: uuid.UUID = Path(),
+    db: AsyncSession = Depends(get_db),
+):
+    """Download PDF report for quick assessment."""
+    from app.services.pdf_generator import generate_quick_report_pdf
+
+    result_row = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    r = result_row.scalar_one_or_none()
+    if not r:
+        raise NotFoundError("Result not found")
+
+    # Load prakriti data for the report
+    data_dir = FilePath(__file__).resolve().parent.parent.parent / "data"
+    prakriti_data = None
+    try:
+        with open(data_dir / "prakriti_types.json") as f:
+            all_types = json.load(f)
+        key = r.prakriti_type.lower().replace(" ", "-").replace("_", "-")
+        prakriti_data = all_types.get(key)
+    except Exception:
+        pass
+
+    result_dict = {
+        "prakriti_type": r.prakriti_type,
+        "archetype_title": r.archetype_title,
+        "sattva_yes": r.sattva_yes, "sattva_no": r.sattva_no, "sattva_sometimes": r.sattva_sometimes,
+        "rajas_yes": r.rajas_yes, "rajas_no": r.rajas_no, "rajas_sometimes": r.rajas_sometimes,
+        "tamas_yes": r.tamas_yes, "tamas_no": r.tamas_no, "tamas_sometimes": r.tamas_sometimes,
+        "sattva_primary_pct": r.sattva_primary_pct, "rajas_primary_pct": r.rajas_primary_pct, "tamas_primary_pct": r.tamas_primary_pct,
+        "sattva_secondary_pct": r.sattva_secondary_pct, "rajas_secondary_pct": r.rajas_secondary_pct, "tamas_secondary_pct": r.tamas_secondary_pct,
+        "sattva_bala": r.sattva_bala,
+    }
+
+    pdf_bytes = generate_quick_report_pdf(result_dict, prakriti_data)
+    filename = f"manas-prakriti-{r.prakriti_type.lower().replace(' ', '-')}.pdf"
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
+
+@router.get("/{assessment_id}/deep-pdf")
+async def download_deep_pdf(
+    assessment_id: uuid.UUID = Path(),
+    user_id: str = Query(...),
+    db: AsyncSession = Depends(get_db),
+):
+    """Download PDF for deep assessment. Requires purchase."""
+    from app.services.pdf_generator import generate_deep_report_pdf
+
+    user_uuid = uuid.UUID(user_id)
+    has_unused = await verify_deep_assessment_purchase(user_uuid, db)
+    has_report = await verify_deep_report_access(user_uuid, assessment_id, db)
+    if not has_unused and not has_report:
+        raise UnauthorizedError("Purchase required")
+
+    result_row = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    r = result_row.scalar_one_or_none()
+    if not r:
+        raise NotFoundError("Result not found")
+
+    # Get the cached deep report JSON
+    report_data = {}
+    cache_key = "deep_en"
+    if r.ai_insights and cache_key in r.ai_insights:
+        raw = r.ai_insights[cache_key]
+        # Extract JSON (same logic as frontend)
+        import re
+        fence_match = re.search(r'```(?:json)?\s*\n?([\s\S]*?)\n?\s*```', raw)
+        text = fence_match.group(1).strip() if fence_match else raw.strip()
+        try:
+            report_data = json.loads(text)
+        except Exception:
+            first_brace = text.find('{')
+            last_brace = text.rfind('}')
+            if first_brace != -1 and last_brace > first_brace:
+                try:
+                    report_data = json.loads(text[first_brace:last_brace + 1])
+                except Exception:
+                    pass
+
+    # Load demographics
+    assess_row = await db.execute(
+        select(Assessment).where(Assessment.id == assessment_id)
+    )
+    assessment = assess_row.scalar_one_or_none()
+    demographics = assessment.demographics if assessment else None
+
+    result_dict = {
+        "prakriti_type": r.prakriti_type,
+        "prakriti_subtype": r.prakriti_subtype,
+        "archetype_title": r.archetype_title,
+        "subtype_archetype": r.subtype_archetype,
+        "subtype_animal": r.subtype_animal,
+        "sattva_secondary_pct": r.sattva_secondary_pct,
+        "rajas_secondary_pct": r.rajas_secondary_pct,
+        "tamas_secondary_pct": r.tamas_secondary_pct,
+        "sattva_bala": r.sattva_bala,
+    }
+
+    pdf_bytes = generate_deep_report_pdf(result_dict, report_data, demographics)
+    subtype = (r.prakriti_subtype or r.prakriti_type).lower().replace(" ", "-")
+    filename = f"manas-deep-report-{subtype}.pdf"
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
