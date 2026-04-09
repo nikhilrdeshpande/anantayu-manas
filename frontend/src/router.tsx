@@ -11,6 +11,10 @@ const DeepResults = lazy(() => import('./pages/DeepResults'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
 const Science = lazy(() => import('./pages/Science'));
+const About = lazy(() => import('./pages/About'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const Terms = lazy(() => import('./pages/Terms'));
 const Login = lazy(() => import('./pages/Login'));
 const SignUp = lazy(() => import('./pages/SignUp'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -124,6 +128,22 @@ export const router = createBrowserRouter([
         <Science />
       </SuspenseWrapper>
     ),
+  },
+  {
+    path: '/:locale/about',
+    element: <SuspenseWrapper><About /></SuspenseWrapper>,
+  },
+  {
+    path: '/:locale/faq',
+    element: <SuspenseWrapper><FAQ /></SuspenseWrapper>,
+  },
+  {
+    path: '/:locale/privacy',
+    element: <SuspenseWrapper><PrivacyPolicy /></SuspenseWrapper>,
+  },
+  {
+    path: '/:locale/terms',
+    element: <SuspenseWrapper><Terms /></SuspenseWrapper>,
   },
   {
     path: '/:locale/payment-success',

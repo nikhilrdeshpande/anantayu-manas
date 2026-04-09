@@ -190,7 +190,7 @@ export default function AssessmentIntro() {
             className="text-3xl md:text-4xl font-bold text-center mb-3"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--on-surface)' }}
           >
-            About This Assessment
+            Know Yourself in 3 Minutes
           </h1>
 
           {/* Description */}
@@ -198,8 +198,8 @@ export default function AssessmentIntro() {
             className="text-center text-base md:text-lg leading-relaxed mb-8 max-w-md mx-auto"
             style={{ color: 'var(--on-surface-variant)' }}
           >
-            Answer 25 questions about your natural tendencies to discover your unique
-            Manas Prakriti  - your psychological constitution according to Ayurveda.
+            25 honest questions about how you think, react, and cope. No right answers.
+            Based on a PhD thesis in Ayurvedic psychology from the University of Mumbai.
           </p>
 
           {/* Guna indicators */}
@@ -281,7 +281,7 @@ export default function AssessmentIntro() {
           <p className="text-center text-xs mt-4" style={{ color: 'var(--on-surface-variant)' }}>
             {isAuthenticated
               ? `Signed in as ${user?.name}`
-              : 'You\'ll create a free account to save your results'}
+              : 'Free forever. No credit card needed.'}
           </p>
         </div>
       </div>

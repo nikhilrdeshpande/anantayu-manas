@@ -267,28 +267,11 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
         </blockquote>
       </div>
 
-      {/* ── Deep Assessment CTA ── */}
-      <div className="rounded-2xl p-8 bg-white shadow-sm text-center flex flex-col items-center gap-4">
-        <h3 className="text-xl font-bold" style={{ color: 'var(--on-surface)' }}>
-          Want Deeper Insights?
-        </h3>
-        <p className="text-sm max-w-md" style={{ color: 'var(--on-surface-variant)' }}>
-          80-question deep assessment with 16 personality sub-types, a personalized wellness
-          report, and expert consultation access.
-        </p>
-        <button
-          onClick={() => {
-            window.location.href = `/${locale}/pricing`;
-          }}
-          className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white cursor-pointer"
-          style={{ background: 'linear-gradient(135deg, #8B6914, #d4a017)' }}
-        >
-          Unlock Deep Assessment  - ₹399
-          <ChevronRight size={16} />
-        </button>
+      {/* ── Bottom links ── */}
+      <div className="text-center pt-4 space-y-2">
         <a
           href={`/${locale}/science`}
-          className="text-xs hover:underline"
+          className="text-xs hover:underline block"
           style={{ color: 'var(--on-surface-variant)' }}
         >
           Learn about the science behind this assessment

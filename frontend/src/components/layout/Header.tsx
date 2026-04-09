@@ -13,11 +13,13 @@ export function Header() {
     ? [
         { label: 'Dashboard', to: `/${locale}/dashboard` },
         { label: 'Assessment', to: `/${locale}/assessment/intro` },
+        { label: 'Go Deeper', to: `/${locale}/pricing` },
         { label: 'Science', to: `/${locale}/science` },
       ]
     : [
         { label: 'Home', to: `/${locale}` },
         { label: 'Assessment', to: `/${locale}/assessment/intro` },
+        { label: 'Pricing', to: `/${locale}/pricing` },
         { label: 'Science', to: `/${locale}/science` },
       ];
 

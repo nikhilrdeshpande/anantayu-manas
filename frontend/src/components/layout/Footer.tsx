@@ -6,16 +6,16 @@ export function Footer() {
 
   const experienceLinks = [
     { label: 'Manas Prakriti Quiz', to: `/${locale}/assessment/intro` },
-    { label: 'Personalized Plans', to: `/${locale}/insights` },
-    { label: 'Daily Rituals', to: `/${locale}/insights` },
-    { label: 'Track Progress', to: `/${locale}/profile` },
+    { label: 'Deep Assessment', to: `/${locale}/pricing` },
+    { label: 'The Science', to: `/${locale}/science` },
+    { label: 'Track Progress', to: `/${locale}/dashboard` },
   ];
 
   const foundationLinks = [
-    { label: 'About Anantayu', to: `/${locale}` },
-    { label: 'The Science', to: `/${locale}/science` },
-    { label: 'Consult an Expert', to: `/${locale}/pricing` },
-    { label: 'Privacy Policy', to: `/${locale}` },
+    { label: 'About Anantayu', to: `/${locale}/about` },
+    { label: 'FAQ', to: `/${locale}/faq` },
+    { label: 'Privacy Policy', to: `/${locale}/privacy` },
+    { label: 'Terms of Service', to: `/${locale}/terms` },
   ];
 
   return (
@@ -33,18 +33,9 @@ export function Footer() {
               Rooted in the timeless wisdom of Ayurveda, Anantayu guides you to understand your
               unique mental constitution and live in greater harmony.
             </p>
-            <div className="flex items-center gap-4">
-              {/* Social placeholders */}
-              {['Twitter', 'Instagram', 'YouTube'].map((platform) => (
-                <a
-                  key={platform}
-                  href="#"
-                  className="text-xs font-medium text-[#4f4634]/60 hover:text-[#d4a017] transition-colors duration-200"
-                >
-                  {platform}
-                </a>
-              ))}
-            </div>
+            <p className="text-xs text-[#4f4634]/40">
+              Based on PhD research by Dr. Prasad Akolkar, University of Mumbai
+            </p>
           </div>
 
           {/* Experience column */}

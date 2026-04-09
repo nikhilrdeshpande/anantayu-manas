@@ -105,6 +105,10 @@ export default function Science() {
                 16 distinct personality sub-types, each mapped to behavioral patterns (Svabhava) and
                 mythological archetypes from ancient Indian texts.
               </p>
+              <div className="flex items-center gap-4 mt-3 text-sm">
+                <Link to={`/${locale}/about`} className="text-[#d4a017] font-medium hover:underline">Learn more about us</Link>
+                <Link to={`/${locale}/faq`} className="text-[#d4a017] font-medium hover:underline">Read FAQ</Link>
+              </div>
             </div>
           </div>
         </div>

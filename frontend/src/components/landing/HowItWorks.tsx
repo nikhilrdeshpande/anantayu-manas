@@ -11,23 +11,23 @@ interface Step {
 const steps: Step[] = [
   {
     number: '01',
-    title: 'Answer Simply',
+    title: 'Answer Honestly',
     description:
-      'Respond to thoughtfully crafted questions about your daily habits, reactions, and natural tendencies.',
+      '25 questions about how you actually think, react, and feel. No right answers - just your truth.',
     icon: MessageCircle,
   },
   {
     number: '02',
-    title: 'Deep Analysis',
+    title: 'Get Classified',
     description:
-      'Our system maps your responses to the ancient Triguna framework, revealing your unique mental constitution.',
+      'Our algorithm (from a real PhD thesis) maps you to 1 of 7 Prakriti types based on the Triguna framework from the Ashtanga Hridayam.',
     icon: Brain,
   },
   {
     number: '03',
-    title: 'Daily Guidance',
+    title: 'Act on It',
     description:
-      'Receive personalized rituals, diet tips, and mindfulness practices tailored to your Prakriti type.',
+      'Get strengths, growth areas, and daily practices for your type. Want more? Unlock the deep assessment for 16 sub-types + a personalized wellness plan.',
     icon: Sun,
   },
 ];

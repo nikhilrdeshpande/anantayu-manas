@@ -175,7 +175,7 @@ export default function Pricing() {
               <span className="text-4xl font-bold text-white">₹399</span>
               <span className="text-white/50 text-sm">one-time</span>
             </div>
-            <p className="text-white/40 text-xs">80-question assessment + comprehensive AI report</p>
+            <p className="text-white/40 text-xs">One-time payment. No subscription. 80-question assessment + comprehensive AI report.</p>
           </div>
         </div>
 

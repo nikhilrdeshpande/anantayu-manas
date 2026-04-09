@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Download } from 'lucide-react';
+import { DeepAssessmentUpsell } from '../components/results/DeepAssessmentUpsell';
 import { PageLayout } from '../components/layout/PageLayout';
 import { PrakritiCard } from '../components/results/PrakritiCard';
 import { ShareButtons } from '../components/results/ShareButtons';
@@ -187,6 +188,9 @@ export default function Results() {
             </a>
           )}
         </div>
+
+        {/* Deep Assessment Upsell */}
+        <DeepAssessmentUpsell />
 
         {/* Detailed Report */}
         <DetailedReport result={result} prakritiInfo={prakritiInfo} />
