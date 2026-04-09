@@ -20,6 +20,36 @@ import { useAuthStore } from '../stores/auth-store';
 import { manas, type ApiResult } from '../lib/api';
 import { shareResults } from '../lib/share';
 
+/**
+ * Extract valid JSON from AI response that may be wrapped in markdown
+ * code fences, have leading/trailing text, or other artifacts.
+ */
+function extractJSON(raw: string): DeepReportData | null {
+  let text = raw.trim();
+
+  // Strip markdown code fences: ```json ... ``` or ``` ... ```
+  const fenceMatch = text.match(/```(?:json)?\s*\n?([\s\S]*?)\n?\s*```/);
+  if (fenceMatch) {
+    text = fenceMatch[1].trim();
+  }
+
+  // Try direct parse
+  try {
+    return JSON.parse(text) as DeepReportData;
+  } catch { /* continue */ }
+
+  // Try finding first { to last }
+  const firstBrace = text.indexOf('{');
+  const lastBrace = text.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    try {
+      return JSON.parse(text.slice(firstBrace, lastBrace + 1)) as DeepReportData;
+    } catch { /* give up */ }
+  }
+
+  return null;
+}
+
 const SECTION_LABELS = [
   { key: 'who_you_are', label: 'Who You Are' },
   { key: 'strengths_and_shadows', label: 'Strengths & Shadows' },
@@ -91,12 +121,12 @@ export default function DeepResults() {
     // Check cache
     const cacheKey = `deep_${locale}`;
     if (result.ai_insights && result.ai_insights[cacheKey]) {
-      try {
-        setReportData(JSON.parse(result.ai_insights[cacheKey]) as DeepReportData);
-        setRawText(result.ai_insights[cacheKey]);
-      } catch {
-        // Cached as old markdown format - show raw
-        setRawText(result.ai_insights[cacheKey]);
+      const cached = result.ai_insights[cacheKey];
+      setRawText(cached);
+      const parsed = extractJSON(cached);
+      if (parsed) {
+        setReportData(parsed);
+      } else {
         setParseError(true);
       }
       return;
@@ -124,16 +154,11 @@ export default function DeepResults() {
           setRawText(text);
         }
 
-        // Parse JSON
-        try {
-          // Strip potential markdown code fence wrapping
-          let jsonStr = text.trim();
-          if (jsonStr.startsWith('```')) {
-            jsonStr = jsonStr.replace(/^```(?:json)?\s*/, '').replace(/\s*```$/, '');
-          }
-          const parsed = JSON.parse(jsonStr) as DeepReportData;
+        // Parse JSON from streamed text
+        const parsed = extractJSON(text);
+        if (parsed) {
           setReportData(parsed);
-        } catch {
+        } else {
           setParseError(true);
         }
         setIsStreaming(false);
