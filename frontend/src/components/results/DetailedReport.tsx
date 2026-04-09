@@ -2,7 +2,7 @@ import {
   Zap, Sparkles, Brain, Heart, Shield, Sprout, Globe,
   Sun, Moon, UtensilsCrossed, BookOpen, Wind, Clock,
   Anchor, Rocket, Users, Target, Timer, RefreshCw,
-  Flame, Mountain, Share2, ChevronRight,
+  Flame, Mountain, Share2,
 } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import type { ScoringResult } from '../../types';
