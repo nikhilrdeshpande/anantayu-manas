@@ -24,7 +24,7 @@ export function GunaChart({
   const total = sattvaPercent + rajasPercent + tamasPercent;
   const sNorm = total > 0 ? (sattvaPercent / total) * 100 : 33.33;
   const rNorm = total > 0 ? (rajasPercent / total) * 100 : 33.33;
-  const _tNorm = total > 0 ? (tamasPercent / total) * 100 : 33.34;
+  void (total > 0 ? (tamasPercent / total) * 100 : 33.34); // tNorm computed implicitly via conic-gradient
 
   // Find dominant guna
   const dominant =
