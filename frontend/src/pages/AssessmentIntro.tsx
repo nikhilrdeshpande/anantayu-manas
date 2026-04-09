@@ -19,7 +19,7 @@ export default function AssessmentIntro() {
   const [resumeMessage, setResumeMessage] = useState('');
   const [hasResumable, setHasResumable] = useState(false);
   const [savedDemographics, setSavedDemographics] = useState<ApiDemographics | null>(null);
-  const [loadingDemographics, setLoadingDemographics] = useState(false);
+  const [, setLoadingDemographics] = useState(false);
 
   // Check for saved progress + demographics when user is authenticated
   useEffect(() => {

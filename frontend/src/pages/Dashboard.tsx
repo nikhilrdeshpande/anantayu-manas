@@ -44,7 +44,7 @@ export default function Dashboard() {
   if (!user) return null;
 
   const latestQuick = history.find((h) => h.assessment_type === 'quick');
-  const latestDeep = history.find((h) => h.assessment_type === 'full' || h.assessment_type === 'deep');
+  const _latestDeep = history.find((h) => h.assessment_type === 'full' || h.assessment_type === 'deep');
   const quickHistory = history.filter((h) => h.assessment_type === 'quick');
   const deepHistory = history.filter((h) => h.assessment_type === 'full' || h.assessment_type === 'deep');
 

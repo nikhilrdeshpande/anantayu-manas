@@ -157,7 +157,7 @@ export const manas = {
     ),
 
   getUserHistory: (userId: string) =>
-    api.get<{ history: Array<{ assessment_id: string; prakriti_type: string; archetype_title: string; completed_at: string; sattva_bala: string }> }>(
+    api.get<{ history: Array<{ assessment_id: string; assessment_type: string; prakriti_type: string | null; prakriti_subtype: string | null; archetype_title: string | null; subtype_archetype: string | null; completed_at: string | null; sattva_bala: string | null; sattva_pct: number | null; rajas_pct: number | null; tamas_pct: number | null }> }>(
       `/api/v1/assessments/history/${userId}`
     ),
 
