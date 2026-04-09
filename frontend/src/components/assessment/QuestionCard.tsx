@@ -1,6 +1,6 @@
 import { Leaf, Zap, Mountain } from 'lucide-react';
 import { useAssessmentStore } from '../../stores/assessment-store';
-import { SECTION_CONFIG, SECTION_ORDER } from '../../lib/constants';
+import { SECTION_CONFIG, DEEP_SECTION_CONFIG, SECTION_ORDER } from '../../lib/constants';
 import { SectionProgress } from './SectionProgress';
 import { AnswerSelector } from './AnswerSelector';
 import type { AnswerValue, GunaType } from '../../types';
@@ -18,9 +18,9 @@ const SECTION_ICONS: Record<GunaType, typeof Leaf> = {
 };
 
 const AYURVEDIC_QUOTES = [
-  '"The mind is the root of all actions." — Charaka Samhita',
-  '"When the mind is balanced, the body follows." — Sushruta',
-  '"Self-knowledge is the beginning of wisdom." — Vagbhata',
+  '"The mind is the root of all actions."  - Charaka Samhita',
+  '"When the mind is balanced, the body follows."  - Sushruta',
+  '"Self-knowledge is the beginning of wisdom."  - Vagbhata',
 ];
 
 interface QuestionCardProps {
@@ -33,6 +33,7 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
     questions,
     currentQuestionIndex,
     answers,
+    assessmentType,
     currentSection,
     currentSectionIndex,
     sectionProgress,
@@ -40,10 +41,11 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
     nextQuestion,
   } = useAssessmentStore();
 
+  const sectionConfig = assessmentType === 'deep' ? DEEP_SECTION_CONFIG : SECTION_CONFIG;
   const section = currentSection();
   const sectionIdx = currentSectionIndex();
   const progress = sectionProgress();
-  const total = SECTION_ORDER.reduce((sum, s) => sum + SECTION_CONFIG[s].questions, 0);
+  const total = SECTION_ORDER.reduce((sum, s) => sum + sectionConfig[s].questions, 0);
   const question = questions[currentQuestionIndex];
 
   if (!question) return null;
@@ -51,7 +53,7 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
   const colors = SECTION_COLORS[section];
   const Icon = SECTION_ICONS[section];
   const partNumber = SECTION_ORDER.indexOf(section) + 1;
-  const config = SECTION_CONFIG[section];
+  const config = sectionConfig[section];
   const selectedAnswer = answers[question.id] as AnswerValue | undefined;
 
   // Pick a quote based on question index
@@ -127,7 +129,7 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
 
       {/* Bhava tag */}
       <p className="text-center text-sm italic mb-8" style={{ color: 'var(--on-surface-variant)' }}>
-        {question.bhava_tag} — {question.bhava_description_en}
+        {question.bhava_tag}  - {question.bhava_description_en}
       </p>
 
       {/* Answer buttons */}

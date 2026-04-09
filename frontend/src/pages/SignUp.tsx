@@ -28,7 +28,7 @@ export default function SignUp() {
 
     try {
       await register(email, name, password);
-      navigate(`/${locale}/assessment/intro`);
+      navigate(`/${locale}/dashboard`);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Registration failed');
     } finally {

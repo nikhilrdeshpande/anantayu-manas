@@ -39,5 +39,295 @@
         {"tag": "smriti_nasha", "name": "Forgetfulness", "description": "Chronic forgetfulness and poor memory"}
       ]
     }
+  },
+  "subtype_profiles": {
+    "brahma": {
+      "guna": "sattva",
+      "name": "Brahma Kaya",
+      "archetype": "The Creator",
+      "animal": "Swan (Hamsa)",
+      "description": "You are a natural seeker of truth and knowledge. Your mind is drawn to understanding the deeper meaning behind everything  - why things work the way they do, what is right, what is just. You process the world through intellect and discernment, often seeing patterns and connections others miss.",
+      "behavioral_patterns": [
+        "You're the person friends come to when they need honest, unbiased advice  - and you give it even when it's uncomfortable",
+        "You lose track of time reading, learning, or diving deep into a subject that fascinates you",
+        "You feel physically uncomfortable when you have to lie or bend the truth, even in small social situations",
+        "You often think several steps ahead in conversations, which can make you seem quiet  - you're actually processing deeply",
+        "You'd rather be respected for your knowledge than liked for being agreeable"
+      ],
+      "strengths": ["Exceptional clarity of thought", "Natural truth-seeker", "Strong memory and learning ability", "Wise decision-making", "Intellectual leadership"],
+      "shadows": ["Can become detached or overly cerebral", "May judge others who don't value truth as deeply", "Tendency to overthink before acting", "Can appear cold when you're actually processing emotions internally"],
+      "relationship_style": "You value depth over breadth in relationships. You have few close friends but those bonds are built on mutual respect and intellectual honesty. You struggle with people who are superficial or dishonest.",
+      "work_style": "You thrive in roles requiring analysis, strategy, and ethical decision-making. You're the one who asks the hard questions in meetings that everyone else was thinking but afraid to voice."
+    },
+    "mahendra": {
+      "guna": "sattva",
+      "name": "Mahendra Kaya",
+      "archetype": "The Sovereign",
+      "animal": "Lion (Simha)",
+      "description": "You carry a natural authority that others sense immediately. Your strength isn't loud or aggressive  - it comes from discipline, consistency, and an unshakable commitment to doing things properly. You lead by example, not by force.",
+      "behavioral_patterns": [
+        "You have routines and systems for everything  - and you feel genuinely unsettled when they're disrupted",
+        "People naturally look to you to take charge in group situations, even when you haven't volunteered",
+        "You keep promises as if they were sacred  - breaking a commitment feels like a personal failure",
+        "You respect hierarchy and tradition, but only when the people in authority have earned it",
+        "You push through discomfort with a discipline that others find impressive and sometimes intimidating"
+      ],
+      "strengths": ["Natural leadership presence", "Exceptional discipline and endurance", "Keeps commitments unfailingly", "Respected by peers and elders", "Calm under pressure"],
+      "shadows": ["Can be rigid when flexibility is needed", "Difficulty delegating  - you believe you'll do it better", "May suppress emotions in favor of 'being strong'", "Can hold others to impossibly high standards"],
+      "relationship_style": "You're the rock in your relationships. People rely on you, and you take that responsibility seriously. But you sometimes forget that vulnerability is also a form of strength.",
+      "work_style": "You excel in structured environments with clear expectations. You're the person who arrives early, stays late, and never misses a deadline  - but you struggle when rules feel arbitrary."
+    },
+    "varuna": {
+      "guna": "sattva",
+      "name": "Varuna Kaya",
+      "archetype": "The Protector",
+      "animal": "Elephant (Gaja)",
+      "description": "Your defining quality is an almost infinite capacity for patience and forgiveness. Where others react, you absorb. Where others hold grudges, you let go. This isn't weakness  - it's a profound inner stability that allows you to remain calm when everything around you is chaotic.",
+      "behavioral_patterns": [
+        "You're the one who de-escalates fights  - between friends, family members, even strangers",
+        "You can sit with uncomfortable silence without feeling the need to fill it",
+        "People have told you you're 'too nice' or 'too forgiving'  - you don't see it as a problem",
+        "You notice environmental details others miss  - a messy room genuinely affects your mood",
+        "You process anger slowly  - you might not realize you're upset until hours or days later"
+      ],
+      "strengths": ["Extraordinary patience", "Natural peacemaker", "Emotional stability under pressure", "Genuine contentment", "Strong sense of inner cleanliness"],
+      "shadows": ["Can avoid necessary confrontation", "Others may take advantage of your forgiving nature", "Tendency to suppress anger rather than process it", "May stay in harmful situations too long out of patience"],
+      "relationship_style": "You create a sense of safety for everyone around you. Your relationships are warm and steady, but you need to watch for patterns where you give more than you receive.",
+      "work_style": "You're the calming presence in stressful teams. You handle customer complaints, mediate conflicts, and maintain quality  - but you may not advocate loudly enough for your own advancement."
+    },
+    "kaubera": {
+      "guna": "sattva",
+      "name": "Kaubera Kaya",
+      "archetype": "The Generous One",
+      "animal": "Cow (Dhenu)",
+      "description": "Generosity isn't something you practice  - it's how you naturally move through the world. You share time, resources, attention, and energy without keeping score. Your sense of abundance comes from within, not from what you own.",
+      "behavioral_patterns": [
+        "You're the first person to offer help  - and the last person to ask for it",
+        "You feel genuine joy when giving gifts or treating someone to a meal",
+        "You treat the security guard and the CEO with the same respect  - status hierarchies confuse you",
+        "You've been called 'too generous' by people who worry you'll be taken advantage of",
+        "You feel uncomfortable with excess  - you'd rather share than accumulate"
+      ],
+      "strengths": ["Natural generosity without expectation", "Treats everyone with equal respect", "Gratitude as a daily practice", "Non-possessive approach to life", "Creates abundance around them"],
+      "shadows": ["Difficulty setting financial boundaries", "May give to the point of self-depletion", "Can feel resentful when generosity isn't reciprocated", "Struggle saying no to requests"],
+      "relationship_style": "Your relationships are characterized by warmth and generosity. You remember birthdays, you check in on people, you show up. But you need to learn that receiving is also a gift you can give others.",
+      "work_style": "You're the team player everyone loves working with. You share credit, mentor juniors, and contribute to team culture. Your challenge is ensuring your contributions are recognized and compensated fairly."
+    },
+    "gandharva": {
+      "guna": "sattva",
+      "name": "Gandharva Kaya",
+      "archetype": "The Artist",
+      "animal": "Peacock (Mayura)",
+      "description": "You experience the world through beauty and aesthetics. Your environment deeply affects your inner state  - a well-organized space lifts you up, while chaos drains you. You have a natural drive to make things better, cleaner, more beautiful.",
+      "behavioral_patterns": [
+        "You notice when a picture frame is slightly crooked  - and it bothers you until you fix it",
+        "You put effort into your appearance, your workspace, your home  - not for others, but because it matters to you",
+        "You adapt quickly to new situations and environments  - change doesn't scare you, it excites you",
+        "You find purpose and meaning in your daily activities, even mundane ones",
+        "You believe that hard work always pays off, and you live by that belief"
+      ],
+      "strengths": ["Strong aesthetic sense", "Adaptable and purposeful", "Personal discipline and hygiene", "Goal-oriented effort", "Creates beauty in everyday life"],
+      "shadows": ["Can become perfectionist about appearance and environment", "May judge 'messy' people harshly", "Effort can become performative", "Difficulty accepting imperfection"],
+      "relationship_style": "You bring beauty and order to your relationships. You plan thoughtful dates, create lovely home environments, and put effort into maintaining connections. Your partner needs to appreciate the care you put into these details.",
+      "work_style": "You thrive in creative, aesthetic, or design-oriented roles. You're the person who makes the presentation look beautiful, who redesigns the workflow to be more elegant."
+    },
+    "yamya": {
+      "guna": "sattva",
+      "name": "Yamya Kaya",
+      "archetype": "The Just One",
+      "animal": "Bull (Vrishabha)",
+      "description": "Justice and fairness are your core operating principles. You have an internal compass that always points toward what is right  - not what is convenient, popular, or easy. You hold yourself to the same standards you expect from others.",
+      "behavioral_patterns": [
+        "You speak up when you see injustice, even when it's socially uncomfortable",
+        "You follow rules because you genuinely believe in their purpose, not because you fear punishment",
+        "You can't stand hypocrisy  - people who preach one thing and do another frustrate you deeply",
+        "You have strong opinions about right and wrong, but you hold them with humility",
+        "You take your responsibilities seriously  - 'it's not my job' isn't in your vocabulary"
+      ],
+      "strengths": ["Unwavering moral compass", "Actions match words", "Natural sense of duty", "Humble despite strong convictions", "Reliable and trustworthy"],
+      "shadows": ["Can be inflexible about ethical gray areas", "May judge others too harshly for moral lapses", "Difficulty accepting that not everyone shares your values", "Can burn out from carrying too much responsibility"],
+      "relationship_style": "You're the friend who will tell you the truth even when it hurts. Your loyalty is earned, not given  - but once earned, it's unbreakable. You need partners who match your commitment to honesty and fairness.",
+      "work_style": "You're drawn to roles with purpose  - law, education, public service, ethics. You're the person who writes the policy, who ensures compliance, who advocates for the underdog."
+    },
+    "rishi": {
+      "guna": "sattva",
+      "name": "Rishi Kaya",
+      "archetype": "The Sage",
+      "animal": "Deer (Mriga)",
+      "description": "Your inner world is vast and rich. You're naturally drawn to spiritual practice, contemplation, and the pursuit of wisdom. You find contentment not in external achievements but in internal understanding. Others often don't see the depth of your inner life.",
+      "behavioral_patterns": [
+        "You need regular solitude to recharge  - social situations drain you faster than most people realize",
+        "You've always been drawn to spiritual or philosophical questions, even as a child",
+        "You don't gossip or envy others  - not because you're trying to be good, but because it genuinely doesn't interest you",
+        "You remember things others forget  - details, conversations, knowledge from years ago",
+        "You feel most alive during meditation, prayer, or deep contemplation"
+      ],
+      "strengths": ["Deep spiritual awareness", "Freedom from envy and gossip", "Exceptional memory", "Natural contentment", "Wisdom beyond years"],
+      "shadows": ["Can become too withdrawn from worldly responsibilities", "Others may see you as detached or disengaged", "Difficulty with practical, mundane tasks", "May struggle to connect with people who don't share your depth"],
+      "relationship_style": "You form deep, meaningful bonds with very few people. You need a partner who respects your need for solitude and shares your interest in the deeper questions of life.",
+      "work_style": "You excel in research, teaching, counseling, or any role that allows depth over speed. You're not competitive  - you're thorough. Your work has a quality that comes from genuine understanding, not just effort."
+    },
+    "asura": {
+      "guna": "rajas",
+      "name": "Asura Kaya",
+      "archetype": "The Titan",
+      "animal": "Tiger (Vyaghra)",
+      "description": "You are a force of nature. Your ambition, drive, and self-confidence create a magnetic presence that draws people in and pushes boundaries. You don't just want success  - you want to dominate your field, be the best, leave a legacy.",
+      "behavioral_patterns": [
+        "You walk into a room and automatically assess the power dynamics  - who's in charge, who's a threat, who's useful",
+        "You set goals that others call unrealistic, then hit them  - that's your fuel",
+        "You've been called 'too much' or 'too intense'  - you wear it as a badge of honor",
+        "You need to be in control. Delegating feels like losing grip, even when you know it's necessary",
+        "You measure your worth by your achievements, possessions, and influence"
+      ],
+      "strengths": ["Unstoppable drive and ambition", "Natural authority and charisma", "High self-confidence", "Strategic thinking", "Can mobilize and lead large groups"],
+      "shadows": ["Ego can blind you to your own mistakes", "Relationships become transactional", "Difficulty being vulnerable or asking for help", "Material success never feels like 'enough'", "May alienate people with your intensity"],
+      "relationship_style": "You attract people with your energy and confidence, but intimacy requires vulnerability  - your weakest muscle. You need a partner who is strong enough not to be overwhelmed by you, and honest enough to call you out.",
+      "work_style": "You're the entrepreneur, the empire builder, the CEO. You create, you scale, you dominate. Your challenge is learning that control and success aren't the same thing."
+    },
+    "sarpa": {
+      "guna": "rajas",
+      "name": "Sarpa Kaya",
+      "archetype": "The Serpent",
+      "animal": "Cobra (Naga)",
+      "description": "Your emotional intensity is your defining feature. You feel everything deeply  - love, anger, betrayal, loyalty. When you're calm, you're magnetic and perceptive. When you're triggered, the force of your reaction surprises even you.",
+      "behavioral_patterns": [
+        "You remember every slight, every betrayal  - your emotional memory is extraordinarily detailed",
+        "Your anger doesn't build slowly  - it strikes fast and hard, then you regret it",
+        "You can read people's true intentions with uncanny accuracy  - you just 'know' when someone is lying",
+        "Traffic jams, rude people, broken promises  - small things trigger disproportionate fury",
+        "You hold grudges longer than you'd like to admit, even when you know it hurts you"
+      ],
+      "strengths": ["Intense emotional intelligence", "Fierce loyalty to those you love", "Perceptive and intuitive", "Powerful presence when focused", "Protective of loved ones"],
+      "shadows": ["Explosive anger that damages relationships", "Holding grudges poisons your peace", "Emotional reactions can be disproportionate", "Difficulty forgiving perceived betrayals", "Your intensity exhausts people around you"],
+      "relationship_style": "You love hard and protect fiercely. Your relationships are intense  - there's no 'casual' in your vocabulary. You need a partner who can handle your emotional depth without being consumed by it.",
+      "work_style": "You're at your best in high-stakes environments where emotional intelligence matters  - negotiation, crisis management, sales. Your challenge is managing reactive anger in professional settings."
+    },
+    "shakuna": {
+      "guna": "rajas",
+      "name": "Shakuna Kaya",
+      "archetype": "The Hunter",
+      "animal": "Hawk (Shyena)",
+      "description": "You are restless, quick, and always scanning for the next opportunity. Your mind moves faster than most  - jumping from idea to idea, plan to plan. You thrive on novelty and wilt in routine.",
+      "behavioral_patterns": [
+        "You have 12 browser tabs open, 3 half-finished projects, and a new idea you're excited about",
+        "You make decisions quickly  - sometimes too quickly  - and deal with consequences later",
+        "Routine physically drains you. You need variety, change, stimulation",
+        "You're competitive not out of malice but because winning gives you the dopamine hit you crave",
+        "You need external motivation to finish things  - starting is easy, completing is the struggle"
+      ],
+      "strengths": ["Quick thinking and fast action", "Excellent at spotting opportunities", "Thrives under pressure", "Competitive drive pushes performance", "Adaptable and energetic"],
+      "shadows": ["Chronic unfinished projects", "Impulsive decisions with long-term consequences", "Restlessness masquerading as productivity", "Difficulty with commitment and follow-through", "Burns out from constant stimulation-seeking"],
+      "relationship_style": "You're exciting but unpredictable. Your partners love your energy but struggle with your restlessness. You need someone who keeps things interesting without enabling your avoidance of depth.",
+      "work_style": "Startups, sales, trading, journalism  - anything fast-paced with variety. You're the person who thrives in chaos. Your Achilles heel is the boring-but-important maintenance work."
+    },
+    "rakshasa": {
+      "guna": "rajas",
+      "name": "Rakshasa Kaya",
+      "archetype": "The Fierce One",
+      "animal": "Wolf (Vrka)",
+      "description": "You have a raw, unfiltered intensity that others either admire or fear. You don't tolerate incompetence, dishonesty, or weakness  - in yourself or others. Your standards are impossibly high, and you enforce them relentlessly.",
+      "behavioral_patterns": [
+        "You say what others are thinking but afraid to say  - and you don't sugarcoat it",
+        "Waiting in lines, slow service, inefficient processes  - these things make your blood boil",
+        "You'd rather do it yourself than explain it to someone who might do it wrong",
+        "You've been told you're intimidating. You see it as honesty; others see it as aggression",
+        "You respect strength and competence above all else  - titles and seniority mean nothing to you"
+      ],
+      "strengths": ["Uncompromising standards", "Cuts through nonsense", "Fierce determination", "Direct and honest communication", "Gets results where others give up"],
+      "shadows": ["Alienates people with harsh directness", "Impatience destroys team morale", "Difficulty showing empathy or softness", "Stubbornness prevents course-correction", "Controls through intimidation rather than inspiration"],
+      "relationship_style": "You need a partner with a thick skin and their own backbone. You respect people who stand up to you. Your love language is 'acts of service'  - you show care by doing, not by saying.",
+      "work_style": "You're the turnaround specialist, the drill sergeant, the person they call when things are broken and need fixing fast. Your challenge is sustainability  - you burn hot, and you burn out."
+    },
+    "paishaca": {
+      "guna": "rajas",
+      "name": "Paishaca Kaya",
+      "archetype": "The Indulgent",
+      "animal": "Jackal (Srigala)",
+      "description": "You have a complicated relationship with pleasure and excess. You're drawn to sensory experiences  - food, shopping, social media, the next exciting thing. You're aware that some of these patterns don't serve you, but the pull is strong.",
+      "behavioral_patterns": [
+        "You eat when stressed, shop when bored, scroll when anxious  - pleasure is your coping mechanism",
+        "You're good at presenting a curated version of yourself  - on social media and in person",
+        "You know shortcuts to everything and you're not ashamed to use them",
+        "You spend more than you should to maintain a lifestyle that looks good from the outside",
+        "You exaggerate stories to make them more interesting  - a little embellishment never hurt anyone, right?"
+      ],
+      "strengths": ["Social intelligence and charm", "Resourceful and street-smart", "Knows how to enjoy life", "Adaptable and quick-witted", "Creates engaging experiences for others"],
+      "shadows": ["Emotional eating and impulse spending", "Curated image vs. authentic self gap", "Shortcuts can become dishonesty", "Pleasure-seeking masks deeper emotional needs", "Difficulty with delayed gratification"],
+      "relationship_style": "You're fun and exciting to be around, but your relationships can be performative. The growth edge is allowing people to see the real you  - not just the curated version.",
+      "work_style": "Marketing, entertainment, hospitality, sales  - anything that leverages your social skills and love of experience. Your challenge is building substance underneath the style."
+    },
+    "preta": {
+      "guna": "rajas",
+      "name": "Preta Kaya",
+      "archetype": "The Seeker",
+      "animal": "Crow (Kaka)",
+      "description": "There's a hunger in you that never quite gets satisfied. You compare, you evaluate, you measure yourself against others. It's not malice  - it's a deep-seated feeling that you should be further along, that others have something you're missing.",
+      "behavioral_patterns": [
+        "You check how many likes your posts get. You notice who got promoted before you. You compare salaries",
+        "Even after getting what you wanted, there's a brief moment of satisfaction followed by 'what's next?'",
+        "You talk about your achievements because you need external validation to feel they're real",
+        "You feel a pang when a friend succeeds  - you're happy for them, but there's a whisper of 'why not me?'",
+        "You set expectations for others and feel crushed when they don't meet them"
+      ],
+      "strengths": ["Drives you to constantly improve", "Observant and analytical about social dynamics", "High expectations lead to high output", "Self-aware about your patterns", "Hunger for growth keeps you moving forward"],
+      "shadows": ["Comparison is the thief of your joy", "Chronic dissatisfaction despite achievements", "Jealousy strains friendships", "Self-praise covers deep insecurity", "Others feel they can never be enough for you"],
+      "relationship_style": "You need a lot of reassurance, even if you don't ask for it directly. Your partner may feel like they're constantly being measured. The growth edge is learning that love isn't earned through achievement.",
+      "work_style": "You're driven and productive, but your motivation comes from comparison rather than purpose. You'll outperform, but you won't enjoy it until you decouple self-worth from external metrics."
+    },
+    "pashu": {
+      "guna": "tamas",
+      "name": "Pashu Kaya",
+      "archetype": "The Steady One",
+      "animal": "Buffalo (Mahisha)",
+      "description": "Your natural state is rest. Not laziness  - rest. Your body and mind are wired for conservation, for steady rhythms, for doing things at your own pace. The world's urgency often feels manufactured to you, and honestly, you're not wrong.",
+      "behavioral_patterns": [
+        "Your snooze button has seen more action than any other button in your life",
+        "You procrastinate not because you're lazy but because urgency doesn't register until the last minute",
+        "You can sleep anywhere, anytime  - it's a genuine superpower (and sometimes a genuine problem)",
+        "You feel lethargic in the mornings and need a long runway before you're functional",
+        "You know you should exercise. You've thought about it. Tomorrow seems like a good day to start"
+      ],
+      "strengths": ["Unshakeable calm under pressure", "Doesn't waste energy on unnecessary things", "Steady and reliable once momentum builds", "Comfortable with slowness in a fast world", "Low stress levels compared to peers"],
+      "shadows": ["Procrastination creates real consequences", "Physical inertia affects health", "Others mistake your pace for laziness", "Missed opportunities from delayed action", "Drowsiness and lethargy affect daily functioning"],
+      "relationship_style": "You're easygoing and non-demanding, which many partners appreciate. But your comfort zone can become a prison  - your partner may feel like they're always the one initiating plans, dates, and changes.",
+      "work_style": "You do your best work with clear deadlines and external structure. Without it, things drift. You're reliable once you start, but starting is the hard part. Jobs with routine and predictability suit you better than startup chaos."
+    },
+    "matsya": {
+      "guna": "tamas",
+      "name": "Matsya Kaya",
+      "archetype": "The Hidden One",
+      "animal": "Fish (Matsya)",
+      "description": "You move through life cautiously, preferring safety over risk, familiarity over novelty. Fear isn't always loud for you  - sometimes it's just a quiet decision to stay where you are instead of reaching for something new.",
+      "behavioral_patterns": [
+        "You avoid confrontation even when someone has crossed a clear line  - peace at any cost",
+        "You defer to others' opinions in group settings, even when you disagree internally",
+        "Change  - any change  - triggers anxiety. New job, new city, new routine: all feel threatening",
+        "You sometimes feel hopeless about the future, like things won't get better no matter what you do",
+        "You'd rather endure a bad situation you know than risk an unknown one that might be worse"
+      ],
+      "strengths": ["Highly empathetic and non-threatening", "Careful and risk-averse (avoids costly mistakes)", "Loyal and consistent", "Sensitive to others' emotions", "Perseveres quietly through hardship"],
+      "shadows": ["Fear holds you back from growth", "Dependency on others for decisions", "Hopelessness can spiral into depression", "Avoidance of confrontation enables mistreatment", "Comfort zone becomes a cage"],
+      "relationship_style": "You give a lot in relationships because you fear abandonment. You need a partner who is patient and encouraging  - someone who helps you take small risks without pushing too hard.",
+      "work_style": "You do well in supportive, low-conflict environments with clear expectations. You're reliable and thorough, but you won't advocate for promotions or raises. You need a manager who actively supports your growth."
+    },
+    "vanaspatya": {
+      "guna": "tamas",
+      "name": "Vanaspatya Kaya",
+      "archetype": "The Rooted One",
+      "animal": "Tortoise (Kurma)",
+      "description": "You are deeply rooted, almost immovable. Your mind prefers the familiar, the routine, the unchanging. Mental effort  - learning new things, solving complex problems, engaging in abstract thinking  - feels genuinely exhausting to you.",
+      "behavioral_patterns": [
+        "You forget things that others remember easily  - appointments, conversations, tasks",
+        "You avoid social gatherings not because you dislike people, but because the effort of engaging feels enormous",
+        "Learning new skills or subjects feels like pushing a boulder uphill",
+        "Personal hygiene and self-care slip when you're alone  - you do it for others, not for yourself",
+        "You feel indifferent toward goals that excite everyone else  - ambition feels foreign"
+      ],
+      "strengths": ["Deep patience and rootedness", "Not swayed by trends or social pressure", "Simple, uncomplicated needs", "Ability to endure difficult conditions", "Presence without pretense"],
+      "shadows": ["Intellectual stagnation", "Social withdrawal becomes isolation", "Neglect of personal care", "Indifference mimics depression", "Others may underestimate or overlook you"],
+      "relationship_style": "You need a partner who accepts you without trying to change you, while gently encouraging small steps forward. Your love is quiet and steady, expressed through presence rather than words.",
+      "work_style": "Manual, repetitive, or routine work suits you better than creative or intellectual roles. You're reliable for consistent tasks but struggle when the job requires learning, adapting, or socializing."
+    }
   }
 }

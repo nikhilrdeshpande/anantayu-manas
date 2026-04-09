@@ -1,10 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { Brain, Leaf, Zap, Mountain, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { Brain, Leaf, Zap, Mountain, ArrowRight, RotateCcw } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useAssessmentStore } from '../stores/assessment-store';
 import { useAuthStore } from '../stores/auth-store';
 import { DemographicsForm } from '../components/assessment/DemographicsForm';
 import { AuthGate } from '../components/assessment/AuthGate';
+import { manas } from '../lib/api';
 import type { ApiDemographics } from '../lib/api';
 
 type Step = 'intro' | 'auth' | 'demographics';
@@ -16,36 +17,90 @@ export default function AssessmentIntro() {
   const { isAuthenticated, user } = useAuthStore();
   const [step, setStep] = useState<Step>('intro');
   const [resumeMessage, setResumeMessage] = useState('');
+  const [hasResumable, setHasResumable] = useState(false);
+  const [savedDemographics, setSavedDemographics] = useState<ApiDemographics | null>(null);
+  const [loadingDemographics, setLoadingDemographics] = useState(false);
+
+  // Check for saved progress + demographics when user is authenticated
+  useEffect(() => {
+    if (!isAuthenticated || !user) return;
+    // Check resumable progress
+    manas.getResumeData(user.id).then((data) => {
+      if (data.has_progress && data.answers && data.answers.length > 0) {
+        setHasResumable(true);
+      }
+    }).catch(() => {});
+    // Check saved demographics
+    manas.getUserDemographics(user.id).then((data) => {
+      if (data.has_demographics && data.demographics) {
+        setSavedDemographics(data.demographics);
+      }
+    }).catch(() => {});
+  }, [isAuthenticated, user]);
+
+  const startFresh = () => {
+    store.reset();
+    store.loadQuestions();
+    if (savedDemographics) {
+      // Skip demographics  - use saved ones
+      store.setDemographics(savedDemographics);
+      store.setPhase('quiz');
+      navigate(`/${locale}/assessment`);
+    } else {
+      setStep('demographics');
+    }
+  };
+
+  const handleResume = async () => {
+    store.reset();
+    store.loadQuestions();
+    if (savedDemographics) {
+      store.setDemographics(savedDemographics);
+    }
+    const loaded = await store.loadSavedProgress();
+    if (loaded) {
+      setResumeMessage('Resuming from where you left off');
+      store.setPhase('quiz');
+      navigate(`/${locale}/assessment`);
+    } else {
+      // Nothing to resume, start fresh
+      startFresh();
+    }
+  };
 
   const handleBegin = () => {
     if (isAuthenticated) {
-      // Already logged in — go straight to demographics
-      store.reset();
-      store.loadQuestions();
-      setStep('demographics');
+      startFresh();
     } else {
-      // Need to sign up / sign in first
       setStep('auth');
     }
   };
 
   const handleAuthenticated = () => {
-    // Auth completed — now proceed to demographics
-    store.reset();
-    store.loadQuestions();
-    setStep('demographics');
+    // Auth completed  - check demographics async, then proceed
+    setLoadingDemographics(true);
+    manas.getUserDemographics(user!.id).then((data) => {
+      if (data.has_demographics && data.demographics) {
+        setSavedDemographics(data.demographics);
+        store.reset();
+        store.loadQuestions();
+        store.setDemographics(data.demographics);
+        store.setPhase('quiz');
+        navigate(`/${locale}/assessment`);
+      } else {
+        store.reset();
+        store.loadQuestions();
+        setStep('demographics');
+      }
+    }).catch(() => {
+      store.reset();
+      store.loadQuestions();
+      setStep('demographics');
+    }).finally(() => setLoadingDemographics(false));
   };
 
   const handleDemographicsSubmit = async (demographics: ApiDemographics) => {
     store.setDemographics(demographics);
-
-    // Check for saved progress
-    const hasProgress = await store.loadSavedProgress();
-    if (hasProgress) {
-      setResumeMessage('Resuming from where you left off');
-      setTimeout(() => setResumeMessage(''), 3000);
-    }
-
     store.setPhase('quiz');
     navigate(`/${locale}/assessment`);
   };
@@ -144,7 +199,7 @@ export default function AssessmentIntro() {
             style={{ color: 'var(--on-surface-variant)' }}
           >
             Answer 25 questions about your natural tendencies to discover your unique
-            Manas Prakriti — your psychological constitution according to Ayurveda.
+            Manas Prakriti  - your psychological constitution according to Ayurveda.
           </p>
 
           {/* Guna indicators */}
@@ -154,7 +209,7 @@ export default function AssessmentIntro() {
                 <Leaf className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="font-semibold text-sm" style={{ color: '#466729' }}>Part 1 — Calm Nature</p>
+                <p className="font-semibold text-sm" style={{ color: '#466729' }}>Part 1  - Calm Nature</p>
                 <p className="text-xs" style={{ color: 'var(--on-surface-variant)' }}>
                   10 questions exploring your purity and balance
                 </p>
@@ -166,7 +221,7 @@ export default function AssessmentIntro() {
                 <Zap className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="font-semibold text-sm" style={{ color: '#8B6914' }}>Part 2 — Active Nature</p>
+                <p className="font-semibold text-sm" style={{ color: '#8B6914' }}>Part 2  - Active Nature</p>
                 <p className="text-xs" style={{ color: 'var(--on-surface-variant)' }}>
                   10 questions exploring your energy and drive
                 </p>
@@ -178,7 +233,7 @@ export default function AssessmentIntro() {
                 <Mountain className="w-5 h-5 text-white" />
               </div>
               <div>
-                <p className="font-semibold text-sm" style={{ color: '#50606f' }}>Part 3 — Steady Nature</p>
+                <p className="font-semibold text-sm" style={{ color: '#50606f' }}>Part 3  - Steady Nature</p>
                 <p className="text-xs" style={{ color: 'var(--on-surface-variant)' }}>
                   5 questions exploring your stability and grounding
                 </p>
@@ -196,7 +251,7 @@ export default function AssessmentIntro() {
             </p>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <button
             onClick={handleBegin}
             className="w-full py-4 rounded-2xl flex items-center justify-center gap-2 text-white font-semibold text-lg transition-all duration-200 hover:opacity-90 active:scale-[0.98] cursor-pointer"
@@ -206,9 +261,21 @@ export default function AssessmentIntro() {
               boxShadow: '0 4px 14px rgba(212, 160, 23, 0.35)',
             }}
           >
-            {isAuthenticated ? 'Continue to Assessment' : 'Begin Assessment'}
+            {isAuthenticated ? 'Start Assessment' : 'Begin Assessment'}
             <ArrowRight className="w-5 h-5" />
           </button>
+
+          {/* Resume option for returning users */}
+          {isAuthenticated && hasResumable && (
+            <button
+              onClick={handleResume}
+              className="w-full py-3 mt-3 rounded-2xl flex items-center justify-center gap-2 font-medium text-sm transition-all border cursor-pointer"
+              style={{ borderColor: '#d3c5ae', color: '#795900' }}
+            >
+              <RotateCcw className="w-4 h-4" />
+              Resume Previous Assessment
+            </button>
+          )}
 
           {/* Footer */}
           <p className="text-center text-xs mt-4" style={{ color: 'var(--on-surface-variant)' }}>

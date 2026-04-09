@@ -48,6 +48,12 @@ class Result(Base):
     archetype_title: Mapped[str | None] = mapped_column(String(100), nullable=True)
     sattva_bala: Mapped[str] = mapped_column(String(20))  # pravara/madhya/avara
 
+    # Sub-type fields (populated for deep/full assessments)
+    subtype_key: Mapped[str | None] = mapped_column(String(50), nullable=True)
+    subtype_archetype: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    subtype_animal: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    bhava_scores: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+
     # AI-generated insights
     ai_insights: Mapped[dict | None] = mapped_column(JSON, nullable=True)
 

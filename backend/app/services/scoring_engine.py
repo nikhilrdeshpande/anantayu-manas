@@ -29,6 +29,10 @@ class ScoringResult:
     prakriti_type: str
     prakriti_subtype: str | None
     archetype_title: str | None
+    subtype_key: str | None
+    subtype_archetype: str | None
+    subtype_animal: str | None
+    bhava_scores: dict[str, int] | None
     sattva_bala: str
 
 
@@ -49,6 +53,7 @@ class ScoringEngine:
     SECTION_TOTALS = {
         "quick": {"sattva": 10, "rajas": 10, "tamas": 5},
         "full": {"sattva": 30, "rajas": 30, "tamas": 20},
+        "deep": {"sattva": 30, "rajas": 30, "tamas": 20},
     }
 
     def score(self, answers: list[dict], assessment_type: str = "quick") -> ScoringResult:
@@ -58,6 +63,7 @@ class ScoringEngine:
             answers: List of dicts with 'section' and 'answer' keys.
                      section: 'sattva', 'rajas', or 'tamas'
                      answer: 'YES', 'NO', or 'SOMETIMES'
+                     bhava_tag: (optional) bhava tag for sub-type classification
             assessment_type: 'quick' or 'full'
 
         Returns:
@@ -71,11 +77,19 @@ class ScoringEngine:
             "rajas": {"YES": 0, "NO": 0, "SOMETIMES": 0},
             "tamas": {"YES": 0, "NO": 0, "SOMETIMES": 0},
         }
+        # Track per-bhava YES scores for sub-type classification
+        bhava_scores: dict[str, int] = {}
         for ans in answers:
             section = ans["section"].lower()
             answer = ans["answer"].upper()
             if section in counts and answer in counts[section]:
                 counts[section][answer] += 1
+            # Track bhava-level scores (YES=1, SOMETIMES=0.5 rounded, NO=0)
+            bhava_tag = ans.get("bhava_tag")
+            if bhava_tag and answer == "YES":
+                bhava_scores[bhava_tag] = bhava_scores.get(bhava_tag, 0) + 1
+            elif bhava_tag and answer == "SOMETIMES":
+                bhava_scores[bhava_tag] = bhava_scores.get(bhava_tag, 0) + 1
 
         sattva_yes = counts["sattva"]["YES"]
         sattva_no = counts["sattva"]["NO"]
@@ -132,6 +146,17 @@ class ScoringEngine:
             primary_dominant_guna, secondary_dominant_guna, guna_scores
         )
 
+        # Step 6b: Classify sub-type for full assessments
+        if assessment_type in ("full", "deep") and bhava_scores:
+            subtype_result = classifier.classify_subtype(
+                primary_dominant_guna, bhava_scores
+            )
+            if subtype_result:
+                classification["prakriti_subtype"] = subtype_result["subtype_name"]
+                classification["subtype_key"] = subtype_result["subtype_key"]
+                classification["subtype_archetype"] = subtype_result["subtype_archetype"]
+                classification["subtype_animal"] = subtype_result["subtype_animal"]
+
         # Step 7: Calculate sattva bala
         sattva_bala = self._sattva_bala(sattva_secondary_pct)
 
@@ -156,6 +181,10 @@ class ScoringEngine:
             prakriti_type=classification["prakriti_type"],
             prakriti_subtype=classification.get("prakriti_subtype"),
             archetype_title=classification.get("archetype_title"),
+            subtype_key=classification.get("subtype_key"),
+            subtype_archetype=classification.get("subtype_archetype"),
+            subtype_animal=classification.get("subtype_animal"),
+            bhava_scores=bhava_scores if bhava_scores else None,
             sattva_bala=sattva_bala,
         )
 

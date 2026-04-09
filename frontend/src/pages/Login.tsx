@@ -21,7 +21,7 @@ export default function Login() {
 
     try {
       await login(email, password);
-      navigate(`/${locale}/assessment/intro`);
+      navigate(`/${locale}/dashboard`);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed');
     } finally {

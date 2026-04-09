@@ -16,9 +16,9 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
     archetype: 'The Luminous Sage',
     traits: ['Serene', 'Wise', 'Compassionate'],
     description:
-      'Your mind is predominantly governed by Sattva — the quality of clarity, harmony, and inner light. You naturally gravitate toward truth, self-discipline, and a deep reverence for all living beings.',
+      'Your mind is predominantly governed by Sattva  - the quality of clarity, harmony, and inner light. You naturally gravitate toward truth, self-discipline, and a deep reverence for all living beings.',
     whatIs:
-      'Sattvika Prakriti represents the purest expression of mental constitution in Ayurveda. Individuals with this prakriti possess an innate clarity of thought, emotional stability, and spiritual inclination. The Charaka Samhita describes Sattvika individuals as those who are devoted to knowledge, truthful in speech, and naturally inclined toward self-control. They experience genuine happiness through service and contemplation rather than sensory pleasure. This constitution reflects a mind in its most balanced state — clear like still water, capable of reflecting reality without distortion.',
+      'Sattvika Prakriti represents the purest expression of mental constitution in Ayurveda. Individuals with this prakriti possess an innate clarity of thought, emotional stability, and spiritual inclination. The Charaka Samhita describes Sattvika individuals as those who are devoted to knowledge, truthful in speech, and naturally inclined toward self-control. They experience genuine happiness through service and contemplation rather than sensory pleasure. This constitution reflects a mind in its most balanced state  - clear like still water, capable of reflecting reality without distortion.',
     strengths: [
       {
         title: 'Natural Equanimity',
@@ -69,7 +69,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       {
         title: 'Sattvic Nourishment',
         description:
-          'Favor fresh, seasonal, and lightly cooked foods — milk, ghee, fruits, and whole grains.',
+          'Favor fresh, seasonal, and lightly cooked foods  - milk, ghee, fruits, and whole grains.',
         icon: 'UtensilsCrossed',
       },
       {
@@ -80,7 +80,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'Your Sattvika constitution is a rare gift. The key to sustaining it lies not in withdrawing from the world, but in engaging with it fully while maintaining your inner stillness. Think of yourself as a lotus — rooted in the mud of daily life, yet untouched by it. Your greatest contribution is not what you do, but the quality of presence you bring to everything.',
+      'Your Sattvika constitution is a rare gift. The key to sustaining it lies not in withdrawing from the world, but in engaging with it fully while maintaining your inner stillness. Think of yourself as a lotus  - rooted in the mud of daily life, yet untouched by it. Your greatest contribution is not what you do, but the quality of presence you bring to everything.',
   },
 
   rajasika: {
@@ -88,9 +88,9 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
     archetype: 'The Dynamic Achiever',
     traits: ['Ambitious', 'Passionate', 'Energetic'],
     description:
-      'Your mind is predominantly governed by Rajas — the quality of action, desire, and dynamic energy. You are naturally driven to create, compete, and transform the world around you.',
+      'Your mind is predominantly governed by Rajas  - the quality of action, desire, and dynamic energy. You are naturally driven to create, compete, and transform the world around you.',
     whatIs:
-      'Rajasika Prakriti reflects a mind dominated by the force of activity and passion. According to Ayurvedic texts, Rajasika individuals are characterized by intense ambition, restless energy, and a strong attachment to outcomes. They are natural leaders and doers, thriving in environments that demand quick decision-making and bold action. The Charaka Samhita notes that Rajas propels the mind toward external pursuits — wealth, status, and sensory pleasures. While this energy is essential for worldly achievement, unchecked Rajas can lead to anxiety, irritability, and chronic dissatisfaction.',
+      'Rajasika Prakriti reflects a mind dominated by the force of activity and passion. According to Ayurvedic texts, Rajasika individuals are characterized by intense ambition, restless energy, and a strong attachment to outcomes. They are natural leaders and doers, thriving in environments that demand quick decision-making and bold action. The Charaka Samhita notes that Rajas propels the mind toward external pursuits  - wealth, status, and sensory pleasures. While this energy is essential for worldly achievement, unchecked Rajas can lead to anxiety, irritability, and chronic dissatisfaction.',
     strengths: [
       {
         title: 'Relentless Drive',
@@ -152,7 +152,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'Your Rajasika energy is a powerful engine. The ancient texts compare it to fire — essential for transformation, but destructive without containment. Your path to growth is not about suppressing your drive, but about channeling it with intention. When you learn to act from a place of inner clarity rather than restless desire, your achievements will carry a quality of fulfillment that ambition alone cannot provide.',
+      'Your Rajasika energy is a powerful engine. The ancient texts compare it to fire  - essential for transformation, but destructive without containment. Your path to growth is not about suppressing your drive, but about channeling it with intention. When you learn to act from a place of inner clarity rather than restless desire, your achievements will carry a quality of fulfillment that ambition alone cannot provide.',
   },
 
   tamasika: {
@@ -160,9 +160,9 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
     archetype: 'The Grounded Observer',
     traits: ['Steady', 'Reflective', 'Enduring'],
     description:
-      'Your mind carries a strong influence of Tamas — the quality of stability, inertia, and deep rootedness. You possess a natural capacity for endurance and a contemplative relationship with life.',
+      'Your mind carries a strong influence of Tamas  - the quality of stability, inertia, and deep rootedness. You possess a natural capacity for endurance and a contemplative relationship with life.',
     whatIs:
-      'Tamasika Prakriti indicates a mental constitution where the quality of Tamas — stability, heaviness, and resistance to change — is predominant. Ayurveda recognizes that while Tamas in excess creates lethargy and confusion, in its balanced form it provides essential grounding, patience, and the ability to withstand difficulty. The Charaka Samhita describes various subtypes of Tamasika nature, noting that individuals with this constitution often have deep emotional reservoirs and a capacity for sustained effort once motivated. Understanding and gradually introducing Sattva through diet, routine, and spiritual practice is the recommended path.',
+      'Tamasika Prakriti indicates a mental constitution where the quality of Tamas  - stability, heaviness, and resistance to change  - is predominant. Ayurveda recognizes that while Tamas in excess creates lethargy and confusion, in its balanced form it provides essential grounding, patience, and the ability to withstand difficulty. The Charaka Samhita describes various subtypes of Tamasika nature, noting that individuals with this constitution often have deep emotional reservoirs and a capacity for sustained effort once motivated. Understanding and gradually introducing Sattva through diet, routine, and spiritual practice is the recommended path.',
     strengths: [
       {
         title: 'Unshakeable Patience',
@@ -179,7 +179,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       {
         title: 'Loyal Dependability',
         description:
-          'Once committed, you are steadfast and reliable — a true anchor for those who depend on you.',
+          'Once committed, you are steadfast and reliable  - a true anchor for those who depend on you.',
         icon: 'Anchor',
       },
     ],
@@ -207,7 +207,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       {
         title: 'Sunrise Movement',
         description:
-          'Begin each day with 20 minutes of vigorous exercise — sun salutations or brisk walking — to counter heaviness.',
+          'Begin each day with 20 minutes of vigorous exercise  - sun salutations or brisk walking  - to counter heaviness.',
         icon: 'Sun',
       },
       {
@@ -224,7 +224,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'Your Tamasika nature is not a limitation — it is an invitation. The earth itself is Tamasika, and from it springs all life. Your journey is about gently introducing light and movement into your steady foundation. Small, consistent actions compound dramatically over time. You do not need to become someone else; you need to awaken the vitality that already sleeps within your remarkable capacity for depth and endurance.',
+      'Your Tamasika nature is not a limitation  - it is an invitation. The earth itself is Tamasika, and from it springs all life. Your journey is about gently introducing light and movement into your steady foundation. Small, consistent actions compound dramatically over time. You do not need to become someone else; you need to awaken the vitality that already sleeps within your remarkable capacity for depth and endurance.',
   },
 
   'sattvika-rajasika': {
@@ -296,7 +296,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'You carry the rare combination of seeing clearly and acting boldly. The ancient Rishis would recognize you as an ideal Karma Yogi — one who works tirelessly in the world while remaining internally free. Your challenge is not about doing more, but about knowing when to stop. Cultivate the art of sacred pauses. The space between your actions is where your deepest wisdom lives.',
+      'You carry the rare combination of seeing clearly and acting boldly. The ancient Rishis would recognize you as an ideal Karma Yogi  - one who works tirelessly in the world while remaining internally free. Your challenge is not about doing more, but about knowing when to stop. Cultivate the art of sacred pauses. The space between your actions is where your deepest wisdom lives.',
   },
 
   'sattvika-tamasika': {
@@ -331,7 +331,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       {
         title: 'Taking Initiative',
         description:
-          'Your contemplative nature may delay necessary action — practice starting before you feel fully ready.',
+          'Your contemplative nature may delay necessary action  - practice starting before you feel fully ready.',
         icon: 'Rocket',
       },
       {
@@ -343,7 +343,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       {
         title: 'Physical Vitality',
         description:
-          'Tamas can manifest as physical heaviness — regular movement keeps your clarity bright.',
+          'Tamas can manifest as physical heaviness  - regular movement keeps your clarity bright.',
         icon: 'Sprout',
       },
     ],
@@ -368,7 +368,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'You are like a deep mountain lake — still on the surface, with immeasurable depth below. Your gift is the ability to perceive what others cannot because you have the patience to look long enough. The growth edge for you is translation — turning your inner knowing into outer expression. The world needs your wisdom, not just as a silent presence, but as a voice. Speak what you see.',
+      'You are like a deep mountain lake  - still on the surface, with immeasurable depth below. Your gift is the ability to perceive what others cannot because you have the patience to look long enough. The growth edge for you is translation  - turning your inner knowing into outer expression. The world needs your wisdom, not just as a silent presence, but as a voice. Speak what you see.',
   },
 
   'rajasika-tamasika': {
@@ -440,7 +440,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'You carry the energy of a storm — powerful, transformative, and sometimes destructive. Your constitution is not a flaw to fix but a force to master. The greatest warriors in Ayurvedic tradition were Rajasika-Tamasika by nature, but elevated by discipline and purpose. Your path is the warrior\'s path: channel your immense energy toward causes larger than yourself, and watch that very intensity become your liberation.',
+      'You carry the energy of a storm  - powerful, transformative, and sometimes destructive. Your constitution is not a flaw to fix but a force to master. The greatest warriors in Ayurvedic tradition were Rajasika-Tamasika by nature, but elevated by discipline and purpose. Your path is the warrior\'s path: channel your immense energy toward causes larger than yourself, and watch that very intensity become your liberation.',
   },
 
   trigunatmaka: {
@@ -448,9 +448,9 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
     archetype: 'The Balanced Seeker',
     traits: ['Adaptable', 'Versatile', 'Evolving'],
     description:
-      'Your constitution reflects a relatively balanced interplay of all three Gunas — Sattva, Rajas, and Tamas. You are naturally versatile, experiencing the full spectrum of mental qualities.',
+      'Your constitution reflects a relatively balanced interplay of all three Gunas  - Sattva, Rajas, and Tamas. You are naturally versatile, experiencing the full spectrum of mental qualities.',
     whatIs:
-      'Trigunatmaka Prakriti, or the tri-balanced constitution, occurs when no single Guna dominates decisively. Ayurveda describes this as an inherently adaptable state — you can draw upon the clarity of Sattva, the energy of Rajas, or the stability of Tamas as situations demand. However, this balance is also dynamic and easily tipped by diet, lifestyle, season, and company. The Charaka Samhita suggests that individuals with balanced constitutions have the greatest potential for conscious evolution, as they are not strongly pulled in any single direction. The key lies in intentionally cultivating Sattva to elevate the entire equilibrium.',
+      'Trigunatmaka Prakriti, or the tri-balanced constitution, occurs when no single Guna dominates decisively. Ayurveda describes this as an inherently adaptable state  - you can draw upon the clarity of Sattva, the energy of Rajas, or the stability of Tamas as situations demand. However, this balance is also dynamic and easily tipped by diet, lifestyle, season, and company. The Charaka Samhita suggests that individuals with balanced constitutions have the greatest potential for conscious evolution, as they are not strongly pulled in any single direction. The key lies in intentionally cultivating Sattva to elevate the entire equilibrium.',
     strengths: [
       {
         title: 'Remarkable Adaptability',
@@ -475,13 +475,13 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       {
         title: 'Decision Clarity',
         description:
-          'Multiple perspectives can sometimes create analysis paralysis — practice decisive action.',
+          'Multiple perspectives can sometimes create analysis paralysis  - practice decisive action.',
         icon: 'Target',
       },
       {
         title: 'Consistency',
         description:
-          'Your adaptability may lead to inconsistency in habits and practices — build strong routines.',
+          'Your adaptability may lead to inconsistency in habits and practices  - build strong routines.',
         icon: 'Timer',
       },
       {
@@ -512,7 +512,7 @@ export const PRAKRITI_DATA: Record<string, PrakritiInfo> = {
       },
     ],
     aiInsight:
-      'You stand at a unique crossroads in Ayurvedic psychology. While others work to overcome a dominant tendency, you have the rare freedom to consciously choose your direction. This is both a gift and a responsibility. The Bhagavad Gita teaches that Sattva, being luminous and healthy, binds through attachment to happiness and knowledge — even this highest quality must eventually be transcended. Use your balanced nature as a launchpad for conscious evolution, not as a reason for complacency.',
+      'You stand at a unique crossroads in Ayurvedic psychology. While others work to overcome a dominant tendency, you have the rare freedom to consciously choose your direction. This is both a gift and a responsibility. The Bhagavad Gita teaches that Sattva, being luminous and healthy, binds through attachment to happiness and knowledge  - even this highest quality must eventually be transcended. Use your balanced nature as a launchpad for conscious evolution, not as a reason for complacency.',
   },
 };
 

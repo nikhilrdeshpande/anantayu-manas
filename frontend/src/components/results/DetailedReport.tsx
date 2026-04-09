@@ -4,6 +4,7 @@ import {
   Anchor, Rocket, Users, Target, Timer, RefreshCw,
   Flame, Mountain, Share2, ChevronRight,
 } from 'lucide-react';
+import { useParams } from 'react-router-dom';
 import type { ScoringResult } from '../../types';
 import type { PrakritiInfo } from '../../lib/prakriti-data';
 
@@ -25,6 +26,7 @@ interface DetailedReportProps {
 }
 
 export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
+  const { locale = 'en' } = useParams<{ locale: string }>();
   const sattva = result.sattvaSecondaryPct;
   const rajas = result.rajasSecondaryPct;
   const tamas = result.tamasSecondaryPct;
@@ -271,19 +273,26 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
           Want Deeper Insights?
         </h3>
         <p className="text-sm max-w-md" style={{ color: 'var(--on-surface-variant)' }}>
-          Our comprehensive assessment analyzes 120+ parameters across all three Gunas for a
-          complete understanding of your mental constitution.
+          80-question deep assessment with 16 personality sub-types, a personalized wellness
+          report, and expert consultation access.
         </p>
         <button
           onClick={() => {
-            window.location.href = '/en/deep-assessment';
+            window.location.href = `/${locale}/pricing`;
           }}
-          className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white cursor-pointer"
-          style={{ backgroundColor: '#313030' }}
+          className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white cursor-pointer"
+          style={{ background: 'linear-gradient(135deg, #8B6914, #d4a017)' }}
         >
-          Take Deep Assessment
+          Unlock Deep Assessment  - ₹399
           <ChevronRight size={16} />
         </button>
+        <a
+          href={`/${locale}/science`}
+          className="text-xs hover:underline"
+          style={{ color: 'var(--on-surface-variant)' }}
+        >
+          Learn about the science behind this assessment
+        </a>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.api.v1 import assessments, auth, questions, results
+from app.api.v1 import assessments, auth, payments, questions, results
 
 api_router = APIRouter()
 api_router.include_router(auth.router, prefix="/auth", tags=["auth"])
@@ -9,3 +9,4 @@ api_router.include_router(
     assessments.router, prefix="/assessments", tags=["assessments"]
 )
 api_router.include_router(results.router, prefix="/results", tags=["results"])
+api_router.include_router(payments.router, prefix="/payments", tags=["payments"])

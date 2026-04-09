@@ -9,6 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.deps import get_db
 from app.core.exceptions import BadRequestError, NotFoundError
 from app.models.assessment import Answer, Assessment
+from app.models.purchase import Purchase
 from app.models.question import Question
 from app.models.result import Result
 from app.schemas.assessment import (
@@ -28,7 +29,7 @@ class FullAssessmentSubmit(BaseModel):
     assessment_type: str = "quick"
     locale: str = "en"
     answers: list[AnswerItem]  # [{question_id: 1, answer: "YES"}, ...]
-    user_id: str | None = None  # Optional — links assessment to a user
+    user_id: str | None = None  # Optional  - links assessment to a user
     demographics: Demographics | None = None  # Optional pre-quiz demographics
 
 
@@ -86,19 +87,23 @@ async def submit_full_assessment(
         db.add(answer)
     await db.flush()
 
-    # 3. Map question_id -> section from the database
+    # 3. Map question_id -> section and bhava_tag from the database
     question_ids = [item.question_id for item in body.answers]
     q_result = await db.execute(
         select(Question).where(Question.id.in_(question_ids))
     )
-    questions = {q.id: q.section for q in q_result.scalars().all()}
+    questions = {q.id: {"section": q.section, "bhava_tag": q.bhava_tag} for q in q_result.scalars().all()}
 
-    # Build answer dicts for the scoring engine
+    # Build answer dicts for the scoring engine (include bhava_tag for sub-type classification)
     answer_list = []
     for item in body.answers:
-        section = questions.get(item.question_id)
-        if section:
-            answer_list.append({"section": section, "answer": item.answer.upper()})
+        q_info = questions.get(item.question_id)
+        if q_info:
+            answer_list.append({
+                "section": q_info["section"],
+                "answer": item.answer.upper(),
+                "bhava_tag": q_info.get("bhava_tag"),
+            })
 
     # 4. Run scoring engine
     engine = ScoringEngine()
@@ -127,11 +132,32 @@ async def submit_full_assessment(
         prakriti_type=scoring.prakriti_type,
         prakriti_subtype=scoring.prakriti_subtype,
         archetype_title=scoring.archetype_title,
+        subtype_key=scoring.subtype_key,
+        subtype_archetype=scoring.subtype_archetype,
+        subtype_animal=scoring.subtype_animal,
+        bhava_scores=scoring.bhava_scores,
         sattva_bala=scoring.sattva_bala,
     )
     db.add(result)
     await db.flush()
     await db.refresh(result)
+
+    # 6. For deep assessments, mark the purchase as used
+    if body.assessment_type in ("full", "deep") and body.user_id:
+        user_uuid = uuid.UUID(body.user_id)
+        purchase_result = await db.execute(
+            select(Purchase).where(
+                Purchase.user_id == user_uuid,
+                Purchase.product == "deep_assessment",
+                Purchase.status == "completed",
+                Purchase.assessment_id.is_(None),
+            ).order_by(Purchase.created_at.desc()).limit(1)
+        )
+        purchase = purchase_result.scalar_one_or_none()
+        if purchase:
+            purchase.assessment_id = assessment.id
+            await db.flush()
+
     return result
 
 
@@ -262,8 +288,13 @@ async def get_user_history(user_id: str, db: AsyncSession = Depends(get_db)):
             "assessment_type": a.assessment_type,
             "completed_at": a.completed_at.isoformat() if a.completed_at else None,
             "prakriti_type": r.prakriti_type if r else None,
+            "prakriti_subtype": r.prakriti_subtype if r else None,
             "archetype_title": r.archetype_title if r else None,
+            "subtype_archetype": r.subtype_archetype if r else None,
             "sattva_bala": r.sattva_bala if r else None,
+            "sattva_pct": float(r.sattva_secondary_pct) if r else None,
+            "rajas_pct": float(r.rajas_secondary_pct) if r else None,
+            "tamas_pct": float(r.tamas_secondary_pct) if r else None,
         })
 
     return {"history": history}

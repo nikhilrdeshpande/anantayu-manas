@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { PrakritiCard } from '../components/results/PrakritiCard';
@@ -8,10 +8,11 @@ import { DetailedReport } from '../components/results/DetailedReport';
 import { AIInsights } from '../components/results/AIInsights';
 import { useAssessmentStore } from '../stores/assessment-store';
 import { PRAKRITI_DATA } from '../lib/prakriti-data';
+import { manas } from '../lib/api';
 import type { ScoringResult, SattvaBalaGrade, GunaType } from '../types';
 import type { ApiResult } from '../lib/api';
 
-// Sample data for development — always shows something useful
+// Sample data for development  - always shows something useful
 const SAMPLE_RESULT: ScoringResult = {
   sattvaYes: 7,
   sattvaNo: 1,
@@ -104,13 +105,25 @@ function apiResultToScoringResult(sr: ApiResult): ScoringResult {
 
 export default function Results() {
   const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
   const scoringResult = useAssessmentStore((s) => s.scoringResult);
   const serverResult = useAssessmentStore((s) => s.serverResult);
-  const assessmentId = useAssessmentStore((s) => s.assessmentId);
+  const storeAssessmentId = useAssessmentStore((s) => s.assessmentId);
+  const [fetchedResult, setFetchedResult] = useState<ApiResult | null>(null);
 
-  // Prefer server result, fall back to client-side, then localStorage, then sample
+  // Fetch from API if we have a real assessment ID in the URL
+  useEffect(() => {
+    if (id && id !== 'local' && !serverResult) {
+      manas.getResult(id).then(setFetchedResult).catch(() => {});
+    }
+  }, [id, serverResult]);
+
+  const assessmentId = storeAssessmentId || (fetchedResult?.assessment_id) || id || null;
+
+  // Prefer server result, fall back to fetched, client-side, localStorage, sample
   const result: ScoringResult = useMemo(() => {
     if (serverResult) return apiResultToScoringResult(serverResult);
+    if (fetchedResult) return apiResultToScoringResult(fetchedResult);
     if (scoringResult) return scoringResult;
 
     // Try localStorage fallbacks
@@ -127,7 +140,7 @@ export default function Results() {
     }
 
     return SAMPLE_RESULT;
-  }, [serverResult, scoringResult]);
+  }, [serverResult, fetchedResult, scoringResult]);
 
   const prakritiInfo = useMemo(() => lookupPrakritiData(result.prakritiType), [result.prakritiType]);
 

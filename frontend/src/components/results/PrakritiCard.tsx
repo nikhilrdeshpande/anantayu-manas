@@ -93,7 +93,7 @@ export function PrakritiCard({
           Mental Strength
         </span>
         <span className="text-sm font-semibold" style={{ color: '#d4a017' }}>
-          {sattvaBala.charAt(0).toUpperCase() + sattvaBala.slice(1)} — {BALA_LABELS[sattvaBala]}
+          {sattvaBala.charAt(0).toUpperCase() + sattvaBala.slice(1)}  - {BALA_LABELS[sattvaBala]}
         </span>
       </div>
 

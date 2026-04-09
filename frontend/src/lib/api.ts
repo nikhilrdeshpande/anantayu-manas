@@ -97,9 +97,29 @@ export interface ApiResult {
   prakriti_type: string;
   prakriti_subtype: string | null;
   archetype_title: string | null;
+  subtype_key: string | null;
+  subtype_archetype: string | null;
+  subtype_animal: string | null;
+  bhava_scores: Record<string, number> | null;
   sattva_bala: string;
   ai_insights: Record<string, string> | null;
   created_at: string;
+}
+
+export interface RazorpayOrder {
+  order_id: string;
+  amount: number;
+  currency: string;
+  key_id: string;
+}
+
+export interface PurchaseInfo {
+  id: string;
+  product: string;
+  amount: number;
+  currency: string;
+  status: string;
+  created_at: string | null;
 }
 
 export const manas = {
@@ -145,4 +165,34 @@ export const manas = {
     api.get<{ has_demographics: boolean; demographics?: ApiDemographics }>(
       `/api/v1/assessments/demographics/${userId}`
     ),
+
+  // Payments
+  createOrder: (userId: string, product = 'deep_assessment') =>
+    api.post<RazorpayOrder>('/api/v1/payments/create-order', { user_id: userId, product }),
+
+  verifyPayment: (userId: string, razorpayOrderId: string, razorpayPaymentId: string, razorpaySignature: string) =>
+    api.post<{ status: string; purchase_id: string; product: string }>('/api/v1/payments/verify', {
+      user_id: userId,
+      razorpay_order_id: razorpayOrderId,
+      razorpay_payment_id: razorpayPaymentId,
+      razorpay_signature: razorpaySignature,
+    }),
+
+  getPurchases: (userId: string) =>
+    api.get<{ purchases: PurchaseInfo[] }>(`/api/v1/payments/purchases/${userId}`),
+
+  hasAccess: (userId: string, product = 'deep_assessment') =>
+    api.get<{ has_access: boolean }>(`/api/v1/payments/has-access/${userId}/${product}`),
+
+  // Subtype profile
+  getSubtypeProfile: (assessmentId: string) =>
+    api.get<{ has_profile: boolean; subtype_key?: string; profile?: Record<string, unknown> }>(
+      `/api/v1/results/${assessmentId}/subtype-profile`
+    ),
+
+  // Deep insights (premium)
+  streamDeepInsights: (assessmentId: string, userId: string, locale = 'en') => {
+    const url = `${API_BASE_URL}/api/v1/results/${assessmentId}/deep-insights?user_id=${userId}&locale=${locale}`;
+    return fetch(url);
+  },
 };

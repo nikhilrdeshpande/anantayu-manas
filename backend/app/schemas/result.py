@@ -33,6 +33,10 @@ class ResultResponse(BaseModel):
     prakriti_type: str
     prakriti_subtype: str | None = None
     archetype_title: str | None = None
+    subtype_key: str | None = None
+    subtype_archetype: str | None = None
+    subtype_animal: str | None = None
+    bhava_scores: dict[str, int] | None = None
     sattva_bala: str
 
     ai_insights: dict[str, Any] | None = None

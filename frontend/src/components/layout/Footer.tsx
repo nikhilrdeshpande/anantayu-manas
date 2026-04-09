@@ -13,8 +13,8 @@ export function Footer() {
 
   const foundationLinks = [
     { label: 'About Anantayu', to: `/${locale}` },
-    { label: 'Ayurvedic Philosophy', to: `/${locale}` },
-    { label: 'Research & Sources', to: `/${locale}` },
+    { label: 'The Science', to: `/${locale}/science` },
+    { label: 'Consult an Expert', to: `/${locale}/pricing` },
     { label: 'Privacy Policy', to: `/${locale}` },
   ];
 

@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import type { AnswerValue, AssessmentPhase, AssessmentType, GunaType, Question, ScoringResult, SattvaBalaGrade } from '../types';
-import { SECTION_ORDER, SECTION_CONFIG } from '../lib/constants';
+import { SECTION_ORDER, SECTION_CONFIG, DEEP_SECTION_CONFIG } from '../lib/constants';
 import { manas, type ApiDemographics, type ApiResult } from '../lib/api';
-import questionsData from '../data/questions_quick_en.json';
+import quickQuestionsData from '../data/questions_quick_en.json';
+import fullQuestionsData from '../data/questions_full_en.json';
 
 // ── Storage helpers ──
 const STORAGE_KEY = 'manas_assessment_answers';
@@ -28,31 +29,38 @@ function clearAnswers() {
 }
 
 // ── Section boundary helpers ──
-function getSectionStartIndex(section: GunaType): number {
+function getConfig(type: AssessmentType) {
+  return type === 'deep' ? DEEP_SECTION_CONFIG : SECTION_CONFIG;
+}
+
+function getSectionStartIndex(section: GunaType, type: AssessmentType = 'quick'): number {
+  const config = getConfig(type);
   let start = 0;
   for (const s of SECTION_ORDER) {
     if (s === section) return start;
-    start += SECTION_CONFIG[s].questions;
+    start += config[s].questions;
   }
   return start;
 }
 
-function getSectionForGlobalIndex(index: number): GunaType {
+function getSectionForGlobalIndex(index: number, type: AssessmentType = 'quick'): GunaType {
+  const config = getConfig(type);
   let cumulative = 0;
   for (const s of SECTION_ORDER) {
-    cumulative += SECTION_CONFIG[s].questions;
+    cumulative += config[s].questions;
     if (index < cumulative) return s;
   }
   return 'tamas';
 }
 
-function getIndexWithinSection(globalIndex: number): number {
-  const section = getSectionForGlobalIndex(globalIndex);
-  return globalIndex - getSectionStartIndex(section);
+function getIndexWithinSection(globalIndex: number, type: AssessmentType = 'quick'): number {
+  const section = getSectionForGlobalIndex(globalIndex, type);
+  return globalIndex - getSectionStartIndex(section, type);
 }
 
-function getTotalQuestions(): number {
-  return SECTION_ORDER.reduce((sum, s) => sum + SECTION_CONFIG[s].questions, 0);
+function getTotalQuestions(type: AssessmentType = 'quick'): number {
+  const config = getConfig(type);
+  return SECTION_ORDER.reduce((sum, s) => sum + config[s].questions, 0);
 }
 
 // ── Scoring ──
@@ -71,8 +79,9 @@ const DUAL_TYPES: Record<string, { prakritiType: string; archetypeTitle: string 
   'rajas-tamas': { prakritiType: 'Rajo-Tamasika', archetypeTitle: 'The Restless Warrior' },
 };
 
-function computeScoringResult(answers: Record<number, AnswerValue>, questions: Question[]): ScoringResult {
-  const totals = { sattva: 10, rajas: 10, tamas: 5 };
+function computeScoringResult(answers: Record<number, AnswerValue>, questions: Question[], type: AssessmentType = 'quick'): ScoringResult {
+  const config = getConfig(type);
+  const totals = { sattva: config.sattva.questions, rajas: config.rajas.questions, tamas: config.tamas.questions };
 
   // Step 1: Count raw answers per section
   const counts: Record<GunaType, Record<string, number>> = {
@@ -204,7 +213,7 @@ interface AssessmentState {
   sectionProgress: () => { sattva: number; rajas: number; tamas: number };
 
   // Actions
-  loadQuestions: () => void;
+  loadQuestions: (type?: AssessmentType) => void;
   setAnswer: (questionId: number, answer: AnswerValue) => void;
   nextQuestion: () => 'next' | 'transition' | 'complete';
   previousQuestion: () => void;
@@ -231,8 +240,8 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => {
     serverResult: null,
     demographics: null,
 
-    currentSection: () => getSectionForGlobalIndex(get().currentQuestionIndex),
-    currentSectionIndex: () => getIndexWithinSection(get().currentQuestionIndex),
+    currentSection: () => getSectionForGlobalIndex(get().currentQuestionIndex, get().assessmentType),
+    currentSectionIndex: () => getIndexWithinSection(get().currentQuestionIndex, get().assessmentType),
 
     totalAnswered: () => Object.keys(get().answers).length,
 
@@ -247,9 +256,11 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => {
       return progress;
     },
 
-    loadQuestions: () => {
-      const questions = (questionsData as Question[]);
-      set({ questions });
+    loadQuestions: (type?: AssessmentType) => {
+      const assessmentType = type || get().assessmentType;
+      const data = assessmentType === 'deep' ? fullQuestionsData : quickQuestionsData;
+      const questions = data as Question[];
+      set({ questions, assessmentType });
     },
 
     setAnswer: (questionId, answer) => {
@@ -265,22 +276,20 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => {
     },
 
     nextQuestion: () => {
-      const { currentQuestionIndex } = get();
-      const total = getTotalQuestions();
-      const currentSection = getSectionForGlobalIndex(currentQuestionIndex);
+      const { currentQuestionIndex, assessmentType } = get();
+      const total = getTotalQuestions(assessmentType);
+      const currentSection = getSectionForGlobalIndex(currentQuestionIndex, assessmentType);
 
       if (currentQuestionIndex >= total - 1) {
-        // Last question overall
         return 'complete';
       }
 
       const nextIndex = currentQuestionIndex + 1;
-      const nextSection = getSectionForGlobalIndex(nextIndex);
+      const nextSection = getSectionForGlobalIndex(nextIndex, assessmentType);
 
       set({ currentQuestionIndex: nextIndex });
 
       if (nextSection !== currentSection) {
-        // Crossing section boundary
         return 'transition';
       }
 
@@ -297,8 +306,8 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => {
     setPhase: (phase) => set({ phase }),
 
     computeResults: () => {
-      const { answers, questions } = get();
-      const result = computeScoringResult(answers, questions);
+      const { answers, questions, assessmentType } = get();
+      const result = computeScoringResult(answers, questions, assessmentType);
       set({ scoringResult: result, phase: 'complete' });
 
       // Persist result to localStorage for Results page

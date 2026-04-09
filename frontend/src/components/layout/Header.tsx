@@ -9,16 +9,22 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, isAuthenticated, logout } = useAuthStore();
 
-  const navLinks = [
-    { label: 'Home', to: `/${locale}` },
-    { label: 'Prakriti', to: `/${locale}/assessment/intro` },
-    { label: 'Insights', to: `/${locale}/insights` },
-  ];
+  const navLinks = isAuthenticated
+    ? [
+        { label: 'Dashboard', to: `/${locale}/dashboard` },
+        { label: 'Assessment', to: `/${locale}/assessment/intro` },
+        { label: 'Science', to: `/${locale}/science` },
+      ]
+    : [
+        { label: 'Home', to: `/${locale}` },
+        { label: 'Assessment', to: `/${locale}/assessment/intro` },
+        { label: 'Science', to: `/${locale}/science` },
+      ];
 
   return (
     <header className="sticky top-0 z-50 bg-[#1A1A1A] border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Brand — logo image */}
+        {/* Brand  - logo image */}
         <Link to={`/${locale}`} className="flex items-center gap-2 shrink-0">
           <img
             src="/anantayu-logo-dark.png"
@@ -48,7 +54,7 @@ export function Header() {
           <div className="hidden md:flex items-center">
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
-                <Link to={`/${locale}/profile`} className="flex items-center gap-2 group">
+                <Link to={`/${locale}/dashboard`} className="flex items-center gap-2 group">
                   <div className="w-8 h-8 rounded-full bg-[#d4a017] flex items-center justify-center text-white text-sm font-bold">
                     {user?.name?.charAt(0).toUpperCase()}
                   </div>
@@ -103,7 +109,7 @@ export function Header() {
             {isAuthenticated ? (
               <>
                 <Link
-                  to={`/${locale}/profile`}
+                  to={`/${locale}/dashboard`}
                   className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors mb-3"
                   onClick={() => setMobileOpen(false)}
                 >

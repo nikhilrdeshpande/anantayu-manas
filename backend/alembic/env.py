@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from app.database import Base
 
 # Import all models so they are registered on Base.metadata
-from app.models import Answer, Assessment, Question, Result, User  # noqa: F401
+from app.models import Answer, Assessment, Purchase, Question, Result, User  # noqa: F401
 
 config = context.config
 if config.config_file_name is not None:

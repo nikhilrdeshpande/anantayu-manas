@@ -1,19 +1,19 @@
+import json
 import uuid
+from pathlib import Path as FilePath
 
 from fastapi import APIRouter, Depends, Path, Query
 from fastapi.responses import StreamingResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.api.deps import get_db
-from app.core.exceptions import BadRequestError, NotFoundError
+from app.api.deps import get_db, verify_deep_assessment_purchase, verify_deep_report_access
+from app.core.exceptions import BadRequestError, NotFoundError, UnauthorizedError
 from app.models.assessment import Answer, Assessment
 from app.models.result import Result
 from app.schemas.result import ResultResponse
 from app.services.ai_insights import AIInsightsService
 from app.services.scoring_engine import ScoringEngine
-
-from sqlalchemy.orm import selectinload
 
 router = APIRouter()
 
@@ -46,21 +46,23 @@ async def compute_result(
     answers = answers_result.scalars().all()
 
     # Load questions to map question_id -> section
-    import json
-    from pathlib import Path as FilePath
-
     data_dir = FilePath(__file__).resolve().parent.parent.parent / "data"
-    qfile = f"questions_{assessment.assessment_type}_en.json"
+    atype = "full" if assessment.assessment_type == "deep" else assessment.assessment_type
+    qfile = f"questions_{atype}_en.json"
     with open(data_dir / qfile) as f:
         questions_data = json.load(f)
-    question_section_map = {q["id"]: q["section"] for q in questions_data}
+    question_map = {q["id"]: q for q in questions_data}
 
-    # Build answer dicts for scoring engine
+    # Build answer dicts for scoring engine (include bhava_tag for sub-type classification)
     answer_list = []
     for a in answers:
-        section = question_section_map.get(a.question_id)
-        if section:
-            answer_list.append({"section": section, "answer": a.answer})
+        q_data = question_map.get(a.question_id)
+        if q_data:
+            answer_list.append({
+                "section": q_data["section"],
+                "answer": a.answer,
+                "bhava_tag": q_data.get("bhava_tag"),
+            })
 
     engine = ScoringEngine()
     scoring = engine.score(answer_list, assessment.assessment_type)
@@ -87,6 +89,10 @@ async def compute_result(
         prakriti_type=scoring.prakriti_type,
         prakriti_subtype=scoring.prakriti_subtype,
         archetype_title=scoring.archetype_title,
+        subtype_key=scoring.subtype_key,
+        subtype_archetype=scoring.subtype_archetype,
+        subtype_animal=scoring.subtype_animal,
+        bhava_scores=scoring.bhava_scores,
         sattva_bala=scoring.sattva_bala,
     )
     db.add(result)
@@ -106,6 +112,36 @@ async def get_result(
     if not r:
         raise NotFoundError("Result not found for this assessment")
     return r
+
+
+@router.get("/{assessment_id}/subtype-profile")
+async def get_subtype_profile(
+    assessment_id: uuid.UUID = Path(),
+    db: AsyncSession = Depends(get_db),
+):
+    """Get the full subtype profile data for a deep assessment result."""
+    result_row = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    r = result_row.scalar_one_or_none()
+    if not r:
+        raise NotFoundError("Result not found")
+    if not r.subtype_key:
+        return {"has_profile": False}
+
+    data_dir = FilePath(__file__).resolve().parent.parent.parent / "data"
+    with open(data_dir / "svabhava_profiles.json") as f:
+        profiles_data = json.load(f)
+
+    profile = profiles_data.get("subtype_profiles", {}).get(r.subtype_key)
+    if not profile:
+        return {"has_profile": False}
+
+    return {
+        "has_profile": True,
+        "subtype_key": r.subtype_key,
+        "profile": profile,
+    }
 
 
 @router.get("/{assessment_id}/insights")
@@ -158,3 +194,84 @@ async def stream_insights(
         # (fire and forget - don't block the stream)
 
     return StreamingResponse(insight_stream(), media_type="text/plain")
+
+
+@router.get("/{assessment_id}/deep-insights")
+async def stream_deep_insights(
+    assessment_id: uuid.UUID = Path(),
+    user_id: str = Query(...),
+    locale: str = Query("en"),
+    db: AsyncSession = Depends(get_db),
+):
+    """Stream comprehensive premium report. Requires completed purchase."""
+    user_uuid = uuid.UUID(user_id)
+
+    # Verify purchase  - either an unused purchase OR a purchase linked to this assessment
+    has_unused = await verify_deep_assessment_purchase(user_uuid, db)
+    has_report = await verify_deep_report_access(user_uuid, assessment_id, db)
+    if not has_unused and not has_report:
+        raise UnauthorizedError("Purchase required to access deep insights")
+
+    # Load result
+    result_row = await db.execute(
+        select(Result).where(Result.assessment_id == assessment_id)
+    )
+    r = result_row.scalar_one_or_none()
+    if not r:
+        raise NotFoundError("Result not found")
+
+    # Check cache
+    cache_key = f"deep_{locale}"
+    if r.ai_insights and cache_key in (r.ai_insights or {}):
+        async def cached_stream():
+            yield r.ai_insights[cache_key]
+        return StreamingResponse(cached_stream(), media_type="text/plain")
+
+    # Load demographics
+    assess_row = await db.execute(
+        select(Assessment).where(Assessment.id == assessment_id)
+    )
+    assessment = assess_row.scalar_one_or_none()
+    demographics = assessment.demographics if assessment else None
+
+    # Load subtype profile from data file
+    subtype_profile = None
+    if r.subtype_key:
+        data_dir = FilePath(__file__).resolve().parent.parent.parent / "data"
+        with open(data_dir / "svabhava_profiles.json") as f:
+            profiles_data = json.load(f)
+        subtype_profile = profiles_data.get("subtype_profiles", {}).get(r.subtype_key)
+
+    service = AIInsightsService()
+    collected_text = []
+
+    async def deep_stream():
+        async for chunk in service.generate_deep_report_stream(
+            prakriti_type=r.prakriti_type,
+            subtype_key=r.subtype_key,
+            subtype_name=r.prakriti_subtype,
+            subtype_archetype=r.subtype_archetype,
+            subtype_animal=r.subtype_animal,
+            primary_guna=r.primary_dominant_guna,
+            secondary_guna=r.secondary_dominant_guna,
+            sattva_pct=float(r.sattva_secondary_pct),
+            rajas_pct=float(r.rajas_secondary_pct),
+            tamas_pct=float(r.tamas_secondary_pct),
+            sattva_bala=r.sattva_bala,
+            bhava_scores=r.bhava_scores,
+            demographics=demographics,
+            subtype_profile=subtype_profile,
+            locale=locale,
+        ):
+            collected_text.append(chunk)
+            yield chunk
+
+        # Cache after streaming completes
+        full_text = "".join(collected_text)
+        if full_text:
+            current_insights = r.ai_insights or {}
+            current_insights[cache_key] = full_text
+            r.ai_insights = current_insights
+            await db.commit()
+
+    return StreamingResponse(deep_stream(), media_type="text/plain")

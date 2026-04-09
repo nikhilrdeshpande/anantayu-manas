@@ -63,7 +63,7 @@ export function Hero() {
 
           {/* Right side: hero images from Stitch */}
           <div className="relative flex justify-center lg:justify-end">
-            {/* Main image — Meditation */}
+            {/* Main image  - Meditation */}
             <div className="w-[280px] h-[400px] md:w-[380px] md:h-[520px] rounded-2xl overflow-hidden shadow-2xl rotate-3 bg-stone-900 border border-white/5 p-3">
               <img
                 src="/images/hero-meditation.jpg"
@@ -72,7 +72,7 @@ export function Hero() {
               />
             </div>
 
-            {/* Secondary image — Herbs */}
+            {/* Secondary image  - Herbs */}
             <div className="absolute -bottom-8 -left-8 w-[200px] h-[270px] rounded-2xl overflow-hidden shadow-2xl -rotate-6 hidden md:block bg-stone-900 border border-white/5 p-3">
               <img
                 src="/images/hero-herbs.jpg"

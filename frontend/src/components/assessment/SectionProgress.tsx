@@ -1,4 +1,5 @@
-import { SECTION_ORDER, SECTION_CONFIG } from '../../lib/constants';
+import { SECTION_ORDER, SECTION_CONFIG, DEEP_SECTION_CONFIG } from '../../lib/constants';
+import { useAssessmentStore } from '../../stores/assessment-store';
 import type { GunaType } from '../../types';
 
 const SECTION_COLORS: Record<GunaType, string> = {
@@ -13,21 +14,24 @@ interface SectionProgressProps {
 }
 
 export function SectionProgress({ currentGlobalIndex, sectionProgress }: SectionProgressProps) {
+  const assessmentType = useAssessmentStore((s) => s.assessmentType);
+  const config = assessmentType === 'deep' ? DEEP_SECTION_CONFIG : SECTION_CONFIG;
+
   // Determine current section
   let cumulative = 0;
   let currentSection: GunaType = 'sattva';
   for (const s of SECTION_ORDER) {
-    if (currentGlobalIndex < cumulative + SECTION_CONFIG[s].questions) {
+    if (currentGlobalIndex < cumulative + config[s].questions) {
       currentSection = s;
       break;
     }
-    cumulative += SECTION_CONFIG[s].questions;
+    cumulative += config[s].questions;
   }
 
   return (
     <div className="flex gap-1.5 w-full">
       {SECTION_ORDER.map((section) => {
-        const total = SECTION_CONFIG[section].questions;
+        const total = config[section].questions;
         const answered = sectionProgress[section];
         const color = SECTION_COLORS[section];
 

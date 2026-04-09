@@ -13,6 +13,11 @@ class Settings(BaseSettings):
     GEMINI_API_KEY: str = ""
     OPENAI_API_KEY: str = ""
 
+    # Razorpay Configuration
+    RAZORPAY_KEY_ID: str = ""
+    RAZORPAY_KEY_SECRET: str = ""
+    DEEP_ASSESSMENT_PRICE_PAISE: int = 39900  # ₹399 in paise
+
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
 

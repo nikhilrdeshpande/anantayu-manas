@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from 'react';
 import { Leaf, Zap, Mountain } from 'lucide-react';
-import { SECTION_ORDER, SECTION_CONFIG } from '../../lib/constants';
+import { SECTION_ORDER, SECTION_CONFIG, DEEP_SECTION_CONFIG } from '../../lib/constants';
+import { useAssessmentStore } from '../../stores/assessment-store';
 import type { GunaType } from '../../types';
 
 const SECTION_META: Record<GunaType, {
@@ -39,11 +40,13 @@ interface SectionTransitionProps {
 }
 
 export function SectionTransition({ nextSection, onContinue }: SectionTransitionProps) {
+  const assessmentType = useAssessmentStore((s) => s.assessmentType);
+  const config = assessmentType === 'deep' ? DEEP_SECTION_CONFIG : SECTION_CONFIG;
   const meta = SECTION_META[nextSection];
   const Icon = meta.Icon;
   const partNumber = SECTION_ORDER.indexOf(nextSection) + 1;
   const remainingQuestions = SECTION_ORDER.slice(SECTION_ORDER.indexOf(nextSection)).reduce(
-    (sum, s) => sum + SECTION_CONFIG[s].questions, 0
+    (sum, s) => sum + config[s].questions, 0
   );
 
   const handleContinue = useCallback(() => {

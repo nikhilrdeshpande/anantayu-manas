@@ -2,10 +2,15 @@ import { createBrowserRouter } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 const Landing = lazy(() => import('./pages/Landing'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
 const AssessmentIntro = lazy(() => import('./pages/AssessmentIntro'));
 const Assessment = lazy(() => import('./pages/Assessment'));
 const Results = lazy(() => import('./pages/Results'));
 const DeepAssessment = lazy(() => import('./pages/DeepAssessment'));
+const DeepResults = lazy(() => import('./pages/DeepResults'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const PaymentSuccess = lazy(() => import('./pages/PaymentSuccess'));
+const Science = lazy(() => import('./pages/Science'));
 const Login = lazy(() => import('./pages/Login'));
 const SignUp = lazy(() => import('./pages/SignUp'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -46,6 +51,16 @@ export const router = createBrowserRouter([
     ),
   },
 
+  /* Dashboard (logged-in home) */
+  {
+    path: '/:locale/dashboard',
+    element: (
+      <SuspenseWrapper>
+        <Dashboard />
+      </SuspenseWrapper>
+    ),
+  },
+
   /* Assessment flow - minimal layout (no footer, handled by page itself) */
   {
     path: '/:locale/assessment/intro',
@@ -80,6 +95,41 @@ export const router = createBrowserRouter([
     element: (
       <SuspenseWrapper>
         <DeepAssessment />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: '/:locale/deep-results/:id',
+    element: (
+      <SuspenseWrapper>
+        <DeepResults />
+      </SuspenseWrapper>
+    ),
+  },
+
+  /* Pricing */
+  {
+    path: '/:locale/pricing',
+    element: (
+      <SuspenseWrapper>
+        <Pricing />
+      </SuspenseWrapper>
+    ),
+  },
+
+  {
+    path: '/:locale/science',
+    element: (
+      <SuspenseWrapper>
+        <Science />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: '/:locale/payment-success',
+    element: (
+      <SuspenseWrapper>
+        <PaymentSuccess />
       </SuspenseWrapper>
     ),
   },

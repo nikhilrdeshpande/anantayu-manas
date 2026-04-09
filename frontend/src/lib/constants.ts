@@ -14,6 +14,12 @@ export const SECTION_CONFIG: Record<GunaType, { labelKey: string; questions: num
   tamas: { labelKey: 'assessment:sections.tamas', questions: 5, label: 'Tamas', subtitle: 'Stability & Grounding' },
 };
 
+export const DEEP_SECTION_CONFIG: Record<GunaType, { labelKey: string; questions: number; label: string; subtitle: string }> = {
+  sattva: { labelKey: 'assessment:sections.sattva', questions: 30, label: 'Sattva', subtitle: 'Purity & Balance' },
+  rajas: { labelKey: 'assessment:sections.rajas', questions: 30, label: 'Rajas', subtitle: 'Energy & Action' },
+  tamas: { labelKey: 'assessment:sections.tamas', questions: 20, label: 'Tamas', subtitle: 'Stability & Grounding' },
+};
+
 export const PRAKRITI_TYPES: Record<PrakritiType, { nameKey: string; archetypeKey: string }> = {
   vata: { nameKey: 'results:types.vata.name', archetypeKey: 'results:types.vata.archetype' },
   pitta: { nameKey: 'results:types.pitta.name', archetypeKey: 'results:types.pitta.archetype' },

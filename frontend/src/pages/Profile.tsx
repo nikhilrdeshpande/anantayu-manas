@@ -31,7 +31,7 @@ export default function Profile() {
         setHistory(data.history || []);
       })
       .catch(() => {
-        // Silently fail — history just won't show
+        // Silently fail  - history just won't show
       })
       .finally(() => setLoadingHistory(false));
   }, [isAuthenticated, user, navigate, locale]);
@@ -137,7 +137,7 @@ export default function Profile() {
                         {item.prakriti_type}
                         {item.archetype_title && (
                           <span className="text-[#817662] font-normal ml-1.5">
-                            — {item.archetype_title}
+                             - {item.archetype_title}
                           </span>
                         )}
                       </p>

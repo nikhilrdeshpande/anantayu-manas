@@ -1,0 +1,642 @@
+[
+  {
+    "id": 1,
+    "section": "sattva",
+    "question_number": 1,
+    "text_en": "Do you believe in the thought, 'live and let live'?",
+    "bhava_tag": "ahimsa",
+    "bhava_description_en": "non-violence"
+  },
+  {
+    "id": 2,
+    "section": "sattva",
+    "question_number": 2,
+    "text_en": "Do you always speak the truth?",
+    "bhava_tag": "satya",
+    "bhava_description_en": "truthfulness"
+  },
+  {
+    "id": 3,
+    "section": "sattva",
+    "question_number": 3,
+    "text_en": "Do you believe that stealing (taking what is not yours) is a sin?",
+    "bhava_tag": "asteya",
+    "bhava_description_en": "non-stealing"
+  },
+  {
+    "id": 4,
+    "section": "sattva",
+    "question_number": 4,
+    "text_en": "Do you perform your duties religiously?",
+    "bhava_tag": "dharma",
+    "bhava_description_en": "righteousness"
+  },
+  {
+    "id": 5,
+    "section": "sattva",
+    "question_number": 5,
+    "text_en": "Do you believe that whatever happens, happens because of one's own deeds (karma)?",
+    "bhava_tag": "astikya",
+    "bhava_description_en": "faith in karma"
+  },
+  {
+    "id": 6,
+    "section": "sattva",
+    "question_number": 6,
+    "text_en": "Do you keep calm in every situation?",
+    "bhava_tag": "kshama",
+    "bhava_description_en": "forgiveness"
+  },
+  {
+    "id": 7,
+    "section": "sattva",
+    "question_number": 7,
+    "text_en": "Are you always patient when waiting in a queue?",
+    "bhava_tag": "dhairya",
+    "bhava_description_en": "patience"
+  },
+  {
+    "id": 8,
+    "section": "sattva",
+    "question_number": 8,
+    "text_en": "Do you follow traffic rules strictly even when no one is watching?",
+    "bhava_tag": "achara",
+    "bhava_description_en": "good conduct"
+  },
+  {
+    "id": 9,
+    "section": "sattva",
+    "question_number": 9,
+    "text_en": "Do you believe that hard work always pays off?",
+    "bhava_tag": "prayatna",
+    "bhava_description_en": "effort and perseverance"
+  },
+  {
+    "id": 10,
+    "section": "sattva",
+    "question_number": 10,
+    "text_en": "Do you have a spirit of gratitude in daily life?",
+    "bhava_tag": "kritajna",
+    "bhava_description_en": "gratitude"
+  },
+  {
+    "id": 11,
+    "section": "sattva",
+    "question_number": 11,
+    "text_en": "Do you avoid taking credit for your team's work?",
+    "bhava_tag": "anahamkara",
+    "bhava_description_en": "egolessness"
+  },
+  {
+    "id": 12,
+    "section": "sattva",
+    "question_number": 12,
+    "text_en": "Do you easily retain what you have learned?",
+    "bhava_tag": "medha",
+    "bhava_description_en": "intellect"
+  },
+  {
+    "id": 13,
+    "section": "sattva",
+    "question_number": 13,
+    "text_en": "Do you like to do humanitarian work without expecting any reward?",
+    "bhava_tag": "tyaga",
+    "bhava_description_en": "selfless service"
+  },
+  {
+    "id": 14,
+    "section": "sattva",
+    "question_number": 14,
+    "text_en": "Do you believe that development should not come at the cost of destroying nature?",
+    "bhava_tag": "shaucha",
+    "bhava_description_en": "purity of environment"
+  },
+  {
+    "id": 15,
+    "section": "sattva",
+    "question_number": 15,
+    "text_en": "Do you respect your elders and teachers?",
+    "bhava_tag": "guru_bhakti",
+    "bhava_description_en": "respect for elders"
+  },
+  {
+    "id": 16,
+    "section": "sattva",
+    "question_number": 16,
+    "text_en": "Do you treat everyone equally regardless of their status?",
+    "bhava_tag": "samata",
+    "bhava_description_en": "equanimity"
+  },
+  {
+    "id": 17,
+    "section": "sattva",
+    "question_number": 17,
+    "text_en": "Do you have a habit of donating a part of your earnings?",
+    "bhava_tag": "dana",
+    "bhava_description_en": "charity"
+  },
+  {
+    "id": 18,
+    "section": "sattva",
+    "question_number": 18,
+    "text_en": "Do you take interest in reading or gaining knowledge?",
+    "bhava_tag": "jnana",
+    "bhava_description_en": "love for knowledge"
+  },
+  {
+    "id": 19,
+    "section": "sattva",
+    "question_number": 19,
+    "text_en": "Do you feel content with what you have?",
+    "bhava_tag": "santosha",
+    "bhava_description_en": "contentment"
+  },
+  {
+    "id": 20,
+    "section": "sattva",
+    "question_number": 20,
+    "text_en": "Do you accept criticism without getting upset?",
+    "bhava_tag": "titiksha",
+    "bhava_description_en": "endurance"
+  },
+  {
+    "id": 21,
+    "section": "sattva",
+    "question_number": 21,
+    "text_en": "Do you practice self-discipline in your daily routine?",
+    "bhava_tag": "tapas",
+    "bhava_description_en": "austerity"
+  },
+  {
+    "id": 22,
+    "section": "sattva",
+    "question_number": 22,
+    "text_en": "Do you maintain cleanliness in your personal and professional space?",
+    "bhava_tag": "shaucha_shareera",
+    "bhava_description_en": "personal hygiene"
+  },
+  {
+    "id": 23,
+    "section": "sattva",
+    "question_number": 23,
+    "text_en": "Do you stay calm when others provoke you?",
+    "bhava_tag": "akrodha",
+    "bhava_description_en": "non-anger"
+  },
+  {
+    "id": 24,
+    "section": "sattva",
+    "question_number": 24,
+    "text_en": "Do you think before you act?",
+    "bhava_tag": "viveka",
+    "bhava_description_en": "discrimination"
+  },
+  {
+    "id": 25,
+    "section": "sattva",
+    "question_number": 25,
+    "text_en": "Do you avoid gossiping about others?",
+    "bhava_tag": "anasūyā",
+    "bhava_description_en": "non-envy"
+  },
+  {
+    "id": 26,
+    "section": "sattva",
+    "question_number": 26,
+    "text_en": "Do you share your resources with those in need?",
+    "bhava_tag": "aparigraha",
+    "bhava_description_en": "non-possessiveness"
+  },
+  {
+    "id": 27,
+    "section": "sattva",
+    "question_number": 27,
+    "text_en": "Do you keep your promises?",
+    "bhava_tag": "pratigya_palana",
+    "bhava_description_en": "commitment"
+  },
+  {
+    "id": 28,
+    "section": "sattva",
+    "question_number": 28,
+    "text_en": "Do you believe in the power of meditation and prayer?",
+    "bhava_tag": "upasana",
+    "bhava_description_en": "spiritual practice"
+  },
+  {
+    "id": 29,
+    "section": "sattva",
+    "question_number": 29,
+    "text_en": "Do you adapt easily to changing situations?",
+    "bhava_tag": "anukulata",
+    "bhava_description_en": "adaptability"
+  },
+  {
+    "id": 30,
+    "section": "sattva",
+    "question_number": 30,
+    "text_en": "Do you feel a sense of purpose in your daily activities?",
+    "bhava_tag": "lakshya",
+    "bhava_description_en": "purposefulness"
+  },
+  {
+    "id": 31,
+    "section": "rajas",
+    "question_number": 1,
+    "text_en": "Do you become impatient when your work takes longer than expected?",
+    "bhava_tag": "amarsha",
+    "bhava_description_en": "impatience"
+  },
+  {
+    "id": 32,
+    "section": "rajas",
+    "question_number": 2,
+    "text_en": "Do you feel proud when you achieve a goal?",
+    "bhava_tag": "mana",
+    "bhava_description_en": "pride"
+  },
+  {
+    "id": 33,
+    "section": "rajas",
+    "question_number": 3,
+    "text_en": "Do you express your pride openly to others?",
+    "bhava_tag": "ahamkara",
+    "bhava_description_en": "ego"
+  },
+  {
+    "id": 34,
+    "section": "rajas",
+    "question_number": 4,
+    "text_en": "Do you enjoy shopping and acquiring new things?",
+    "bhava_tag": "aishwarya",
+    "bhava_description_en": "materialism"
+  },
+  {
+    "id": 35,
+    "section": "rajas",
+    "question_number": 5,
+    "text_en": "Do you get angry when you fail to complete your work on time?",
+    "bhava_tag": "krodha",
+    "bhava_description_en": "anger"
+  },
+  {
+    "id": 36,
+    "section": "rajas",
+    "question_number": 6,
+    "text_en": "Do you always try to perform better than your colleagues?",
+    "bhava_tag": "spardhā",
+    "bhava_description_en": "competitiveness"
+  },
+  {
+    "id": 37,
+    "section": "rajas",
+    "question_number": 7,
+    "text_en": "Do you prefer shortcuts to achieve your goals faster?",
+    "bhava_tag": "shathya",
+    "bhava_description_en": "cunning"
+  },
+  {
+    "id": 38,
+    "section": "rajas",
+    "question_number": 8,
+    "text_en": "Do you insist on doing things your way?",
+    "bhava_tag": "mada",
+    "bhava_description_en": "stubbornness"
+  },
+  {
+    "id": 39,
+    "section": "rajas",
+    "question_number": 9,
+    "text_en": "Do you tend to exaggerate your experiences when telling others?",
+    "bhava_tag": "vitatha",
+    "bhava_description_en": "exaggeration"
+  },
+  {
+    "id": 40,
+    "section": "rajas",
+    "question_number": 10,
+    "text_en": "Do you express your frustration loudly?",
+    "bhava_tag": "krodha_bahya",
+    "bhava_description_en": "outward aggression"
+  },
+  {
+    "id": 41,
+    "section": "rajas",
+    "question_number": 11,
+    "text_en": "Do you feel restless when you have nothing to do?",
+    "bhava_tag": "chanchala",
+    "bhava_description_en": "restlessness"
+  },
+  {
+    "id": 42,
+    "section": "rajas",
+    "question_number": 12,
+    "text_en": "Do you get jealous of others' success?",
+    "bhava_tag": "irshya",
+    "bhava_description_en": "jealousy"
+  },
+  {
+    "id": 43,
+    "section": "rajas",
+    "question_number": 13,
+    "text_en": "Do you want to control people and situations around you?",
+    "bhava_tag": "niyantrana",
+    "bhava_description_en": "control"
+  },
+  {
+    "id": 44,
+    "section": "rajas",
+    "question_number": 14,
+    "text_en": "Do you frequently compare yourself with others?",
+    "bhava_tag": "tulana",
+    "bhava_description_en": "comparison"
+  },
+  {
+    "id": 45,
+    "section": "rajas",
+    "question_number": 15,
+    "text_en": "Do you spend a lot of time on social media to gain validation?",
+    "bhava_tag": "pradarshana",
+    "bhava_description_en": "showing off"
+  },
+  {
+    "id": 46,
+    "section": "rajas",
+    "question_number": 16,
+    "text_en": "Do you find it difficult to forgive someone who has wronged you?",
+    "bhava_tag": "vaira",
+    "bhava_description_en": "enmity"
+  },
+  {
+    "id": 47,
+    "section": "rajas",
+    "question_number": 17,
+    "text_en": "Do you always want to be the centre of attention?",
+    "bhava_tag": "ahamkara_pradhana",
+    "bhava_description_en": "attention seeking"
+  },
+  {
+    "id": 48,
+    "section": "rajas",
+    "question_number": 18,
+    "text_en": "Do you eat more when you are stressed or emotional?",
+    "bhava_tag": "atibhojana",
+    "bhava_description_en": "emotional eating"
+  },
+  {
+    "id": 49,
+    "section": "rajas",
+    "question_number": 19,
+    "text_en": "Do you frequently change plans because of new interests?",
+    "bhava_tag": "asthirata",
+    "bhava_description_en": "fickleness"
+  },
+  {
+    "id": 50,
+    "section": "rajas",
+    "question_number": 20,
+    "text_en": "Do you feel anxious about future events?",
+    "bhava_tag": "chinta",
+    "bhava_description_en": "worry"
+  },
+  {
+    "id": 51,
+    "section": "rajas",
+    "question_number": 21,
+    "text_en": "Do you lose your temper in traffic jams?",
+    "bhava_tag": "krodha_vahana",
+    "bhava_description_en": "road rage"
+  },
+  {
+    "id": 52,
+    "section": "rajas",
+    "question_number": 22,
+    "text_en": "Do you feel upset when someone does not acknowledge your work?",
+    "bhava_tag": "pratyasha",
+    "bhava_description_en": "expectation"
+  },
+  {
+    "id": 53,
+    "section": "rajas",
+    "question_number": 23,
+    "text_en": "Do you spend beyond your means to maintain a lifestyle?",
+    "bhava_tag": "apavarjana",
+    "bhava_description_en": "extravagance"
+  },
+  {
+    "id": 54,
+    "section": "rajas",
+    "question_number": 24,
+    "text_en": "Do you dominate conversations?",
+    "bhava_tag": "vakpradhana",
+    "bhava_description_en": "verbal dominance"
+  },
+  {
+    "id": 55,
+    "section": "rajas",
+    "question_number": 25,
+    "text_en": "Do you feel dissatisfied even after getting what you wanted?",
+    "bhava_tag": "asantosha",
+    "bhava_description_en": "dissatisfaction"
+  },
+  {
+    "id": 56,
+    "section": "rajas",
+    "question_number": 26,
+    "text_en": "Do you hold grudges against people?",
+    "bhava_tag": "dvesha",
+    "bhava_description_en": "hatred"
+  },
+  {
+    "id": 57,
+    "section": "rajas",
+    "question_number": 27,
+    "text_en": "Do you get irritated by small inconveniences?",
+    "bhava_tag": "asahishnuta",
+    "bhava_description_en": "intolerance"
+  },
+  {
+    "id": 58,
+    "section": "rajas",
+    "question_number": 28,
+    "text_en": "Do you talk about your achievements frequently?",
+    "bhava_tag": "atmashlāghā",
+    "bhava_description_en": "self-praise"
+  },
+  {
+    "id": 59,
+    "section": "rajas",
+    "question_number": 29,
+    "text_en": "Do you need external motivation to complete your work?",
+    "bhava_tag": "bahya_prerana",
+    "bhava_description_en": "external motivation dependency"
+  },
+  {
+    "id": 60,
+    "section": "rajas",
+    "question_number": 30,
+    "text_en": "Do you make impulsive decisions?",
+    "bhava_tag": "sahasa",
+    "bhava_description_en": "impulsiveness"
+  },
+  {
+    "id": 61,
+    "section": "tamas",
+    "question_number": 1,
+    "text_en": "Do you prefer sleeping in your spare time?",
+    "bhava_tag": "nidra",
+    "bhava_description_en": "excess sleep"
+  },
+  {
+    "id": 62,
+    "section": "tamas",
+    "question_number": 2,
+    "text_en": "Do you often miss deadlines?",
+    "bhava_tag": "alasya",
+    "bhava_description_en": "laziness"
+  },
+  {
+    "id": 63,
+    "section": "tamas",
+    "question_number": 3,
+    "text_en": "Do you avoid learning new subjects or skills?",
+    "bhava_tag": "amedha",
+    "bhava_description_en": "lack of intellect"
+  },
+  {
+    "id": 64,
+    "section": "tamas",
+    "question_number": 4,
+    "text_en": "Do you avoid taking responsibility that requires creative thinking?",
+    "bhava_tag": "buddhi_nasha",
+    "bhava_description_en": "avoidance of mental effort"
+  },
+  {
+    "id": 65,
+    "section": "tamas",
+    "question_number": 5,
+    "text_en": "Do you have a forgetful nature?",
+    "bhava_tag": "smriti_nasha",
+    "bhava_description_en": "forgetfulness"
+  },
+  {
+    "id": 66,
+    "section": "tamas",
+    "question_number": 6,
+    "text_en": "Do you feel lethargic most of the day?",
+    "bhava_tag": "tandra",
+    "bhava_description_en": "drowsiness"
+  },
+  {
+    "id": 67,
+    "section": "tamas",
+    "question_number": 7,
+    "text_en": "Do you depend entirely on others for making decisions?",
+    "bhava_tag": "paradheenata",
+    "bhava_description_en": "dependence"
+  },
+  {
+    "id": 68,
+    "section": "tamas",
+    "question_number": 8,
+    "text_en": "Do you feel hopeless about the future?",
+    "bhava_tag": "nirasha",
+    "bhava_description_en": "hopelessness"
+  },
+  {
+    "id": 69,
+    "section": "tamas",
+    "question_number": 9,
+    "text_en": "Do you avoid physical exercise or activity?",
+    "bhava_tag": "sthaulya",
+    "bhava_description_en": "physical inertia"
+  },
+  {
+    "id": 70,
+    "section": "tamas",
+    "question_number": 10,
+    "text_en": "Do you often eat junk food or overeat?",
+    "bhava_tag": "atibhojana_tamas",
+    "bhava_description_en": "unhealthy eating"
+  },
+  {
+    "id": 71,
+    "section": "tamas",
+    "question_number": 11,
+    "text_en": "Do you procrastinate regularly?",
+    "bhava_tag": "dirghsutrata",
+    "bhava_description_en": "procrastination"
+  },
+  {
+    "id": 72,
+    "section": "tamas",
+    "question_number": 12,
+    "text_en": "Do you feel disinterested in social gatherings?",
+    "bhava_tag": "asanga",
+    "bhava_description_en": "social withdrawal"
+  },
+  {
+    "id": 73,
+    "section": "tamas",
+    "question_number": 13,
+    "text_en": "Do you ignore personal hygiene when at home?",
+    "bhava_tag": "ashaucha",
+    "bhava_description_en": "lack of cleanliness"
+  },
+  {
+    "id": 74,
+    "section": "tamas",
+    "question_number": 14,
+    "text_en": "Do you feel indifferent towards your own goals?",
+    "bhava_tag": "udaseenata",
+    "bhava_description_en": "indifference"
+  },
+  {
+    "id": 75,
+    "section": "tamas",
+    "question_number": 15,
+    "text_en": "Do you prefer to stay in your comfort zone?",
+    "bhava_tag": "bhaya",
+    "bhava_description_en": "fear of change"
+  },
+  {
+    "id": 76,
+    "section": "tamas",
+    "question_number": 16,
+    "text_en": "Do you lack enthusiasm about starting new projects?",
+    "bhava_tag": "nirutsaha",
+    "bhava_description_en": "lack of enthusiasm"
+  },
+  {
+    "id": 77,
+    "section": "tamas",
+    "question_number": 17,
+    "text_en": "Do you avoid confrontation even when your rights are violated?",
+    "bhava_tag": "bheerata",
+    "bhava_description_en": "cowardice"
+  },
+  {
+    "id": 78,
+    "section": "tamas",
+    "question_number": 18,
+    "text_en": "Do you consume intoxicating substances to relieve stress?",
+    "bhava_tag": "madya_sevana",
+    "bhava_description_en": "substance dependence"
+  },
+  {
+    "id": 79,
+    "section": "tamas",
+    "question_number": 19,
+    "text_en": "Do you spend excessive time watching television or mindless browsing?",
+    "bhava_tag": "pramada",
+    "bhava_description_en": "distraction"
+  },
+  {
+    "id": 80,
+    "section": "tamas",
+    "question_number": 20,
+    "text_en": "Do you feel that nothing good can happen to you?",
+    "bhava_tag": "vishada",
+    "bhava_description_en": "despair"
+  }
+]
