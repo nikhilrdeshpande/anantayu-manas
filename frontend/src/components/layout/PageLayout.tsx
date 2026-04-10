@@ -10,9 +10,9 @@ interface PageLayoutProps {
 
 export function PageLayout({ children, hideHeader = false, hideFooter = false }: PageLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcf9f8]">
+    <div className="min-h-screen flex flex-col bg-[#131313]">
       {!hideHeader && <Header />}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pt-16">{children}</main>
       {!hideFooter && <Footer />}
     </div>
   );

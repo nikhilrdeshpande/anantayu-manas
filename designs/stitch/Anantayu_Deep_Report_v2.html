@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - Deep Assessment Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            gold: '#d4a017',
+                            darkGold: '#795900',
+                        },
+                        sattva: '#7ba05b',
+                        tamas: '#5b6b7a',
+                        surface: {
+                            dark: '#1A1A1A',
+                            cream: '#fcf9f8',
+                            card: '#f6f3f2'
+                        }
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans"],
+                        body: ["Inter"],
+                        label: ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .guna-donut {
+            background: conic-gradient(#d4a017 0% 71%, #7ba05b 71% 85%, #5b6b7a 85% 100%);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-surface-dark font-body text-slate-200">
+<!-- Sticky Header -->
+<header class="fixed top-0 w-full z-50 bg-surface-dark/80 backdrop-blur-md border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary-gold">arrow_back</span>
+</button>
+<h1 class="font-headline font-bold text-xl tracking-tight">Your Deep Report</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary-gold">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 max-w-4xl mx-auto px-6 space-y-12">
+<!-- Hero Card -->
+<section class="bg-surface-dark border border-white/5 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-gold/10 blur-[100px] -z-10"></div>
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<div class="guna-donut w-full h-full"></div>
+<div class="absolute inset-4 bg-surface-dark rounded-full flex flex-col items-center justify-center text-center">
+<span class="font-label text-[10px] tracking-widest text-primary-gold uppercase">Dominant</span>
+<span class="font-headline font-extrabold text-3xl">Rajas</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-gold/20 text-primary-gold font-label text-xs font-bold tracking-widest mb-4">TIGER (VYAGHRA)</span>
+<h2 class="font-headline text-5xl md:text-6xl font-extrabold text-white mb-2">Asura Kaya</h2>
+<p class="font-headline text-2xl text-primary-gold/80 italic mb-6">The Titan</p>
+<!-- Guna Bars -->
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-label uppercase tracking-wider mb-1">
+<span>Sattva (Purity)</span>
+<span>54%</span>
+</div>
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-sattva rounded-full" style="width: 54%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-label uppercase tracking-wider mb-1">
+<span>Rajas (Energy)</span>
+<span>71%</span>
+</div>
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary-gold rounded-full" style="width: 71%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-label uppercase tracking-wider mb-1">
+<span>Tamas (Stability)</span>
+<span>35%</span>
+</div>
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-tamas rounded-full" style="width: 35%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Who You Are -->
+<section class="bg-surface-dark border-l-4 border-primary-gold rounded-r-3xl p-8 md:p-12 shadow-xl border-y border-r border-white/5">
+<h3 class="font-headline text-3xl font-bold text-white mb-8">Who You Are</h3>
+<div class="flex flex-wrap gap-3 mb-8">
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 font-label text-xs uppercase tracking-widest">Natural Leader</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 font-label text-xs uppercase tracking-widest">High Intensity</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 font-label text-xs uppercase tracking-widest">Strategic Thinker</span>
+</div>
+<div class="space-y-6 text-slate-300 leading-relaxed">
+<p>As an Asura Kaya personality, you possess an inherent drive that distinguishes you as a natural force of nature. Your constitution is governed by the fiery energy of Rajas, granting you the ambition to build empires and the intellect to sustain them.</p>
+<p>Your mental state is often one of focused preparation. Like the tiger, you are patient in your observation but explosive in your execution. This intensity is your greatest asset, allowing you to navigate complex challenges with a precision that others often find daunting.</p>
+<div class="bg-primary-gold/10 border border-primary-gold/20 p-6 rounded-2xl my-8">
+<span class="block font-label text-xs font-bold text-primary-gold tracking-[0.2em] mb-2">YOUR CORE TENSION</span>
+<p class="text-white font-medium italic">Balancing the insatiable urge for conquest with the biological necessity for stillness. Your fire can either illuminate your path or consume your peace.</p>
+</div>
+<p>You find your flow when you are challenged, yet you risk burnout if you do not cultivate moments of Sattvic tranquility. Understanding this balance is the key to your long-term success and spiritual evolution.</p>
+</div>
+<div class="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-white/10">
+<div>
+<span class="block font-label text-[10px] font-bold text-primary-gold uppercase tracking-widest mb-2">At Work</span>
+<p class="text-sm">Dominant, visionary, and results-oriented. You thrive in high-stakes environments.</p>
+</div>
+<div>
+<span class="block font-label text-[10px] font-bold text-primary-gold uppercase tracking-widest mb-2">In Relationships</span>
+<p class="text-sm">Protective and passionate, but can be perceived as demanding or overly critical.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Strengths & Shadows -->
+<section class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl text-slate-900">
+<h3 class="font-headline text-3xl font-bold mb-10">Strengths &amp; Shadows</h3>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3 text-sattva">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">verified_user</span>
+<h4 class="font-headline font-bold text-xl">Luminous Strengths</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-sattva text-xl">check_circle</span>
+<span class="text-sm font-medium">Unwavering focus in moments of crisis.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-sattva text-xl">check_circle</span>
+<span class="text-sm font-medium">Ability to manifest abstract visions into reality.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-sattva text-xl">check_circle</span>
+<span class="text-sm font-medium">Deep resilience and rapid physical recovery.</span>
+</li>
+</ul>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-3 text-tamas">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">contrast</span>
+<h4 class="font-headline font-bold text-xl">Shadow Aspects</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tamas text-xl">error</span>
+<span class="text-sm font-medium">Tendency toward irritability when progress stalls.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tamas text-xl">error</span>
+<span class="text-sm font-medium">Over-identification with professional achievements.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tamas text-xl">error</span>
+<span class="text-sm font-medium">Potential for "all-or-nothing" burnout cycles.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 3: Diet -->
+<section class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl text-slate-900 border-t-8 border-sattva">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
+<h3 class="font-headline text-3xl font-bold">Ayurvedic Nutrition</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full bg-sattva/10 text-sattva text-[10px] font-bold tracking-widest uppercase">Cooling Diet</span>
+<span class="px-3 py-1 rounded-full bg-sattva/10 text-sattva text-[10px] font-bold tracking-widest uppercase">Anti-Inflammatory</span>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<div class="bg-sattva/5 p-6 rounded-2xl">
+<h4 class="font-headline font-bold text-sattva mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">add_circle</span> Foods to Increase
+                    </h4>
+<p class="text-sm mb-4">Focus on sweet, bitter, and astringent tastes to pacify Rajasic fire.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Ghee</span>
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Coconut</span>
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Leafy Greens</span>
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Basmati Rice</span>
+</div>
+</div>
+<div class="bg-stone-100 p-6 rounded-2xl">
+<h4 class="font-headline font-bold text-stone-600 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">do_not_disturb_on</span> Foods to Reduce
+                    </h4>
+<p class="text-sm mb-4">Avoid overly spicy, sour, or fermented foods that aggravate the tiger energy.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Chili</span>
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Garlic</span>
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Vinegar</span>
+<span class="bg-white px-3 py-1 rounded-lg text-xs font-semibold shadow-sm">Coffee</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-4 bg-surface-card rounded-xl border border-stone-200">
+<span class="font-label text-[10px] uppercase text-stone-400 mb-2 block">Breakfast</span>
+<p class="text-xs font-bold">Oatmeal with coconut milk &amp; dates</p>
+</div>
+<div class="p-4 bg-surface-card rounded-xl border border-stone-200">
+<span class="font-label text-[10px] uppercase text-stone-400 mb-2 block">Lunch</span>
+<p class="text-xs font-bold">Moong Dal with steamed zucchini</p>
+</div>
+<div class="p-4 bg-surface-card rounded-xl border border-stone-200">
+<span class="font-label text-[10px] uppercase text-stone-400 mb-2 block">Dinner</span>
+<p class="text-xs font-bold">Sweet potato mash with coriander</p>
+</div>
+<div class="p-4 bg-surface-card rounded-xl border border-stone-200">
+<span class="font-label text-[10px] uppercase text-stone-400 mb-2 block">Snack</span>
+<p class="text-xs font-bold">Soaked almonds &amp; fennel tea</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Routine -->
+<section class="relative">
+<h3 class="font-headline text-3xl font-bold text-white mb-10">Optimal Dinacharya</h3>
+<div class="absolute left-4 top-24 bottom-10 w-px bg-primary-gold/30"></div>
+<div class="space-y-12 pl-12">
+<div class="relative">
+<div class="absolute -left-[37px] top-0 w-3 h-3 rounded-full bg-primary-gold ring-4 ring-primary-gold/20"></div>
+<span class="font-label text-xs text-primary-gold font-bold uppercase tracking-widest mb-1 block">Morning (06:00 - 10:00)</span>
+<h4 class="text-xl font-headline font-bold text-white mb-2">Grounding &amp; Centering</h4>
+<p class="text-sm text-slate-400 leading-relaxed max-w-lg">Wake up before sunrise. Use Abhyanga (self-massage) with cooling coconut oil to soothe the nervous system before the day's intensity begins.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[37px] top-0 w-3 h-3 rounded-full bg-primary-gold ring-4 ring-primary-gold/20"></div>
+<span class="font-label text-xs text-primary-gold font-bold uppercase tracking-widest mb-1 block">Midday (10:00 - 14:00)</span>
+<h4 class="text-xl font-headline font-bold text-white mb-2">Strategic Execution</h4>
+<p class="text-sm text-slate-400 leading-relaxed max-w-lg">Your Agni (digestive fire) is highest now. Have your largest meal. Schedule your most demanding intellectual tasks during this period.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[37px] top-0 w-3 h-3 rounded-full bg-primary-gold ring-4 ring-primary-gold/20"></div>
+<span class="font-label text-xs text-primary-gold font-bold uppercase tracking-widest mb-1 block">Evening (18:00 - 22:00)</span>
+<h4 class="text-xl font-headline font-bold text-white mb-2">The Soft Descent</h4>
+<p class="text-sm text-slate-400 leading-relaxed max-w-lg">Transition away from digital devices. Gentle walking or light reading. Avoid intense exercise after 7 PM to prevent sleep disruption.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[37px] top-0 w-3 h-3 rounded-full bg-primary-gold ring-4 ring-primary-gold/20"></div>
+<span class="font-label text-xs text-primary-gold font-bold uppercase tracking-widest mb-1 block">Night (22:00 onwards)</span>
+<h4 class="text-xl font-headline font-bold text-white mb-2">Deep Regeneration</h4>
+<p class="text-sm text-slate-400 leading-relaxed max-w-lg">Target sleep by 10 PM. This allows the liver and gallbladder to detoxify the day's metabolic and emotional load efficiently.</p>
+</div>
+</div>
+</section>
+<!-- Section 5: Practices -->
+<section>
+<h3 class="font-headline text-3xl font-bold text-white mb-8">Daily Sadhana</h3>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-surface-dark border border-white/5 p-6 rounded-2xl hover:border-primary-gold/40 transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary-gold">air</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2">Sitali Pranayama</h4>
+<p class="text-xs text-slate-400 leading-relaxed">The 'cooling breath' to lower internal heat and calm sudden bursts of anger or frustration.</p>
+</div>
+<div class="bg-surface-dark border border-white/5 p-6 rounded-2xl hover:border-primary-gold/40 transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary-gold">self_improvement</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2">Trataka Meditation</h4>
+<p class="text-xs text-slate-400 leading-relaxed">Gazing meditation to channel your intense focus toward a single point, refining mental clarity.</p>
+</div>
+<div class="bg-surface-dark border border-white/5 p-6 rounded-2xl hover:border-primary-gold/40 transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary-gold/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary-gold">fitness_center</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2">Yin Yoga</h4>
+<p class="text-xs text-slate-400 leading-relaxed">Slow, deep stretches that focus on connective tissues, balancing your natural muscle tension.</p>
+</div>
+</div>
+</section>
+<!-- Section 6: 30-Day Plan -->
+<section>
+<div class="flex justify-between items-end mb-8">
+<h3 class="font-headline text-3xl font-bold text-white">30-Day Integration</h3>
+<span class="font-label text-xs text-primary-gold font-bold">PHASE 1: PACIFICATION</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+<span class="block text-primary-gold font-label text-[10px] font-bold mb-2 uppercase">Week 01</span>
+<h5 class="font-headline font-bold text-white mb-2">Cooling Down</h5>
+<p class="text-xs text-slate-400">Eliminate stimulants and practice Sitali daily for 5 minutes.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+<span class="block text-primary-gold font-label text-[10px] font-bold mb-2 uppercase">Week 02</span>
+<h5 class="font-headline font-bold text-white mb-2">Ritual Building</h5>
+<p class="text-xs text-slate-400">Introduce Abhyanga massage and 10 PM sleep schedule.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+<span class="block text-primary-gold font-label text-[10px] font-bold mb-2 uppercase">Week 03</span>
+<h5 class="font-headline font-bold text-white mb-2">Refining Focus</h5>
+<p class="text-xs text-slate-400">Adopt the Midday strategic schedule and Yin Yoga practices.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+<span class="block text-primary-gold font-label text-[10px] font-bold mb-2 uppercase">Week 04</span>
+<h5 class="font-headline font-bold text-white mb-2">Full Alignment</h5>
+<p class="text-xs text-slate-400">Deep review of mental shifts and emotional regulation patterns.</p>
+</div>
+</div>
+</section>
+<!-- Consultation CTA -->
+<section class="bg-gradient-to-br from-surface-dark to-stone-900 border border-primary-gold/30 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-primary-gold/10 blur-[60px] rounded-full"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="mb-6 relative">
+<img alt="Dr. Prasad Akolkar" class="w-24 h-24 rounded-full border-2 border-primary-gold p-1 object-cover" data-alt="professional headshot of an experienced Indian male doctor in a white coat with a kind smile and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4DQnnxyW5gFDuymynwCkkxQAdmJo9iVnvpHBTXP3PQAh2QY0D-5GxzIldM-eHyHCWa0L9T8dQPrn6Tl2xKBcFjKIBpBmCgwbFYonMOpC0Zpc0r0Oaagwp7HvBns0KLexEEIqdWG3EdVqx0bzHOEtAg2TyNqsdSt7pgzwBwD27rDgYejx7VIqBYvV4WvlEheEP2IVl961XJr4IMGxO2le2xviuIrDAPjRszLSln8PxulY_lz0ldsAUS3ItekE1CBFO_ojbs0rzIZU"/>
+<div class="absolute bottom-0 right-0 bg-sattva w-6 h-6 rounded-full border-2 border-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-white" data-weight="fill">verified</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-2">Dr. Prasad Akolkar</h3>
+<p class="text-primary-gold font-label text-xs uppercase tracking-widest mb-6">Master Ayurvedic Practitioner</p>
+<p class="text-slate-300 text-sm max-w-md mx-auto mb-8">Deepen your understanding of your Asura Kaya constitution with a personalized 1-on-1 diagnostic session.</p>
+<button class="bg-[#25D366] hover:bg-[#128C7E] text-white font-headline font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 flex items-center gap-3 shadow-xl">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.435 5.63 1.435h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+                    Book via WhatsApp
+                </button>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-dark/90 backdrop-blur-xl border-t border-white/10 z-50">
+<div class="max-w-4xl mx-auto px-6 py-4 flex items-center gap-4">
+<button class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-headline font-bold py-3 rounded-xl transition-all">
+<span class="material-symbols-outlined text-primary-gold">picture_as_pdf</span>
+<span class="text-sm">Download PDF</span>
+</button>
+<button class="w-14 h-14 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl transition-all">
+<span class="material-symbols-outlined text-primary-gold">share</span>
+</button>
+<button class="flex-[1.5] bg-gradient-to-r from-primary-darkGold to-primary-gold text-white font-headline font-bold py-3 rounded-xl shadow-lg hover:shadow-primary-gold/20 transition-all transform hover:-translate-y-1">
+                Book Consultation
+            </button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-stone-950 pt-20 pb-32 px-8">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<span class="text-xl font-bold text-primary-gold mb-4 block tracking-tighter uppercase">Anantayu</span>
+<p class="text-stone-500 font-body text-sm leading-relaxed max-w-md">© 2024 Anantayu Manas Prakriti. Wisdom of the Ancients, Science of the Modern. Dedicated to mental flourishing through the timeless lens of Ayurveda.</p>
+</div>
+<div>
+<h6 class="font-label text-xs font-bold text-primary-gold uppercase tracking-widest mb-6">Insights</h6>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-primary-gold text-sm transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 hover:text-primary-gold text-sm transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label text-xs font-bold text-primary-gold uppercase tracking-widest mb-6">Connect</h6>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-primary-gold text-sm transition-colors" href="#">Ayurvedic Research</a></li>
+<li><a class="text-stone-500 hover:text-primary-gold text-sm transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

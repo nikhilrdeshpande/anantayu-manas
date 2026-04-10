@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anantayu - Premium Ayurvedic Mental Constitution Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#d4a017',
+                            dark: '#795900',
+                        },
+                        sattva: '#7ba05b',
+                        rajas: '#d4a017',
+                        tamas: '#5b6b7a',
+                        background: '#1A1A1A',
+                        card: '#f6f3f2',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans"],
+                        body: ["Inter"],
+                        label: ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gold-glow {
+            background: radial-gradient(circle at center, rgba(212, 160, 23, 0.15) 0%, transparent 70%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#1A1A1A] font-body text-slate-200 antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/10 dark:bg-black/20 backdrop-blur-md border-b border-white/10 dark:border-amber-900/20 shadow-2xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<!-- Brand Logo -->
+<div class="text-2xl font-extrabold text-amber-500 tracking-tighter uppercase font-headline">
+                Anantayu
+            </div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-amber-500 border-b-2 border-amber-500 pb-1 font-headline font-bold tracking-tight cursor-pointer active:opacity-80 transition-all" href="#">Home</a>
+<a class="text-slate-400 hover:text-white transition-colors font-headline font-bold tracking-tight cursor-pointer active:opacity-80 transition-all hover:scale-105 duration-300" href="#">Assessment</a>
+<a class="text-slate-400 hover:text-white transition-colors font-headline font-bold tracking-tight cursor-pointer active:opacity-80 transition-all hover:scale-105 duration-300" href="#">Pricing</a>
+<a class="text-slate-400 hover:text-white transition-colors font-headline font-bold tracking-tight cursor-pointer active:opacity-80 transition-all hover:scale-105 duration-300" href="#">Science</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 rounded-full bg-gradient-to-r from-[#795900] to-[#d4a017] text-white font-label font-bold text-sm tracking-wide shadow-xl hover:scale-105 transition-all duration-300">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center pt-24 overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute top-0 right-0 w-[600px] h-[600px] gold-glow -z-10 opacity-60"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-900/10 rounded-full blur-[120px] -z-10"></div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-10 gap-16 items-center">
+<!-- Left Content (60%) -->
+<div class="lg:col-span-6 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-amber-500/20 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="font-label text-[10px] sm:text-xs font-bold tracking-[0.2em] text-amber-500 uppercase">
+                        BASED ON A PHD THESIS - NOT A BUZZFEED QUIZ
+                    </span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white leading-[1.1] tracking-tight">
+                    The Personality Test <br/>
+                    That <span class="text-amber-500">Ayurveda Built</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl font-body">
+                    Unlock the blueprint of your mind through <span class="text-slate-200 italic font-medium">Manas Prakriti</span>. Our assessment bridges ancient Vedic wisdom with modern psychological rigor to reveal your core mental constitution.
+                </p>
+<div class="flex flex-col sm:flex-row items-center gap-6 pt-4">
+<button class="group relative flex items-center gap-3 px-8 py-5 rounded-full bg-gradient-to-br from-[#d4a017] to-[#795900] text-white font-headline font-bold text-lg shadow-2xl hover:scale-105 transition-all duration-300">
+<span>Take the Free Assessment</span>
+<span class="material-symbols-outlined text-white text-xl group-hover:translate-x-1 transition-transform" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined text-white text-xl group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<a class="flex items-center gap-2 text-slate-300 hover:text-amber-500 font-label font-bold text-sm tracking-widest transition-colors group" href="#">
+                        SEE THE SCIENCE BEHIND IT
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
+</a>
+</div>
+<div class="flex items-center gap-4 pt-4 text-slate-500">
+<div class="flex -space-x-3">
+<img alt="Scholar" class="w-10 h-10 rounded-full border-2 border-[#1A1A1A] object-cover" data-alt="portrait of a distinguished indian scholar with glasses warm lighting academic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFmxp20SBNsIr6Un0Gi7AsPGJA9kuu-PBlB9xTKFu4Mi3wdHTEasQPz47u0_Sjgs6XJ1WOItDLxVPFQ-p6VL9yJ4b4zvW5HGJqoiHwtw4VMFNyU9O11Ll5vVir_8u_Z6eQuKSh4ZiJaJq8LJxi0sdiLRXxwMyWUZIkKud_SShY1DN4wzFMADi4z65bLn_9Qu0_rjGtpjMOTtbx81gfPY3BK06XMD3aotrZ2Q401sWT2HsQ9v7zMZj4PNxw7DRQP8Npg6Zl1ueq3gY"/>
+<img alt="Expert" class="w-10 h-10 rounded-full border-2 border-[#1A1A1A] object-cover" data-alt="portrait of a modern wellness expert smiling soft natural light minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv5tepsNKlX-zL5rYeL-35_ExXvUM3n_Qp2Rhx8HK_93Qmh1BS4r0yRQZhGMDWnQ3v6n5xQRbqby_SL1uc8gqnz_xOaUmY-iQ53wTLYIu-fBXmMSw-2qyiPssSZGn0YID236zU2bv2MtQsIe0brjDqUtXDj-KuuOjMFroUJYjX7ITHzO61OgTvo449vyWFioUKYSgGwPSeSt7oYhbd9G-CHGKdEnx4wtd5mgIUx89yVZBJyakz9EReVX9sz1swxlCM7GqAkFbjcTo"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-[#1A1A1A] object-cover" data-alt="portrait of a young woman looking serene soft golden hour lighting natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByZ0e8fMAf64ZxpvnTI-tO5WCkpbmNHCZ4FLY_8FEvWoHcjpYtJq-BBP5cbZbcwaMJHBZ2jiOkxuq6vOHqiw_qtpRBtoe1PTSF48nu8WeD8NqCE5zxQDEKRSQw8jWPjk2KG8FkkQJ1HMH6trd55nkddvtuKTcWS-rDq1KC0aLRmcvCENEsQIdQ4D00fQ_vgi3HOv7bvk3uBqgBJiyM2LZ2DsD6cvSW6-fYpof4Gq5rgvHiS6XoIuvtGvkGvFXbU7Uvkk6qGDChfwQ"/>
+</div>
+<span class="text-sm font-medium tracking-tight">Trusted by 12,000+ practitioners worldwide</span>
+</div>
+</div>
+<!-- Right Content (40%) -->
+<div class="lg:col-span-4 relative flex justify-center items-center h-[600px]">
+<!-- Main Image -->
+<div class="relative z-10 w-[320px] md:w-[380px] h-[450px] md:h-[520px] rounded-2xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.6)] border border-white/10 rotate-3 transform transition-transform hover:rotate-0 duration-500">
+<img alt="Meditation Sanctuary" class="w-full h-full object-cover" data-alt="cinematic shot of a person meditating in a luxurious minimalist wellness sanctuary with warm golden morning light and soft incense smoke" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5TrWjGCO_g8eM1DNKozNYDwBtrRf6b_EGI46KrxrYS0eE3_DUIxheRjy6hX2EW03wbHjSEOI6sDBuHgp8FpMAv85n8COjM0IJJ379bsc9mlCfe2FSkOlcxbEZmNcQHI33RSe0etq_eYMwFpMTRxGvwWR6mnhXxxxX96y1wb8WKryLkAcoqSQjopVIGBPR-zP8eY-ivCLQjTE4_xWixlQqukw4Lh06CY4fp0nIkI2vXxrLRH_sqi7RqYVnYpjZY0IASwMioWJWv7c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<!-- Secondary Image -->
+<div class="absolute -bottom-4 -left-8 md:-left-16 z-20 w-[180px] md:w-[220px] h-[240px] md:h-[300px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 -rotate-6 transform transition-transform hover:rotate-0 duration-500">
+<img alt="Ayurvedic Herbs" class="w-full h-full object-cover" data-alt="top down macro shot of artisan ayurvedic herbs and gold bowls on dark stone textured surface with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB25yHphnrR2Q_uqKgWXwmveDrFdxYXgjDQjXfQCao2_6nkXdiyzxmnDwcXX9NUI2M11uuUdmgHgFdTxnZW1Rsfbxn_4m9qxoPea2Mian225SaZQzCbyZmSqE4wDHrJ_aWCSTDpVJ0gsaU26SVoHXUdgf53KF2VX_uaqHbvcAztDGQbj-DMIB4RQk3-UcZQuImix0seTt7-5TdVbjoJFDxT5RRggQI01xrUnSlZ5aKHWWI2ki_mKMqI02iJ1bNn7Q61jA6VCCbzPF8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<!-- Decorative Pattern -->
+<div class="absolute -top-12 -right-12 w-48 h-48 opacity-20 invert pointer-events-none">
+<span class="material-symbols-outlined text-[180px] text-amber-500" data-icon="filter_vintage">filter_vintage</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Strip -->
+<div class="w-full bg-black/40 py-12 border-y border-amber-900/10">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center gap-8 md:gap-4">
+<div class="flex items-center gap-4 flex-1 justify-center">
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/10 text-amber-500">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-headline font-extrabold text-white">25</span>
+<span class="text-[10px] font-label font-bold tracking-widest text-slate-500 uppercase">QUESTIONS</span>
+</div>
+</div>
+<div class="hidden md:block w-px h-12 bg-amber-900/20"></div>
+<div class="flex items-center gap-4 flex-1 justify-center">
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/10 text-amber-500">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-headline font-extrabold text-white">7</span>
+<span class="text-[10px] font-label font-bold tracking-widest text-slate-500 uppercase">PRAKRITI TYPES</span>
+</div>
+</div>
+<div class="hidden md:block w-px h-12 bg-amber-900/20"></div>
+<div class="flex items-center gap-4 flex-1 justify-center">
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/10 text-amber-500">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-headline font-extrabold text-white">3,000+</span>
+<span class="text-[10px] font-label font-bold tracking-widest text-slate-500 uppercase">YEAR SCIENCE</span>
+</div>
+</div>
+<div class="hidden md:block w-px h-12 bg-amber-900/20"></div>
+<div class="flex items-center gap-4 flex-1 justify-center">
+<div class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/10 text-amber-500">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-headline font-extrabold text-white">PHD</span>
+<span class="text-[10px] font-label font-bold tracking-widest text-slate-500 uppercase">BACKED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 border-t border-amber-900/30 bg-stone-950 dark:bg-black">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<span class="text-xl font-bold text-amber-500 mb-4 block">Anantayu</span>
+<p class="text-stone-500 font-['Inter'] text-sm leading-relaxed">
+                    Deciphering the ancient wisdom of mental constitutions for the modern mind. Discover your true nature today.
+                </p>
+</div>
+<div>
+<h4 class="font-label text-white text-xs font-bold tracking-widest uppercase mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-amber-200 transition-colors font-['Inter'] text-sm leading-relaxed hover:underline decoration-amber-500/50" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-500 hover:text-amber-200 transition-colors font-['Inter'] text-sm leading-relaxed hover:underline decoration-amber-500/50" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-white text-xs font-bold tracking-widest uppercase mb-6">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-stone-500 hover:text-amber-200 transition-colors font-['Inter'] text-sm leading-relaxed hover:underline decoration-amber-500/50" href="#">Ayurvedic Research</a></li>
+<li><a class="text-stone-500 hover:text-amber-200 transition-colors font-['Inter'] text-sm leading-relaxed hover:underline decoration-amber-500/50" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-white text-xs font-bold tracking-widest uppercase mb-6">Newsletter</h4>
+<div class="flex flex-col gap-4">
+<input class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-amber-500/50 transition-colors" placeholder="Your email address" type="email"/>
+<button class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-amber-900/20 text-center">
+<p class="text-stone-500 font-['Inter'] text-sm leading-relaxed">
+                © 2024 Anantayu Manas Prakriti. Wisdom of the Ancients, Science of the Modern.
+            </p>
+</div>
+</footer>
+</body></html>

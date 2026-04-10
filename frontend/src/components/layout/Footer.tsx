@@ -1,5 +1,4 @@
 import { Link, useParams } from 'react-router-dom';
-import { Heart } from 'lucide-react';
 
 export function Footer() {
   const { locale = 'en' } = useParams<{ locale: string }>();
@@ -19,28 +18,25 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#f6f3f2]">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="w-full bg-[#131313] border-t border-[#4f4634]/15 text-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <img
-              src="/Anantayu Logo.png"
-              alt="Anantayu"
-              className="h-10 w-auto mb-3"
-            />
-            <p className="text-sm text-[#4f4634] leading-relaxed max-w-sm mb-6">
-              Rooted in the timeless wisdom of Ayurveda, Anantayu guides you to understand your
-              unique mental constitution and live in greater harmony.
+            <span className="text-2xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans'] mb-3 inline-block">
+              Anantayu
+            </span>
+            <p className="text-sm text-white/50 leading-relaxed max-w-sm mb-6">
+              Ancient Wisdom, Scientific Precision. Bridging millennia of Ayurvedic knowledge for modern mental wellness.
             </p>
-            <p className="text-xs text-[#4f4634]/40">
+            <p className="text-xs text-white/30">
               Based on PhD research by Dr. Prasad Akolkar, University of Mumbai
             </p>
           </div>
 
           {/* Experience column */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#1c1b1b] mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#f6be39] mb-5">
               Experience
             </h4>
             <ul className="space-y-3">
@@ -48,7 +44,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#4f4634]/70 hover:text-[#d4a017] transition-colors duration-200"
+                    className="text-sm text-white/50 hover:text-[#f6be39] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -59,7 +55,7 @@ export function Footer() {
 
           {/* Foundation column */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#1c1b1b] mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#f6be39] mb-5">
               Foundation
             </h4>
             <ul className="space-y-3">
@@ -67,7 +63,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#4f4634]/70 hover:text-[#d4a017] transition-colors duration-200"
+                    className="text-sm text-white/50 hover:text-[#f6be39] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -79,13 +75,13 @@ export function Footer() {
       </div>
 
       {/* Copyright bar */}
-      <div className="border-t border-[#e5e2e1]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-[#4f4634]/50">
-            &copy; {new Date().getFullYear()} Anantayu. All rights reserved.
+      <div className="border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-white/30">
+            &copy; 2025-{new Date().getFullYear()} Anantayu. Ancient Wisdom, Scientific Precision.
           </p>
-          <p className="text-xs text-[#4f4634]/50 flex items-center gap-1">
-            Made with <Heart size={12} className="text-[#d4a017]" /> for mindful living
+          <p className="text-xs text-white/30">
+            Made with care for mindful living
           </p>
         </div>
       </div>
