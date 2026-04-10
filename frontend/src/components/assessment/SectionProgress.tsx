@@ -46,7 +46,7 @@ export function SectionProgress({ currentGlobalIndex, sectionProgress }: Section
           <div
             key={section}
             className="flex-1 h-1.5 rounded-full overflow-hidden"
-            style={{ backgroundColor: '#E8E4DF' }}
+            style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}
           >
             <div
               className="h-full rounded-full"

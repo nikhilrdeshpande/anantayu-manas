@@ -32,14 +32,14 @@ export function AnswerSelector({ currentSection, selectedAnswer, onSelect }: Ans
             <button
               key={value}
               onClick={() => onSelect(value)}
-              className="w-full py-4 rounded-2xl font-semibold text-base tracking-wide transition-all duration-150 active:scale-[0.97] cursor-pointer"
+              className="w-full py-4 rounded-xl font-bold text-base tracking-wider transition-all duration-150 active:scale-[0.97] cursor-pointer"
               style={{
-                backgroundColor: isSelected ? colors.main : colors.main,
+                backgroundColor: colors.main,
                 color: '#FFFFFF',
                 boxShadow: isSelected
-                  ? `0 4px 16px ${colors.main}44`
-                  : `0 2px 8px ${colors.main}22`,
-                opacity: isSelected ? 1 : 0.85,
+                  ? `0 8px 24px ${colors.main}55`
+                  : `0 4px 12px ${colors.main}33`,
+                opacity: isSelected ? 1 : 0.92,
               }}
             >
               {label}
@@ -47,18 +47,17 @@ export function AnswerSelector({ currentSection, selectedAnswer, onSelect }: Ans
           );
         }
 
-        // SOMETIMES: bordered with section color, tinted bg
+        // SOMETIMES: bordered with section color
         if (value === 'sometimes') {
           return (
             <button
               key={value}
               onClick={() => onSelect(value)}
-              className="w-full py-4 rounded-2xl font-semibold text-base tracking-wide transition-all duration-150 active:scale-[0.97] cursor-pointer"
+              className="w-full py-4 rounded-xl font-bold text-base tracking-wider transition-all duration-150 active:scale-[0.97] cursor-pointer"
               style={{
-                backgroundColor: isSelected ? colors.tint : 'transparent',
-                color: isSelected ? colors.dark : colors.main,
+                backgroundColor: isSelected ? `${colors.main}1a` : 'transparent',
+                color: colors.main,
                 border: `2px solid ${colors.main}`,
-                opacity: isSelected ? 1 : 0.75,
               }}
             >
               {label}
@@ -66,16 +65,16 @@ export function AnswerSelector({ currentSection, selectedAnswer, onSelect }: Ans
           );
         }
 
-        // NO: light border, gray text
+        // NO: subtle dark
         return (
           <button
             key={value}
             onClick={() => onSelect(value)}
-            className="w-full py-4 rounded-2xl font-semibold text-base tracking-wide transition-all duration-150 active:scale-[0.97] cursor-pointer"
+            className="w-full py-4 rounded-xl font-bold text-base tracking-wider transition-all duration-150 active:scale-[0.97] cursor-pointer"
             style={{
-              backgroundColor: isSelected ? '#F5F0EB' : 'transparent',
-              color: isSelected ? '#50606f' : '#9CA3AF',
-              border: `2px solid ${isSelected ? '#C4C0BA' : '#E8E4DF'}`,
+              backgroundColor: isSelected ? 'rgba(255,255,255,0.08)' : 'transparent',
+              color: isSelected ? '#e5e2e1' : '#9b8f7a',
+              border: `2px solid ${isSelected ? '#9b8f7a' : '#4f4634'}`,
             }}
           >
             {label}

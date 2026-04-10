@@ -130,11 +130,11 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
       </div>
 
       {/* ── What is X Prakriti? ── */}
-      <div className="rounded-2xl p-8 bg-white shadow-sm">
-        <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--on-surface)' }}>
+      <div className="rounded-2xl p-8 bg-[#2a2a2a] border border-[#4f4634]/20 shadow-xl">
+        <h2 className="text-xl font-bold mb-4 text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
           What is {result.prakritiType} Prakriti?
         </h2>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--on-surface-variant)' }}>
+        <p className="text-sm leading-relaxed text-[#d3c5ae]">
           {prakritiInfo.whatIs}
         </p>
       </div>
@@ -144,8 +144,8 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
         {/* Strengths */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#d4a017' }} />
-            <h3 className="text-lg font-bold" style={{ color: 'var(--on-surface)' }}>
+            <div className="w-1 h-6 rounded-full bg-[#f6be39]" />
+            <h3 className="text-lg font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
               Your Strengths
             </h3>
           </div>
@@ -154,19 +154,16 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
             return (
               <div
                 key={s.title}
-                className="rounded-xl p-5 bg-white shadow-sm flex gap-4"
+                className="rounded-xl p-5 bg-[#2a2a2a] border border-[#4f4634]/20 shadow-lg flex gap-4 hover:border-[#f6be39]/30 transition-colors"
               >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: 'rgba(212,160,23,0.1)' }}
-                >
-                  <Icon size={20} className="text-[#d4a017]" />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-[#f6be39]/10 border border-[#f6be39]/20">
+                  <Icon size={20} className="text-[#f6be39]" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold mb-1" style={{ color: 'var(--on-surface)' }}>
+                  <h4 className="text-sm font-bold mb-1 text-[#e5e2e1]">
                     {s.title}
                   </h4>
-                  <p className="text-xs leading-relaxed" style={{ color: 'var(--on-surface-variant)' }}>
+                  <p className="text-xs leading-relaxed text-[#d3c5ae]">
                     {s.description}
                   </p>
                 </div>
@@ -178,8 +175,8 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
         {/* Growth Areas */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-1 h-6 rounded-full" style={{ backgroundColor: '#50606f' }} />
-            <h3 className="text-lg font-bold" style={{ color: 'var(--on-surface)' }}>
+            <div className="w-1 h-6 rounded-full bg-[#5b6b7a]" />
+            <h3 className="text-lg font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
               Areas for Growth
             </h3>
           </div>
@@ -188,19 +185,16 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
             return (
               <div
                 key={g.title}
-                className="rounded-xl p-5 bg-white shadow-sm flex gap-4"
+                className="rounded-xl p-5 bg-[#2a2a2a] border border-[#4f4634]/20 shadow-lg flex gap-4 hover:border-[#5b6b7a]/40 transition-colors"
               >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: 'rgba(80,96,111,0.1)' }}
-                >
-                  <Icon size={20} className="text-[#50606f]" />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-[#5b6b7a]/10 border border-[#5b6b7a]/20">
+                  <Icon size={20} className="text-[#9b8f7a]" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold mb-1" style={{ color: 'var(--on-surface)' }}>
+                  <h4 className="text-sm font-bold mb-1 text-[#e5e2e1]">
                     {g.title}
                   </h4>
-                  <p className="text-xs leading-relaxed" style={{ color: 'var(--on-surface-variant)' }}>
+                  <p className="text-xs leading-relaxed text-[#d3c5ae]">
                     {g.description}
                   </p>
                 </div>
@@ -212,7 +206,7 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
 
       {/* ── Daily Practices ── */}
       <div className="flex flex-col gap-4">
-        <h3 className="text-lg font-bold" style={{ color: 'var(--on-surface)' }}>
+        <h3 className="text-lg font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
           Daily Practices
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -221,22 +215,15 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
             return (
               <div
                 key={p.title}
-                className="rounded-xl p-5 flex flex-col gap-3"
-                style={{
-                  backgroundColor: 'rgba(212,160,23,0.06)',
-                  border: '1px solid rgba(212,160,23,0.15)',
-                }}
+                className="rounded-xl p-5 flex flex-col gap-3 bg-[#f6be39]/5 border border-[#f6be39]/20 hover:border-[#f6be39]/40 transition-colors"
               >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(212,160,23,0.12)' }}
-                >
-                  <Icon size={20} className="text-[#d4a017]" />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#f6be39]/10 border border-[#f6be39]/20">
+                  <Icon size={20} className="text-[#f6be39]" />
                 </div>
-                <h4 className="text-sm font-semibold" style={{ color: 'var(--on-surface)' }}>
+                <h4 className="text-sm font-bold text-[#e5e2e1]">
                   {p.title}
                 </h4>
-                <p className="text-xs leading-relaxed" style={{ color: 'var(--on-surface-variant)' }}>
+                <p className="text-xs leading-relaxed text-[#d3c5ae]">
                   {p.description}
                 </p>
               </div>
@@ -246,23 +233,14 @@ export function DetailedReport({ result, prakritiInfo }: DetailedReportProps) {
       </div>
 
       {/* ── AI Insight ── */}
-      <div
-        className="rounded-xl p-6"
-        style={{ backgroundColor: '#f6f3f2' }}
-      >
+      <div className="rounded-2xl p-6 bg-[#1c1b1b] border border-[#4f4634]/20">
         <div className="flex items-center gap-2 mb-3">
-          <Sparkles size={16} className="text-[#d4a017]" />
-          <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#d4a017' }}>
+          <Sparkles size={16} className="text-[#f6be39]" />
+          <span className="text-xs font-bold uppercase tracking-widest text-[#f6be39]">
             AI Insight
           </span>
         </div>
-        <blockquote
-          className="text-sm italic leading-relaxed pl-4"
-          style={{
-            color: 'var(--on-surface-variant)',
-            borderLeft: '4px solid #d4a017',
-          }}
-        >
+        <blockquote className="text-sm italic leading-relaxed pl-4 text-[#d3c5ae] border-l-4 border-[#f6be39]">
           {prakritiInfo.aiInsight}
         </blockquote>
       </div>

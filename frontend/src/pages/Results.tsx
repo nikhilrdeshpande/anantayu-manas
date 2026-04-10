@@ -151,55 +151,58 @@ export default function Results() {
 
   return (
     <PageLayout>
-      <div className="w-full max-w-3xl mx-auto px-4 py-8 flex flex-col gap-10">
-        {/* Back button */}
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-sm font-medium w-fit cursor-pointer"
-          style={{ color: 'var(--on-surface-variant)' }}
-        >
-          <ArrowLeft size={18} />
-          Back
-        </button>
+      <div className="bg-[#131313] relative">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
 
-        {/* Prakriti Card */}
-        <div className="flex justify-center">
-          <PrakritiCard
-            prakritiType={result.prakritiType}
-            archetypeTitle={archetypeTitle}
-            sattvaPercent={result.sattvaSecondaryPct}
-            rajasPercent={result.rajasSecondaryPct}
-            tamasPercent={result.tamasSecondaryPct}
-            sattvaBala={result.sattvaBalaGrade}
-            traits={traits}
+        <div className="relative z-10 w-full max-w-3xl mx-auto px-4 py-12 flex flex-col gap-10">
+          {/* Back button */}
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 text-xs uppercase tracking-wider font-bold w-fit cursor-pointer text-[#d3c5ae] hover:text-[#f6be39] transition-colors"
+          >
+            <ArrowLeft size={16} />
+            Back
+          </button>
+
+          {/* Prakriti Card */}
+          <div className="flex justify-center">
+            <PrakritiCard
+              prakritiType={result.prakritiType}
+              archetypeTitle={archetypeTitle}
+              sattvaPercent={result.sattvaSecondaryPct}
+              rajasPercent={result.rajasSecondaryPct}
+              tamasPercent={result.tamasSecondaryPct}
+              sattvaBala={result.sattvaBalaGrade}
+              traits={traits}
+            />
+          </div>
+
+          {/* Share + Download */}
+          <div className="flex flex-col items-center gap-3">
+            <ShareButtons prakritiType={result.prakritiType} />
+            {assessmentId && assessmentId !== 'local' && (
+              <a
+                href={manas.downloadQuickPdf(assessmentId)}
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#4f4634]/30 text-[#d3c5ae] text-xs uppercase tracking-wider font-bold hover:border-[#f6be39]/40 hover:text-[#f6be39] transition-colors"
+              >
+                <Download size={14} />
+                Download PDF Report
+              </a>
+            )}
+          </div>
+
+          {/* Deep Assessment Upsell */}
+          <DeepAssessmentUpsell />
+
+          {/* Detailed Report */}
+          <DetailedReport result={result} prakritiInfo={prakritiInfo} />
+
+          {/* AI Insights */}
+          <AIInsights
+            assessmentId={assessmentId}
+            fallbackText={prakritiInfo.aiInsight}
           />
         </div>
-
-        {/* Share + Download */}
-        <div className="flex flex-col items-center gap-3">
-          <ShareButtons prakritiType={result.prakritiType} />
-          {assessmentId && assessmentId !== 'local' && (
-            <a
-              href={manas.downloadQuickPdf(assessmentId)}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#d3c5ae] text-[#795900] text-sm font-medium hover:bg-[#fdf6e3] transition-colors"
-            >
-              <Download size={14} />
-              Download PDF Report
-            </a>
-          )}
-        </div>
-
-        {/* Deep Assessment Upsell */}
-        <DeepAssessmentUpsell />
-
-        {/* Detailed Report */}
-        <DetailedReport result={result} prakritiInfo={prakritiInfo} />
-
-        {/* AI Insights (streamed from backend) */}
-        <AIInsights
-          assessmentId={assessmentId}
-          fallbackText={prakritiInfo.aiInsight}
-        />
       </div>
     </PageLayout>
   );

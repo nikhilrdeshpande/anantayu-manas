@@ -148,177 +148,173 @@ export default function Pricing() {
 
   return (
     <PageLayout hideFooter>
-      <div className="min-h-screen bg-[#fcf9f8]">
-        {/* Header */}
-        <div className="sticky top-0 z-30 bg-[#1A1A1A] px-4 py-3 flex items-center gap-3">
-          <button onClick={() => navigate(-1)} className="text-white/70 hover:text-white">
-            <ArrowLeft size={20} />
-          </button>
-          <span className="text-white/90 font-medium">Deep Assessment</span>
-        </div>
+      <div className="min-h-screen bg-[#131313] relative">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
 
-        {/* Hero */}
-        <div className="bg-[#1A1A1A] px-4 pb-10 pt-6">
-          <div className="max-w-lg mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 text-[#d4a017] px-3 py-1 rounded-full text-xs font-medium mb-4">
-              <Sparkles size={12} />
-              Premium Report
-            </div>
-            <h1 className="text-3xl font-bold text-white font-[family-name:var(--font-heading)] mb-3">
-              Go Deeper Than a Label
-            </h1>
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Your free assessment told you <em>what</em> you are. The deep report shows you <em>who</em> you are  -
-              your behavioral patterns, inner conflicts, and a personalized wellness plan that actually fits your life.
-            </p>
-            <div className="flex items-baseline justify-center gap-1 mb-2">
-              <span className="text-4xl font-bold text-white">₹399</span>
-              <span className="text-white/50 text-sm">one-time</span>
-            </div>
-            <p className="text-white/40 text-xs">One-time payment. No subscription. 80-question assessment + comprehensive AI report.</p>
-          </div>
-        </div>
-
-        <div className="max-w-lg mx-auto px-4 py-6 space-y-8">
-
-          {/* Personality preview teaser */}
-          <div className="bg-white rounded-2xl border border-[#d3c5ae] p-5 shadow-sm">
-            <h3 className="text-sm font-semibold text-[#795900] mb-3 uppercase tracking-wide">
-              Sample from a real report
-            </h3>
-            <div className="bg-[#fdf6e3] rounded-xl p-4 italic text-sm text-[#4f4634] leading-relaxed">
-              "You're the person who walks into a room and automatically assesses the power dynamics  - who's in charge, who's a threat, who's useful. You set goals that others call unrealistic, then hit them. You've been called 'too much' or 'too intense'  - you wear it as a badge of honor..."
-            </div>
-            <p className="text-xs text-[#817662] mt-3 text-center">
-              This is from an Asura Kaya (The Titan) report. Yours will be equally specific to you.
-            </p>
-          </div>
-
-          {/* What's in the report  - accordion */}
-          <div>
-            <h3 className="text-lg font-bold text-[#1c1b1b] font-[family-name:var(--font-heading)] mb-4">
-              What's in your report
-            </h3>
-            <div className="space-y-2">
-              {REPORT_SECTIONS.map((section, i) => (
-                <div
-                  key={i}
-                  className="bg-white rounded-xl border border-[#e8e4df] overflow-hidden"
-                >
-                  <button
-                    onClick={() => setExpandedSection(expandedSection === i ? null : i)}
-                    className="w-full flex items-center gap-3 p-4 text-left"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-[#fdf6e3] flex items-center justify-center flex-shrink-0">
-                      <section.icon size={16} className="text-[#d4a017]" />
-                    </div>
-                    <span className="flex-1 font-medium text-sm text-[#1c1b1b]">{section.title}</span>
-                    <ChevronDown
-                      size={16}
-                      className={`text-[#817662] transition-transform ${expandedSection === i ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  {expandedSection === i && (
-                    <div className="px-4 pb-4 pt-0">
-                      <p className="text-sm text-[#4f4634] leading-relaxed">{section.description}</p>
-                      {section.preview && (
-                        <div className="mt-3 bg-[#f6f3f2] rounded-lg p-3 text-xs italic text-[#4f4634]">
-                          {section.preview}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Free vs Premium comparison */}
-          <div>
-            <h3 className="text-lg font-bold text-[#1c1b1b] font-[family-name:var(--font-heading)] mb-4">
-              Free vs Deep Assessment
-            </h3>
-            <div className="bg-white rounded-2xl border border-[#d3c5ae] overflow-hidden">
-              <div className="grid grid-cols-3 bg-[#f6f3f2] px-4 py-2.5 text-xs font-semibold">
-                <span className="text-[#4f4634]">Feature</span>
-                <span className="text-center text-[#817662]">Free</span>
-                <span className="text-center text-[#d4a017]">Premium</span>
+        <div className="relative z-10">
+          {/* Hero */}
+          <div className="px-4 pb-12 pt-12">
+            <div className="max-w-lg mx-auto text-center">
+              <div className="inline-flex items-center gap-2 bg-[#f6be39]/10 border border-[#f6be39]/20 text-[#f6be39] px-4 py-2 rounded-full text-xs uppercase tracking-widest font-bold mb-6">
+                <Sparkles size={12} />
+                Premium Report
               </div>
-              {COMPARISON.map((row, i) => (
-                <div key={i} className="grid grid-cols-3 px-4 py-2.5 border-t border-[#f0eded] text-xs">
-                  <span className="text-[#1c1b1b]">{row.feature}</span>
-                  <span className="text-center text-[#817662]">{row.free}</span>
-                  <span className="text-center text-[#1c1b1b] font-medium">
-                    {row.premium === '---' ? row.premium : (
-                      <span className="flex items-center justify-center gap-1">
-                        <Check size={12} className="text-[#7ba05b]" />
-                        {row.premium}
-                      </span>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-[#e5e2e1] font-['Plus_Jakarta_Sans'] mb-4">
+                Go Deeper Than <span className="text-[#f6be39]">a Label</span>
+              </h1>
+              <p className="text-[#d3c5ae] text-base leading-relaxed mb-8 max-w-md mx-auto">
+                Your free assessment told you <em>what</em> you are. The deep report shows you <em>who</em> you are -
+                your behavioral patterns, inner conflicts, and a personalized wellness plan.
+              </p>
+              <div className="flex items-baseline justify-center gap-2 mb-2">
+                <span className="text-5xl font-bold text-[#f6be39] font-['Plus_Jakarta_Sans']">&#x20B9;399</span>
+                <span className="text-[#9b8f7a] text-sm uppercase tracking-wider">one-time</span>
+              </div>
+              <p className="text-[#9b8f7a] text-xs uppercase tracking-wider">No subscription. Yours forever.</p>
+            </div>
+          </div>
+
+          <div className="max-w-lg mx-auto px-4 py-6 space-y-8 pb-32">
+
+            {/* Personality preview teaser */}
+            <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 p-6 shadow-2xl">
+              <h3 className="text-xs font-bold text-[#f6be39] mb-4 uppercase tracking-widest">
+                Sample from a real report
+              </h3>
+              <div className="bg-[#1c1b1b] rounded-xl p-5 italic text-sm text-[#d3c5ae] leading-relaxed border-l-2 border-[#f6be39]">
+                "You're the person who walks into a room and automatically assesses the power dynamics - who's in charge, who's a threat, who's useful. You set goals that others call unrealistic, then hit them. You've been called 'too much' or 'too intense' - you wear it as a badge of honor..."
+              </div>
+              <p className="text-xs text-[#9b8f7a] mt-3 text-center">
+                From an Asura Kaya (The Titan) report. Yours will be equally specific to you.
+              </p>
+            </div>
+
+            {/* What's in the report - accordion */}
+            <div>
+              <h3 className="text-xl font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans'] mb-4">
+                What's in your report
+              </h3>
+              <div className="space-y-2">
+                {REPORT_SECTIONS.map((section, i) => (
+                  <div
+                    key={i}
+                    className="bg-[#2a2a2a] rounded-xl border border-[#4f4634]/20 overflow-hidden hover:border-[#f6be39]/30 transition-colors"
+                  >
+                    <button
+                      onClick={() => setExpandedSection(expandedSection === i ? null : i)}
+                      className="w-full flex items-center gap-3 p-4 text-left"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-[#f6be39]/10 border border-[#f6be39]/20 flex items-center justify-center flex-shrink-0">
+                        <section.icon size={16} className="text-[#f6be39]" />
+                      </div>
+                      <span className="flex-1 font-semibold text-sm text-[#e5e2e1]">{section.title}</span>
+                      <ChevronDown
+                        size={16}
+                        className={`text-[#9b8f7a] transition-transform ${expandedSection === i ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    {expandedSection === i && (
+                      <div className="px-4 pb-4 pt-0">
+                        <p className="text-sm text-[#d3c5ae] leading-relaxed">{section.description}</p>
+                        {section.preview && (
+                          <div className="mt-3 bg-[#1c1b1b] rounded-lg p-3 text-xs italic text-[#9b8f7a] border border-[#4f4634]/20">
+                            {section.preview}
+                          </div>
+                        )}
+                      </div>
                     )}
-                  </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Free vs Premium comparison */}
+            <div>
+              <h3 className="text-xl font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans'] mb-4">
+                Free vs Deep Assessment
+              </h3>
+              <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 overflow-hidden">
+                <div className="grid grid-cols-3 bg-[#1c1b1b] px-4 py-3 text-xs uppercase tracking-wider font-bold">
+                  <span className="text-[#d3c5ae]">Feature</span>
+                  <span className="text-center text-[#9b8f7a]">Free</span>
+                  <span className="text-center text-[#f6be39]">Premium</span>
                 </div>
-              ))}
+                {COMPARISON.map((row, i) => (
+                  <div key={i} className="grid grid-cols-3 px-4 py-3 border-t border-[#4f4634]/10 text-xs">
+                    <span className="text-[#e5e2e1] font-medium">{row.feature}</span>
+                    <span className="text-center text-[#9b8f7a]">{row.free}</span>
+                    <span className="text-center text-[#e5e2e1] font-medium">
+                      {row.premium === '---' ? row.premium : (
+                        <span className="flex items-center justify-center gap-1">
+                          <Check size={12} className="text-[#abd288]" />
+                          {row.premium}
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 16 sub-types preview */}
+            <div className="bg-[#2a2a2a] rounded-2xl p-6 border border-[#4f4634]/20">
+              <h3 className="font-bold mb-3 text-[#f6be39] text-xs uppercase tracking-widest">
+                16 personality sub-types
+              </h3>
+              <p className="text-sm text-[#d3c5ae] mb-5 leading-relaxed">
+                The free assessment gives you 1 of 7 types. The deep assessment classifies you into 1 of 16 specific sub-types, each with a mythological archetype and animal symbol.
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                {[
+                  'Brahma - The Creator',
+                  'Asura - The Titan',
+                  'Varuna - The Protector',
+                  'Sarpa - The Serpent',
+                  'Gandharva - The Artist',
+                  'Shakuna - The Hunter',
+                  'Rishi - The Sage',
+                  'Pashu - The Steady One',
+                ].map((t, i) => (
+                  <div key={i} className="flex items-center gap-2 text-[#d3c5ae]">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#f6be39]" />
+                    {t}
+                  </div>
+                ))}
+                <div className="col-span-2 text-[#9b8f7a] text-center mt-2">+ 8 more sub-types</div>
+              </div>
+            </div>
+
+            {/* Trust signals */}
+            <div className="flex items-center justify-center gap-6 text-xs text-[#9b8f7a]">
+              <div className="flex items-center gap-1.5">
+                <Shield size={14} />
+                <span>Secure payment</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Lock size={14} />
+                <span>Data encrypted</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <BookOpen size={14} />
+                <span>Research-backed</span>
+              </div>
             </div>
           </div>
 
-          {/* 16 sub-types preview */}
-          <div className="bg-[#1A1A1A] rounded-2xl p-5 text-white">
-            <h3 className="font-semibold mb-3 text-[#d4a017] text-sm">16 personality sub-types</h3>
-            <p className="text-xs text-white/70 mb-4">
-              The free assessment gives you 1 of 7 types. The deep assessment classifies you into 1 of 16 specific sub-types, each with a mythological archetype and animal symbol.
-            </p>
-            <div className="grid grid-cols-2 gap-2 text-xs">
-              {[
-                'Brahma  - The Creator',
-                'Asura  - The Titan',
-                'Varuna  - The Protector',
-                'Sarpa  - The Serpent',
-                'Gandharva  - The Artist',
-                'Shakuna  - The Hunter',
-                'Rishi  - The Sage',
-                'Pashu  - The Steady One',
-              ].map((t, i) => (
-                <div key={i} className="flex items-center gap-2 text-white/60">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#d4a017]" />
-                  {t}
-                </div>
-              ))}
-              <div className="col-span-2 text-white/40 text-center mt-1">+ 8 more sub-types</div>
+          {/* Sticky CTA */}
+          <div className="sticky bottom-0 bg-[#131313]/95 glass-nav border-t border-[#4f4634]/20 px-4 py-4">
+            <div className="max-w-lg mx-auto">
+              <button
+                onClick={handlePurchase}
+                disabled={loading}
+                className="w-full py-4 rounded-xl metallic-gold text-[#402d00] font-bold text-base shadow-xl hover:shadow-[#f6be39]/30 hover:shadow-2xl transition-all active:scale-95 disabled:opacity-50"
+              >
+                {loading ? 'Processing...' : 'Unlock Deep Assessment - \u20B9399'}
+              </button>
+              {error && (
+                <p className="mt-2 text-sm text-red-400 text-center">{error}</p>
+              )}
             </div>
-          </div>
-
-          {/* Trust signals */}
-          <div className="flex items-center justify-center gap-6 text-xs text-[#817662]">
-            <div className="flex items-center gap-1.5">
-              <Shield size={14} />
-              <span>Secure payment</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Lock size={14} />
-              <span>Data encrypted</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <BookOpen size={14} />
-              <span>Research-backed</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Sticky CTA */}
-        <div className="sticky bottom-0 bg-white/95 backdrop-blur border-t border-[#d3c5ae] px-4 py-3">
-          <div className="max-w-lg mx-auto">
-            <button
-              onClick={handlePurchase}
-              disabled={loading}
-              className="w-full py-3.5 rounded-full font-semibold text-white transition-all
-                bg-gradient-to-r from-[#8B6914] to-[#d4a017] hover:opacity-90 disabled:opacity-50
-                shadow-[0_4px_14px_rgba(212,160,23,0.35)]"
-            >
-              {loading ? 'Processing...' : 'Unlock Deep Assessment  - ₹399'}
-            </button>
-            {error && (
-              <p className="mt-2 text-sm text-red-600 text-center">{error}</p>
-            )}
           </div>
         </div>
       </div>

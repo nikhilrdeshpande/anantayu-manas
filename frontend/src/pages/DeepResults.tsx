@@ -172,8 +172,8 @@ export default function DeepResults() {
 
   if (!result) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#fcf9f8]">
-        <div className="w-8 h-8 border-2 border-[#d4a017] border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-[#131313]">
+        <div className="w-8 h-8 border-2 border-[#f6be39] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -189,139 +189,129 @@ export default function DeepResults() {
 
   return (
     <PageLayout hideFooter>
-      <div className="min-h-screen bg-[#fcf9f8]">
-        {/* Dark header */}
-        <div className="sticky top-0 z-30 bg-[#1A1A1A] px-4 py-3 flex items-center justify-between">
-          <button onClick={() => navigate(`/${locale}/dashboard`)} className="text-white/70 hover:text-white">
-            <ArrowLeft size={20} />
-          </button>
-          <span className="text-white/90 font-medium text-sm">Your Deep Report</span>
-          <button
-            onClick={() => shareResults(window.location.href, `My Manas Prakriti: ${result.prakriti_type}`, '')}
-            className="text-white/70 hover:text-white"
-          >
-            <Share2 size={18} />
-          </button>
-        </div>
+      <div className="min-h-screen bg-[#131313] relative">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
 
-        {/* Sub-type Hero Card */}
-        <div className="bg-[#1A1A1A] px-4 pb-8 pt-4">
-          <div className="max-w-lg mx-auto text-center">
-            {result.subtype_animal && (
-              <div className="inline-flex items-center gap-2 bg-white/10 text-[#d4a017] px-3 py-1 rounded-full text-xs font-medium mb-4">
-                {result.subtype_animal}
+        <div className="relative z-10">
+          {/* Sub-type Hero Card */}
+          <div className="px-4 pb-12 pt-12">
+            <div className="max-w-lg mx-auto text-center">
+              {result.subtype_animal && (
+                <div className="inline-flex items-center gap-2 bg-[#f6be39]/10 border border-[#f6be39]/20 text-[#f6be39] px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-bold mb-6">
+                  {result.subtype_animal}
+                </div>
+              )}
+
+              <div className="flex justify-center mb-6">
+                <GunaChart sattvaPercent={sattva} rajasPercent={rajas} tamasPercent={tamas} size={180} />
+              </div>
+
+              <h1 className="text-3xl md:text-4xl font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans'] mb-2">
+                {result.prakriti_subtype || result.prakriti_type}
+              </h1>
+              <p className="text-[#f6be39] text-base italic mb-6">
+                {result.subtype_archetype || result.archetype_title}
+              </p>
+
+              <div className="space-y-2 max-w-xs mx-auto">
+                <GunaBar guna="sattva" percent={sattva} />
+                <GunaBar guna="rajas" percent={rajas} />
+                <GunaBar guna="tamas" percent={tamas} />
+              </div>
+
+              <div className="mt-5 inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5">
+                <span className="text-xs text-[#d3c5ae] uppercase tracking-wider">Mental Strength</span>
+                <span className="text-xs font-bold text-[#abd288] capitalize">{result.sattva_bala}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Report Content */}
+          <div className="max-w-2xl mx-auto px-4 py-8 pb-32">
+            {/* Streaming progress indicator */}
+            {isStreaming && !reportData && (
+              <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 p-6 mb-6 shadow-2xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <Loader2 size={18} className="text-[#f6be39] animate-spin" />
+                  <p className="text-sm font-bold text-[#e5e2e1] uppercase tracking-wider">Generating your personalized report...</p>
+                </div>
+                <div className="space-y-2">
+                  {streamProgress.map((s) => (
+                    <div key={s.key} className="flex items-center gap-2">
+                      {s.detected ? (
+                        <Check size={14} className="text-[#abd288]" />
+                      ) : (
+                        <div className="w-3.5 h-3.5 rounded-full border border-[#4f4634]" />
+                      )}
+                      <span className={`text-xs ${s.detected ? 'text-[#e5e2e1]' : 'text-[#9b8f7a]'}`}>
+                        {s.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            <div className="flex justify-center mb-4">
-              <GunaChart sattvaPercent={sattva} rajasPercent={rajas} tamasPercent={tamas} size={160} />
-            </div>
+            {/* Rendered report sections */}
+            {reportData && (
+              <>
+                <WhoYouAreSection data={reportData.who_you_are} subtypeProfile={subtypeProfile} />
+                <StrengthsShadowsSection data={reportData.strengths_and_shadows} />
+                <DietSection data={reportData.diet} />
+                <RoutineSection data={reportData.routine} />
+                <PracticesSection data={reportData.practices} />
+                <ThirtyDaySection data={reportData.thirty_day_plan} />
+              </>
+            )}
 
-            <h1 className="text-2xl font-bold text-white font-[family-name:var(--font-heading)] mb-1">
-              {result.prakriti_subtype || result.prakriti_type}
-            </h1>
-            <p className="text-[#d4a017] text-sm mb-4">
-              {result.subtype_archetype || result.archetype_title}
-            </p>
+            {/* Fallback */}
+            {parseError && !reportData && rawText && (
+              <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 p-5">
+                <div className="text-sm text-[#d3c5ae] leading-relaxed whitespace-pre-wrap">{rawText}</div>
+              </div>
+            )}
 
-            <div className="space-y-2 max-w-xs mx-auto">
-              <GunaBar guna="sattva" percent={sattva} />
-              <GunaBar guna="rajas" percent={rajas} />
-              <GunaBar guna="tamas" percent={tamas} />
-            </div>
-
-            <div className="mt-4 inline-flex items-center gap-2 bg-white/5 rounded-full px-3 py-1">
-              <span className="text-xs text-white/60">Mental Strength</span>
-              <span className="text-xs font-semibold text-[#7ba05b] capitalize">{result.sattva_bala}</span>
-            </div>
+            {/* Consultation CTA */}
+            {reportData && (
+              <div className="mt-10">
+                <ConsultationCTA prakritiType={result.prakriti_subtype || result.prakriti_type} />
+              </div>
+            )}
           </div>
-        </div>
 
-        {/* Report Content */}
-        <div className="max-w-2xl mx-auto px-4 py-8">
-          {/* Streaming progress indicator */}
-          {isStreaming && !reportData && (
-            <div className="bg-white rounded-2xl border border-[#e8e4df] p-6 mb-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Loader2 size={18} className="text-[#d4a017] animate-spin" />
-                <p className="text-sm font-medium text-[#1c1b1b]">Generating your personalized report...</p>
-              </div>
-              <div className="space-y-2">
-                {streamProgress.map((s) => (
-                  <div key={s.key} className="flex items-center gap-2">
-                    {s.detected ? (
-                      <Check size={14} className="text-[#7ba05b]" />
-                    ) : (
-                      <div className="w-3.5 h-3.5 rounded-full border border-[#d3c5ae]" />
-                    )}
-                    <span className={`text-xs ${s.detected ? 'text-[#1c1b1b]' : 'text-[#817662]'}`}>
-                      {s.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Rendered report sections */}
+          {/* Sticky bottom bar */}
           {reportData && (
-            <>
-              <WhoYouAreSection data={reportData.who_you_are} subtypeProfile={subtypeProfile} />
-              <StrengthsShadowsSection data={reportData.strengths_and_shadows} />
-              <DietSection data={reportData.diet} />
-              <RoutineSection data={reportData.routine} />
-              <PracticesSection data={reportData.practices} />
-              <ThirtyDaySection data={reportData.thirty_day_plan} />
-            </>
-          )}
-
-          {/* Fallback: raw text if JSON parse failed */}
-          {parseError && !reportData && rawText && (
-            <div className="bg-white rounded-2xl border border-[#e8e4df] p-5">
-              <div className="text-sm text-[#4f4634] leading-relaxed whitespace-pre-wrap">{rawText}</div>
-            </div>
-          )}
-
-          {/* Consultation CTA - after report is done */}
-          {reportData && (
-            <div className="mt-8">
-              <ConsultationCTA prakritiType={result.prakriti_subtype || result.prakriti_type} />
-            </div>
-          )}
-        </div>
-
-        {/* Sticky bottom bar */}
-        {reportData && (
-          <div className="sticky bottom-0 bg-white/95 backdrop-blur border-t border-[#d3c5ae] px-4 py-3">
-            <div className="max-w-2xl mx-auto flex gap-2">
-              {user && result.assessment_id && (
-                <a
-                  href={manas.downloadDeepPdf(result.assessment_id, user.id)}
-                  className="py-2.5 px-4 rounded-full border border-[#d3c5ae] text-[#795900] font-medium text-sm flex items-center justify-center gap-1.5"
+            <div className="fixed bottom-0 left-0 right-0 bg-[#131313]/95 glass-nav border-t border-[#4f4634]/20 px-4 py-4 z-40">
+              <div className="max-w-2xl mx-auto flex gap-2">
+                {user && result.assessment_id && (
+                  <a
+                    href={manas.downloadDeepPdf(result.assessment_id, user.id)}
+                    className="py-3 px-4 rounded-full border border-[#4f4634]/30 text-[#d3c5ae] font-medium text-sm flex items-center justify-center gap-1.5 hover:border-[#f6be39]/40 hover:text-[#f6be39] transition-colors"
+                  >
+                    <Download size={14} />
+                    PDF
+                  </a>
+                )}
+                <button
+                  onClick={() => shareResults(window.location.href, `My Manas Prakriti: ${result.prakriti_type}`, '')}
+                  className="flex-1 py-3 rounded-full border border-[#4f4634]/30 text-[#d3c5ae] font-medium text-sm flex items-center justify-center gap-2 hover:border-[#f6be39]/40 hover:text-[#f6be39] transition-colors"
                 >
-                  <Download size={14} />
-                  PDF
+                  <Share2 size={16} />
+                  Share
+                </button>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3 rounded-full bg-[#25D366] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg hover:shadow-[#25D366]/30 transition-all"
+                >
+                  <MessageCircle size={16} />
+                  Consult
                 </a>
-              )}
-              <button
-                onClick={() => shareResults(window.location.href, `My Manas Prakriti: ${result.prakriti_type}`, '')}
-                className="flex-1 py-2.5 rounded-full border border-[#d3c5ae] text-[#795900] font-medium text-sm flex items-center justify-center gap-2"
-              >
-                <Share2 size={16} />
-                Share
-              </button>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 py-2.5 rounded-full bg-[#25D366] text-white font-medium text-sm flex items-center justify-center gap-2"
-              >
-                <MessageCircle size={16} />
-                Consult
-              </a>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </PageLayout>
   );

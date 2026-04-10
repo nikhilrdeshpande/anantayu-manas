@@ -50,40 +50,25 @@ export function AIInsights({ assessmentId, locale = 'en', fallbackText }: AIInsi
   if (!displayText && !isStreaming) return null;
 
   return (
-    <div
-      className="rounded-xl p-6"
-      style={{ backgroundColor: '#f6f3f2' }}
-    >
-      <div className="flex items-center gap-2 mb-3">
-        <Sparkles size={16} className="text-[#d4a017]" />
-        <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#d4a017' }}>
-          AI Insight
+    <div className="rounded-2xl p-6 bg-[#1c1b1b] border border-[#4f4634]/20">
+      <div className="flex items-center gap-2 mb-4">
+        <Sparkles size={16} className="text-[#f6be39]" />
+        <span className="text-xs font-bold uppercase tracking-widest text-[#f6be39]">
+          AI Personalized Insight
         </span>
         {isStreaming && (
           <span
-            className="inline-block w-2 h-4 ml-1"
-            style={{
-              backgroundColor: '#d4a017',
-              animation: 'blink 1s step-end infinite',
-            }}
+            className="inline-block w-2 h-4 ml-1 bg-[#f6be39]"
+            style={{ animation: 'blink 1s step-end infinite' }}
           />
         )}
       </div>
-      <blockquote
-        className="text-sm italic leading-relaxed pl-4 whitespace-pre-wrap"
-        style={{
-          color: 'var(--on-surface-variant)',
-          borderLeft: '4px solid #d4a017',
-        }}
-      >
+      <blockquote className="text-sm italic leading-relaxed pl-4 whitespace-pre-wrap text-[#d3c5ae] border-l-4 border-[#f6be39]">
         {displayText}
         {isStreaming && (
           <span
-            className="inline-block w-1.5 h-3.5 ml-0.5 align-text-bottom"
-            style={{
-              backgroundColor: 'var(--on-surface-variant)',
-              animation: 'blink 1s step-end infinite',
-            }}
+            className="inline-block w-1.5 h-3.5 ml-0.5 align-text-bottom bg-[#d3c5ae]"
+            style={{ animation: 'blink 1s step-end infinite' }}
           />
         )}
       </blockquote>

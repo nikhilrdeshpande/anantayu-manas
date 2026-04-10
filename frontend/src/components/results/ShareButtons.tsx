@@ -51,11 +51,11 @@ export function ShareButtons({ prakritiType, shareUrl }: ShareButtonsProps) {
   };
 
   const buttonClass =
-    'w-12 h-12 rounded-full bg-[#e5e2e1] flex items-center justify-center transition-colors duration-200 hover:bg-[#d4a017] hover:text-white cursor-pointer';
+    'w-12 h-12 rounded-full bg-white/5 border border-white/10 text-[#d3c5ae] flex items-center justify-center transition-all duration-200 hover:bg-[#f6be39] hover:text-[#402d00] hover:border-[#f6be39] cursor-pointer';
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <span className="text-sm font-medium" style={{ color: 'var(--on-surface-variant)' }}>
+      <span className="text-xs uppercase tracking-widest font-bold text-[#d3c5ae]">
         Share your Prakriti
       </span>
       <div className="flex items-center gap-3">

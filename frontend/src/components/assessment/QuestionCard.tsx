@@ -74,32 +74,29 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
   };
 
   return (
-    <div className="w-full max-w-[480px] mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-64px)]">
+    <div className="w-full max-w-[520px] mx-auto px-4 py-6 flex flex-col min-h-[calc(100vh-56px)]">
       {/* Section label */}
       <div className="text-center mb-2">
         <span
-          className="text-xs font-semibold uppercase tracking-widest"
+          className="text-xs font-bold uppercase tracking-widest"
           style={{ color: colors.main }}
         >
-          Part {partNumber} of 3: {config.label}
+          Part {partNumber} of 3 - {config.label}
         </span>
-        <span
-          className="block text-xs mt-0.5 italic"
-          style={{ color: colors.dark }}
-        >
+        <span className="block text-xs mt-1 italic text-[#9b8f7a]">
           {config.subtitle}
         </span>
       </div>
 
       {/* Question counter */}
       <div className="text-center mb-3">
-        <span className="text-sm font-medium" style={{ color: 'var(--on-surface-variant)' }}>
-          {currentQuestionIndex + 1} of {total}
+        <span className="text-xs uppercase tracking-wider font-medium text-[#d3c5ae]">
+          Question {currentQuestionIndex + 1} of {total}
         </span>
       </div>
 
       {/* Progress bar */}
-      <div className="mb-8">
+      <div className="mb-10">
         <SectionProgress
           currentGlobalIndex={currentQuestionIndex}
           sectionProgress={progress}
@@ -109,27 +106,21 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
       {/* Guna icon */}
       <div className="flex justify-center mb-6">
         <div
-          className="w-14 h-14 rounded-full flex items-center justify-center"
-          style={{ backgroundColor: colors.tint }}
+          className="w-16 h-16 rounded-2xl flex items-center justify-center border"
+          style={{ backgroundColor: `${colors.main}1a`, borderColor: `${colors.main}33` }}
         >
-          <Icon className="w-7 h-7" style={{ color: colors.main }} />
+          <Icon className="w-8 h-8" style={{ color: colors.main }} />
         </div>
       </div>
 
       {/* Question text */}
-      <h2
-        className="text-xl md:text-2xl font-bold text-center leading-snug mb-3 flex-shrink-0"
-        style={{
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
-          color: 'var(--on-surface)',
-        }}
-      >
+      <h2 className="text-xl md:text-2xl font-bold text-center leading-snug mb-3 flex-shrink-0 text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
         {question.text_en}
       </h2>
 
       {/* Bhava tag */}
-      <p className="text-center text-sm italic mb-8" style={{ color: 'var(--on-surface-variant)' }}>
-        {question.bhava_tag}  - {question.bhava_description_en}
+      <p className="text-center text-xs italic mb-10 text-[#9b8f7a]">
+        {question.bhava_tag} - {question.bhava_description_en}
       </p>
 
       {/* Answer buttons */}
@@ -141,12 +132,9 @@ export function QuestionCard({ onTransition, onComplete }: QuestionCardProps) {
         />
       </div>
 
-      {/* Context hint */}
-      <div
-        className="mt-8 p-4 rounded-xl text-center"
-        style={{ backgroundColor: '#F5F0EB' }}
-      >
-        <p className="text-xs italic leading-relaxed" style={{ color: 'var(--on-surface-variant)' }}>
+      {/* Quote */}
+      <div className="mt-10 p-4 rounded-xl text-center bg-white/[0.03] border border-white/[0.06]">
+        <p className="text-xs italic leading-relaxed text-[#9b8f7a]">
           {quote}
         </p>
       </div>

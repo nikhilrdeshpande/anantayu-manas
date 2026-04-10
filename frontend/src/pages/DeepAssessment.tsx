@@ -143,7 +143,7 @@ export default function DeepAssessment() {
 
   if (!accessChecked || !ready || questions.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAFAF5]">
+      <div className="min-h-screen flex items-center justify-center bg-[#131313]">
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-2 border-[#d4a017] border-t-transparent rounded-full animate-spin" />
           <p className="text-sm text-[#4f4634]">Preparing deep assessment...</p>
@@ -166,7 +166,7 @@ export default function DeepAssessment() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF5]">
+    <div className="min-h-screen bg-[#131313]">
       <AssessmentTopBar />
       <div className="pt-14">
         <QuestionCard

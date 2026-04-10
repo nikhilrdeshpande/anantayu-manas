@@ -58,7 +58,7 @@ export default function Assessment() {
   // If no questions loaded yet, show nothing
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAFAF5' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#131313' }}>
         <p className="text-sm" style={{ color: 'var(--on-surface-variant)' }}>Loading...</p>
       </div>
     );
@@ -81,7 +81,7 @@ export default function Assessment() {
 
   // Quiz phase
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAFAF5' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#131313' }}>
       <AssessmentTopBar />
       <div className="pt-14">
         <QuestionCard

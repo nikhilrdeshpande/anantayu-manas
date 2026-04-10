@@ -26,12 +26,11 @@ function PillButton<T extends string>({
     <button
       type="button"
       onClick={() => onSelect(value)}
-      className="px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer border"
-      style={{
-        backgroundColor: selected ? '#D4A017' : 'transparent',
-        color: selected ? '#FFFFFF' : 'var(--on-surface)',
-        borderColor: selected ? '#D4A017' : '#E8E4DF',
-      }}
+      className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer border ${
+        selected
+          ? 'metallic-gold text-[#402d00] border-transparent shadow-lg'
+          : 'bg-[#1c1b1b] text-[#d3c5ae] border-[#4f4634]/30 hover:border-[#f6be39]/40 hover:text-[#f6be39]'
+      }`}
     >
       {label}
     </button>
@@ -59,30 +58,20 @@ export function DemographicsForm({ onSubmit }: DemographicsFormProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12" style={{ backgroundColor: '#FAFAF5' }}>
+    <div className="flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
-        <div className="bg-white rounded-3xl shadow-sm border border-[#E8E4DF] p-8">
-          {/* Title */}
-          <h2
-            className="text-2xl font-bold text-center mb-2"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--on-surface)' }}
-          >
+        <div className="bg-[#2a2a2a] rounded-3xl border border-[#4f4634]/20 shadow-2xl p-8">
+          <h2 className="text-2xl font-bold text-center mb-2 text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
             A Little About You
           </h2>
-          <p
-            className="text-center text-sm mb-8"
-            style={{ color: 'var(--on-surface-variant)' }}
-          >
+          <p className="text-center text-sm mb-8 text-[#d3c5ae]">
             This helps us personalize your insights
           </p>
 
           <div className="space-y-6">
             {/* Age */}
             <div>
-              <label
-                className="block text-sm font-semibold mb-2"
-                style={{ color: 'var(--on-surface)' }}
-              >
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
                 Your Age
               </label>
               <input
@@ -95,21 +84,13 @@ export function DemographicsForm({ onSubmit }: DemographicsFormProps) {
                   const val = e.target.value;
                   setAge(val ? parseInt(val, 10) : null);
                 }}
-                className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all duration-200 focus:ring-2 focus:ring-[#D4A017]/30"
-                style={{
-                  borderColor: '#E8E4DF',
-                  color: 'var(--on-surface)',
-                  backgroundColor: '#FAFAF5',
-                }}
+                className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 focus:ring-2 focus:ring-[#f6be39] bg-[#1c1b1b] border border-[#4f4634]/30 text-[#e5e2e1] placeholder:text-[#9b8f7a]"
               />
             </div>
 
             {/* Gender */}
             <div>
-              <label
-                className="block text-sm font-semibold mb-2"
-                style={{ color: 'var(--on-surface)' }}
-              >
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
                 Gender
               </label>
               <div className="flex gap-3">
@@ -120,10 +101,7 @@ export function DemographicsForm({ onSubmit }: DemographicsFormProps) {
 
             {/* Diet */}
             <div>
-              <label
-                className="block text-sm font-semibold mb-2"
-                style={{ color: 'var(--on-surface)' }}
-              >
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
                 Diet
               </label>
               <div className="flex flex-wrap gap-3">
@@ -135,10 +113,7 @@ export function DemographicsForm({ onSubmit }: DemographicsFormProps) {
 
             {/* Work Nature */}
             <div>
-              <label
-                className="block text-sm font-semibold mb-2"
-                style={{ color: 'var(--on-surface)' }}
-              >
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
                 Work Nature
               </label>
               <div className="flex flex-wrap gap-3">
@@ -151,10 +126,7 @@ export function DemographicsForm({ onSubmit }: DemographicsFormProps) {
 
             {/* Sleep Quality */}
             <div>
-              <label
-                className="block text-sm font-semibold mb-2"
-                style={{ color: 'var(--on-surface)' }}
-              >
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
                 Sleep Quality
               </label>
               <div className="flex gap-3">
@@ -169,26 +141,17 @@ export function DemographicsForm({ onSubmit }: DemographicsFormProps) {
           <button
             onClick={handleSubmit}
             disabled={!isValid}
-            className="w-full mt-8 py-4 rounded-2xl flex items-center justify-center gap-2 text-white font-semibold text-lg transition-all duration-200 cursor-pointer"
-            style={{
-              background: isValid
-                ? 'linear-gradient(135deg, #D4A017 0%, #C4920F 100%)'
-                : '#E8E4DF',
-              boxShadow: isValid
-                ? '0 4px 14px rgba(212, 160, 23, 0.35)'
-                : 'none',
-              color: isValid ? '#FFFFFF' : '#A09A90',
-              cursor: isValid ? 'pointer' : 'not-allowed',
-            }}
+            className={`w-full mt-8 py-4 rounded-xl flex items-center justify-center gap-2 font-bold text-lg transition-all duration-200 ${
+              isValid
+                ? 'metallic-gold text-[#402d00] shadow-xl hover:shadow-[#f6be39]/20 hover:shadow-2xl active:scale-95 cursor-pointer'
+                : 'bg-[#1c1b1b] text-[#9b8f7a] border border-[#4f4634]/30 cursor-not-allowed'
+            }`}
           >
             Start Quiz
             <ArrowRight className="w-5 h-5" />
           </button>
 
-          <p
-            className="text-center text-xs mt-3"
-            style={{ color: 'var(--on-surface-variant)' }}
-          >
+          <p className="text-center text-xs mt-4 uppercase tracking-wider text-[#d3c5ae]/60">
             Your data is used only to personalize recommendations
           </p>
         </div>

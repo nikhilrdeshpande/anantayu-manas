@@ -108,28 +108,30 @@ export default function AssessmentIntro() {
   // Step: Auth gate
   if (step === 'auth') {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12" style={{ backgroundColor: '#FAFAF5' }}>
-        {/* Logo */}
-        <div className="mb-8 text-center">
-          <img src="/Anantayu Logo.png" alt="Anantayu" className="h-14 w-auto mx-auto mb-2" />
-          <p className="text-[#4f4634] tracking-widest uppercase text-[10px] font-semibold">
-            Manas Prakriti Assessment
-          </p>
-        </div>
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-24 bg-[#131313] relative">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
+        <div className="relative z-10 w-full flex flex-col items-center">
+          <div className="mb-8 text-center">
+            <span className="text-3xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
+              Anantayu
+            </span>
+            <p className="text-[#d3c5ae] tracking-widest uppercase text-[10px] font-bold mt-2">
+              Manas Prakriti Assessment
+            </p>
+          </div>
 
-        <div className="w-full max-w-lg">
-          <div className="bg-white rounded-3xl shadow-sm border border-[#E8E4DF] p-8 md:p-12">
-            <AuthGate onAuthenticated={handleAuthenticated} />
+          <div className="w-full max-w-lg">
+            <div className="bg-[#2a2a2a] rounded-3xl border border-[#4f4634]/20 p-8 md:p-12 shadow-2xl">
+              <AuthGate onAuthenticated={handleAuthenticated} />
 
-            {/* Back link */}
-            <div className="mt-6 text-center">
-              <button
-                onClick={() => setStep('intro')}
-                className="text-sm hover:underline"
-                style={{ color: '#817662' }}
-              >
-                Back to assessment info
-              </button>
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setStep('intro')}
+                  className="text-xs uppercase tracking-wider text-[#d3c5ae] hover:text-[#f6be39] transition-colors"
+                >
+                  Back to assessment info
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -140,149 +142,141 @@ export default function AssessmentIntro() {
   // Step: Demographics form
   if (step === 'demographics') {
     return (
-      <div style={{ backgroundColor: '#FAFAF5' }} className="min-h-screen">
-        {/* Logo + greeting */}
-        <div className="text-center pt-10 pb-4">
-          <img src="/Anantayu Logo.png" alt="Anantayu" className="h-12 w-auto mx-auto mb-3" />
-          {user && (
-            <p className="text-sm" style={{ color: '#4f4634' }}>
-              Welcome, <span className="font-semibold" style={{ color: '#1c1b1b' }}>{user.name}</span>
-            </p>
-          )}
-        </div>
-
-        {resumeMessage && (
-          <div className="max-w-md mx-auto mt-2 mb-0 p-3 rounded-xl bg-[#c6efa1]/30 text-[#466729] text-sm text-center">
-            {resumeMessage}
+      <div className="min-h-screen bg-[#131313] relative pt-20 pb-12">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
+        <div className="relative z-10">
+          <div className="text-center pt-6 pb-6">
+            <span className="text-2xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
+              Anantayu
+            </span>
+            {user && (
+              <p className="text-sm text-[#d3c5ae] mt-3">
+                Welcome, <span className="font-semibold text-[#e5e2e1]">{user.name}</span>
+              </p>
+            )}
           </div>
-        )}
 
-        <DemographicsForm onSubmit={handleDemographicsSubmit} />
+          {resumeMessage && (
+            <div className="max-w-md mx-auto mt-2 mb-0 p-3 rounded-xl bg-[#7ba05b]/20 border border-[#7ba05b]/30 text-[#abd288] text-sm text-center">
+              {resumeMessage}
+            </div>
+          )}
+
+          <DemographicsForm onSubmit={handleDemographicsSubmit} />
+        </div>
       </div>
     );
   }
 
   // Step: Intro (default)
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12" style={{ backgroundColor: '#FAFAF5' }}>
-      {/* Logo */}
-      <div className="mb-8 text-center">
-        <img src="/Anantayu Logo.png" alt="Anantayu" className="h-14 w-auto mx-auto mb-2" />
-        <p className="text-[#4f4634] tracking-widest uppercase text-[10px] font-semibold">
-          Manas Prakriti Assessment
-        </p>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-24 bg-[#131313] relative overflow-hidden">
+      <div className="absolute inset-0 glow-gold pointer-events-none" />
 
-      <div className="max-w-2xl w-full">
-        <div className="bg-white rounded-3xl shadow-sm border border-[#E8E4DF] p-8 md:p-12">
-          {/* Icon */}
-          <div className="flex justify-center mb-6">
-            <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center"
-              style={{ backgroundColor: 'var(--rajas-tint)' }}
+      {/* Decorative blur orbs */}
+      <div className="blur-orb -top-32 -right-32 w-96 h-96 bg-[#f6be39]/10" />
+      <div className="blur-orb -bottom-32 -left-32 w-96 h-96 bg-[#7ba05b]/10" />
+
+      <div className="relative z-10 w-full flex flex-col items-center">
+        {/* Brand label */}
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f6be39]/10 border border-[#f6be39]/20 mb-4">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f6be39] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f6be39]" />
+            </span>
+            <span className="text-[#f6be39] text-xs uppercase tracking-widest font-bold">
+              Manas Prakriti Assessment
+            </span>
+          </div>
+        </div>
+
+        <div className="max-w-2xl w-full">
+          <div className="bg-[#2a2a2a] rounded-3xl border border-[#4f4634]/20 shadow-2xl p-8 md:p-12">
+            {/* Icon */}
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-[#f6be39]/10 border border-[#f6be39]/20 flex items-center justify-center">
+                <Brain className="w-8 h-8 text-[#f6be39]" />
+              </div>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl md:text-5xl font-bold text-center mb-4 text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
+              Know Yourself in <span className="text-[#f6be39]">3 Minutes</span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-center text-base md:text-lg leading-relaxed mb-10 max-w-md mx-auto text-[#d3c5ae]">
+              25 honest questions about how you think, react, and cope. No right answers.
+              Based on a PhD thesis in Ayurvedic psychology from the University of Mumbai.
+            </p>
+
+            {/* Guna indicators */}
+            <div className="space-y-3 mb-8">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-[#7ba05b]/10 border border-[#7ba05b]/20">
+                <div className="w-10 h-10 rounded-full bg-[#7ba05b] flex items-center justify-center flex-shrink-0">
+                  <Leaf className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-[#abd288] uppercase tracking-wider">Part 1  - Calm Nature</p>
+                  <p className="text-xs text-[#d3c5ae] mt-0.5">
+                    10 questions exploring your purity and balance
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-[#f6be39]/10 border border-[#f6be39]/20">
+                <div className="w-10 h-10 rounded-full bg-[#d4a017] flex items-center justify-center flex-shrink-0">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-[#f6be39] uppercase tracking-wider">Part 2  - Active Nature</p>
+                  <p className="text-xs text-[#d3c5ae] mt-0.5">
+                    10 questions exploring your energy and drive
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-[#5b6b7a]/10 border border-[#5b6b7a]/20">
+                <div className="w-10 h-10 rounded-full bg-[#5b6b7a] flex items-center justify-center flex-shrink-0">
+                  <Mountain className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-[#c8c6c5] uppercase tracking-wider">Part 3  - Steady Nature</p>
+                  <p className="text-xs text-[#d3c5ae] mt-0.5">
+                    5 questions exploring your stability and grounding
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <button
+              onClick={handleBegin}
+              className="w-full py-4 rounded-xl flex items-center justify-center gap-2 metallic-gold text-[#402d00] font-bold text-lg shadow-xl hover:shadow-[#f6be39]/20 hover:shadow-2xl transition-all active:scale-95"
             >
-              <Brain className="w-8 h-8" style={{ color: 'var(--rajas)' }} />
-            </div>
-          </div>
+              {isAuthenticated ? 'Start Assessment' : 'Begin Assessment'}
+              <ArrowRight className="w-5 h-5" />
+            </button>
 
-          {/* Title */}
-          <h1
-            className="text-3xl md:text-4xl font-bold text-center mb-3"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: 'var(--on-surface)' }}
-          >
-            Know Yourself in 3 Minutes
-          </h1>
+            {/* Resume option */}
+            {isAuthenticated && hasResumable && (
+              <button
+                onClick={handleResume}
+                className="w-full py-3 mt-3 rounded-xl flex items-center justify-center gap-2 font-medium text-sm transition-all border border-[#4f4634]/30 text-[#d3c5ae] hover:border-[#f6be39]/40 hover:text-[#f6be39]"
+              >
+                <RotateCcw className="w-4 h-4" />
+                Resume Previous Assessment
+              </button>
+            )}
 
-          {/* Description */}
-          <p
-            className="text-center text-base md:text-lg leading-relaxed mb-8 max-w-md mx-auto"
-            style={{ color: 'var(--on-surface-variant)' }}
-          >
-            25 honest questions about how you think, react, and cope. No right answers.
-            Based on a PhD thesis in Ayurvedic psychology from the University of Mumbai.
-          </p>
-
-          {/* Guna indicators */}
-          <div className="space-y-3 mb-8">
-            <div className="flex items-center gap-4 p-4 rounded-xl" style={{ backgroundColor: 'var(--sattva-tint)' }}>
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#7BA05B' }}>
-                <Leaf className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold text-sm" style={{ color: '#466729' }}>Part 1  - Calm Nature</p>
-                <p className="text-xs" style={{ color: 'var(--on-surface-variant)' }}>
-                  10 questions exploring your purity and balance
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-4 rounded-xl" style={{ backgroundColor: 'var(--rajas-tint)' }}>
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#D4A017' }}>
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold text-sm" style={{ color: '#8B6914' }}>Part 2  - Active Nature</p>
-                <p className="text-xs" style={{ color: 'var(--on-surface-variant)' }}>
-                  10 questions exploring your energy and drive
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-4 rounded-xl" style={{ backgroundColor: 'var(--tamas-tint)' }}>
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#5B6B7A' }}>
-                <Mountain className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold text-sm" style={{ color: '#50606f' }}>Part 3  - Steady Nature</p>
-                <p className="text-xs" style={{ color: 'var(--on-surface-variant)' }}>
-                  5 questions exploring your stability and grounding
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Illustration placeholder */}
-          <div
-            className="w-full h-40 rounded-2xl mb-8 flex items-center justify-center"
-            style={{ backgroundColor: '#F5F0EB' }}
-          >
-            <p className="text-sm italic" style={{ color: 'var(--on-surface-variant)' }}>
-              Discover the balance of your three gunas
+            {/* Footer */}
+            <p className="text-center text-xs mt-5 uppercase tracking-wider text-[#d3c5ae]/60">
+              {isAuthenticated
+                ? `Signed in as ${user?.name}`
+                : 'Free forever. No credit card needed.'}
             </p>
           </div>
-
-          {/* CTA Buttons */}
-          <button
-            onClick={handleBegin}
-            className="w-full py-4 rounded-2xl flex items-center justify-center gap-2 text-white font-semibold text-lg transition-all duration-200 hover:opacity-90 active:scale-[0.98] cursor-pointer"
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              background: 'linear-gradient(135deg, #D4A017 0%, #C4920F 100%)',
-              boxShadow: '0 4px 14px rgba(212, 160, 23, 0.35)',
-            }}
-          >
-            {isAuthenticated ? 'Start Assessment' : 'Begin Assessment'}
-            <ArrowRight className="w-5 h-5" />
-          </button>
-
-          {/* Resume option for returning users */}
-          {isAuthenticated && hasResumable && (
-            <button
-              onClick={handleResume}
-              className="w-full py-3 mt-3 rounded-2xl flex items-center justify-center gap-2 font-medium text-sm transition-all border cursor-pointer"
-              style={{ borderColor: '#d3c5ae', color: '#795900' }}
-            >
-              <RotateCcw className="w-4 h-4" />
-              Resume Previous Assessment
-            </button>
-          )}
-
-          {/* Footer */}
-          <p className="text-center text-xs mt-4" style={{ color: 'var(--on-surface-variant)' }}>
-            {isAuthenticated
-              ? `Signed in as ${user?.name}`
-              : 'Free forever. No credit card needed.'}
-          </p>
         </div>
       </div>
     </div>

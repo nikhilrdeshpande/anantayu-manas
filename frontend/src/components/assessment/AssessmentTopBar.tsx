@@ -5,37 +5,22 @@ export function AssessmentTopBar() {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 h-14"
-      style={{
-        backgroundColor: 'rgba(250, 250, 245, 0.95)',
-        backdropFilter: 'blur(8px)',
-        borderBottom: '1px solid #E8E4DF',
-      }}
-    >
+    <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 h-14 bg-[#131313]/80 glass-nav border-b border-[#4f4634]/20">
       {/* Back button */}
       <button
         onClick={() => navigate(-1)}
-        className="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-[#F0EDED] cursor-pointer"
+        className="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/5 cursor-pointer"
       >
-        <ArrowLeft className="w-5 h-5" style={{ color: 'var(--on-surface)' }} />
+        <ArrowLeft className="w-5 h-5 text-[#d3c5ae]" />
       </button>
 
       {/* Brand */}
-      <img
-        src="/Anantayu Logo.png"
-        alt="Anantayu"
-        className="h-7 w-auto"
-      />
+      <span className="text-lg font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
+        Anantayu
+      </span>
 
       {/* Language pill */}
-      <button
-        className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer"
-        style={{
-          backgroundColor: 'var(--surface-container)',
-          color: 'var(--on-surface-variant)',
-        }}
-      >
+      <button className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer bg-white/5 text-[#d3c5ae] hover:bg-white/10 transition-colors">
         <Globe className="w-3.5 h-3.5" />
         EN
       </button>
