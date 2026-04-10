@@ -41,9 +41,7 @@ export default function Login() {
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Branding */}
         <div className="mb-10 text-center">
-          <span className="text-3xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
-            Anantayu
-          </span>
+          <img src="/anantayu-logo-dark.png" alt="Anantayu" className="h-12 w-auto mx-auto" />
           <p className="text-[#d3c5ae] tracking-widest uppercase text-[10px] font-bold mt-2">
             Manas Prakriti
           </p>

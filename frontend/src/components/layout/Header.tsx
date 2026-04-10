@@ -28,11 +28,13 @@ export function Header() {
       style={{ boxShadow: '0 10px 30px rgba(246,190,57,0.05)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
-        {/* Brand - gold text logo */}
+        {/* Brand - logo image */}
         <Link to={`/${locale}`} className="flex items-center shrink-0">
-          <span className="text-2xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
-            Anantayu
-          </span>
+          <img
+            src="/anantayu-logo-dark.png"
+            alt="Anantayu"
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}

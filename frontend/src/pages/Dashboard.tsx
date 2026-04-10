@@ -23,13 +23,16 @@ interface HistoryItem {
 export default function Dashboard() {
   const { locale = 'en' } = useParams();
   const navigate = useNavigate();
-  const { user, isAuthenticated, logout } = useAuthStore();
+  const { user, isAuthenticated, isLoading, logout } = useAuthStore();
   const { checkAccess } = usePurchaseStore();
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasDeepAccess, setHasDeepAccess] = useState(false);
 
   useEffect(() => {
+    // Wait for auth state to finish loading before redirecting
+    if (isLoading) return;
+
     if (!isAuthenticated || !user) {
       navigate(`/${locale}/login`);
       return;
@@ -39,7 +42,7 @@ export default function Dashboard() {
       manas.getUserHistory(user.id).then((d) => setHistory(d.history || [])),
       checkAccess(user.id).then(setHasDeepAccess),
     ]).finally(() => setLoading(false));
-  }, [isAuthenticated, user]);
+  }, [isAuthenticated, user, isLoading]);
 
   if (!user) return null;
 

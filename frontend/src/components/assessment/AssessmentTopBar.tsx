@@ -15,9 +15,7 @@ export function AssessmentTopBar() {
       </button>
 
       {/* Brand */}
-      <span className="text-lg font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
-        Anantayu
-      </span>
+      <img src="/anantayu-logo-dark.png" alt="Anantayu" className="h-7 w-auto" />
 
       {/* Language pill */}
       <button className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer bg-white/5 text-[#d3c5ae] hover:bg-white/10 transition-colors">

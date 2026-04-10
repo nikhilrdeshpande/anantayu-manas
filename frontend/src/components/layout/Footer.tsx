@@ -23,9 +23,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <span className="text-2xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans'] mb-3 inline-block">
-              Anantayu
-            </span>
+            <img
+              src="/anantayu-logo-dark.png"
+              alt="Anantayu"
+              className="h-10 w-auto mb-3"
+            />
             <p className="text-sm text-white/50 leading-relaxed max-w-sm mb-6">
               Ancient Wisdom, Scientific Precision. Bridging millennia of Ayurvedic knowledge for modern mental wellness.
             </p>

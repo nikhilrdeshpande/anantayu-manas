@@ -22,11 +22,12 @@ interface HistoryItem {
 export default function Profile() {
   const { locale = 'en' } = useParams<{ locale: string }>();
   const navigate = useNavigate();
-  const { user, isAuthenticated, logout } = useAuthStore();
+  const { user, isAuthenticated, isLoading, logout } = useAuthStore();
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [loadingHistory, setLoadingHistory] = useState(true);
 
   useEffect(() => {
+    if (isLoading) return;
     if (!isAuthenticated || !user) {
       navigate(`/${locale}/login`);
       return;
@@ -40,7 +41,7 @@ export default function Profile() {
         // Silently fail  - history just won't show
       })
       .finally(() => setLoadingHistory(false));
-  }, [isAuthenticated, user, navigate, locale]);
+  }, [isAuthenticated, user, isLoading, navigate, locale]);
 
   const handleLogout = () => {
     logout();

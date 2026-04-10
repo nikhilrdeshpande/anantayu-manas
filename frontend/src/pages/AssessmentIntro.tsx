@@ -112,9 +112,7 @@ export default function AssessmentIntro() {
         <div className="absolute inset-0 glow-gold pointer-events-none" />
         <div className="relative z-10 w-full flex flex-col items-center">
           <div className="mb-8 text-center">
-            <span className="text-3xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
-              Anantayu
-            </span>
+            <img src="/anantayu-logo-dark.png" alt="Anantayu" className="h-12 w-auto mx-auto" />
             <p className="text-[#d3c5ae] tracking-widest uppercase text-[10px] font-bold mt-2">
               Manas Prakriti Assessment
             </p>
@@ -146,9 +144,7 @@ export default function AssessmentIntro() {
         <div className="absolute inset-0 glow-gold pointer-events-none" />
         <div className="relative z-10">
           <div className="text-center pt-6 pb-6">
-            <span className="text-2xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
-              Anantayu
-            </span>
+            <img src="/anantayu-logo-dark.png" alt="Anantayu" className="h-10 w-auto mx-auto" />
             {user && (
               <p className="text-sm text-[#d3c5ae] mt-3">
                 Welcome, <span className="font-semibold text-[#e5e2e1]">{user.name}</span>
