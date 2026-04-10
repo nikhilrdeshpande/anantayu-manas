@@ -14,47 +14,49 @@ export default function PaymentSuccess() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fcf9f8] flex flex-col items-center justify-center px-4">
-      <div className="max-w-sm w-full text-center">
+    <div className="min-h-screen bg-[#131313] flex flex-col items-center justify-center px-4 relative overflow-hidden">
+      <div className="absolute inset-0 glow-gold pointer-events-none" />
+      <div className="blur-orb top-[10%] left-[10%] w-80 h-80 bg-[#7ba05b]/10" />
+      <div className="blur-orb bottom-[10%] right-[10%] w-80 h-80 bg-[#f6be39]/10" />
+
+      <div className="relative z-10 max-w-sm w-full text-center">
         {/* Animated check */}
         <div className={`transition-all duration-500 ${showCheck ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
-          <div className="w-20 h-20 rounded-full bg-[#eff5eb] flex items-center justify-center mx-auto mb-6">
-            <CheckCircle size={44} className="text-[#7ba05b]" />
+          <div className="w-24 h-24 rounded-full bg-[#7ba05b]/10 border-2 border-[#7ba05b]/30 flex items-center justify-center mx-auto mb-8">
+            <CheckCircle size={50} className="text-[#abd288]" />
           </div>
         </div>
 
         <div className={`transition-all duration-500 delay-300 ${showContent ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-          <h1 className="text-2xl font-bold text-[#1c1b1b] font-[family-name:var(--font-heading)] mb-2">
-            Payment Successful
+          <h1 className="text-3xl font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans'] mb-2">
+            Payment <span className="text-[#abd288]">Successful</span>
           </h1>
-          <p className="text-[#4f4634] text-sm mb-2">
+          <p className="text-[#d3c5ae] text-sm mb-6">
             Your Deep Assessment is now unlocked.
           </p>
-          <div className="bg-white rounded-xl border border-[#e8e4df] p-4 mb-6 mt-4">
-            <div className="flex justify-between text-sm mb-2">
-              <span className="text-[#817662]">Product</span>
-              <span className="text-[#1c1b1b] font-medium">Deep Manas Prakriti Assessment</span>
+
+          <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 p-5 mb-8 shadow-2xl">
+            <div className="flex justify-between text-sm mb-3">
+              <span className="text-[#9b8f7a] uppercase tracking-wider text-xs">Product</span>
+              <span className="text-[#e5e2e1] font-bold">Deep Assessment</span>
             </div>
-            <div className="flex justify-between text-sm mb-2">
-              <span className="text-[#817662]">Amount</span>
-              <span className="text-[#1c1b1b] font-medium">₹399</span>
+            <div className="flex justify-between text-sm mb-3">
+              <span className="text-[#9b8f7a] uppercase tracking-wider text-xs">Amount</span>
+              <span className="text-[#f6be39] font-bold">&#x20B9;399</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-[#817662]">Includes</span>
-              <span className="text-[#7ba05b] font-medium">Assessment + Report</span>
+              <span className="text-[#9b8f7a] uppercase tracking-wider text-xs">Includes</span>
+              <span className="text-[#abd288] font-bold">Assessment + Report</span>
             </div>
           </div>
 
-          <p className="text-xs text-[#817662] mb-6">
-            Your deep assessment and personalized report are ready. Let's begin.
+          <p className="text-xs text-[#9b8f7a] uppercase tracking-wider mb-6">
+            Your deep assessment and personalized report are ready.
           </p>
 
           <button
             onClick={() => navigate(`/${locale}/deep-assessment`)}
-            className="w-full py-3.5 rounded-full font-semibold text-white transition-all
-              bg-gradient-to-r from-[#8B6914] to-[#d4a017] hover:opacity-90
-              shadow-[0_4px_14px_rgba(212,160,23,0.35)]
-              flex items-center justify-center gap-2"
+            className="w-full py-4 rounded-xl metallic-gold text-[#402d00] font-bold text-base shadow-xl hover:shadow-[#f6be39]/30 hover:shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-2"
           >
             Start Deep Assessment
             <ArrowRight size={18} />

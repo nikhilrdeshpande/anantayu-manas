@@ -53,36 +53,37 @@ export default function FAQ() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#1A1A1A] py-16 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 text-[#d4a017] px-3 py-1 rounded-full text-xs font-medium mb-6">
+      <section className="bg-[#131313] py-20 md:py-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-[#f6be39]/10 border border-[#f6be39]/20 text-[#f6be39] px-4 py-2 rounded-full text-xs uppercase tracking-widest font-bold mb-6">
             <HelpCircle size={12} />
             Help Center
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white font-[family-name:var(--font-heading)]">
-            Frequently Asked Questions
+          <h1 className="text-4xl md:text-5xl font-bold text-[#e5e2e1] font-['Plus_Jakarta_Sans']">
+            Frequently Asked <span className="text-[#f6be39]">Questions</span>
           </h1>
         </div>
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-12 px-6 bg-[#fcf9f8]">
+      <section className="py-16 px-6 bg-[#1c1b1b]">
         <div className="max-w-2xl mx-auto space-y-3">
           {FAQS.map((faq, i) => (
-            <div key={i} className="bg-white rounded-xl border border-[#e8e4df] overflow-hidden">
+            <div key={i} className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 overflow-hidden hover:border-[#f6be39]/30 transition-colors">
               <button
                 onClick={() => setExpanded(expanded === i ? null : i)}
-                className="w-full flex items-center justify-between p-4 text-left"
+                className="w-full flex items-center justify-between p-5 text-left"
               >
-                <span className="font-medium text-sm text-[#1c1b1b] pr-4">{faq.q}</span>
+                <span className="font-bold text-sm text-[#e5e2e1] pr-4">{faq.q}</span>
                 <ChevronDown
-                  size={16}
-                  className={`text-[#817662] transition-transform flex-shrink-0 ${expanded === i ? 'rotate-180' : ''}`}
+                  size={18}
+                  className={`text-[#f6be39] transition-transform flex-shrink-0 ${expanded === i ? 'rotate-180' : ''}`}
                 />
               </button>
               {expanded === i && (
-                <div className="px-4 pb-4 pt-0">
-                  <p className="text-sm text-[#4f4634] leading-relaxed">{faq.a}</p>
+                <div className="px-5 pb-5 pt-0">
+                  <p className="text-sm text-[#d3c5ae] leading-relaxed">{faq.a}</p>
                 </div>
               )}
             </div>
@@ -90,14 +91,14 @@ export default function FAQ() {
         </div>
 
         {/* Cross-links */}
-        <div className="max-w-2xl mx-auto mt-10 text-center space-y-2">
-          <p className="text-sm text-[#817662]">Still have questions?</p>
+        <div className="max-w-2xl mx-auto mt-12 text-center space-y-3">
+          <p className="text-sm text-[#9b8f7a]">Still have questions?</p>
           <div className="flex items-center justify-center gap-4 text-sm">
-            <Link to={`/${locale}/about`} className="text-[#d4a017] hover:underline">About us</Link>
-            <span className="text-[#d3c5ae]">|</span>
-            <Link to={`/${locale}/science`} className="text-[#d4a017] hover:underline">The Science</Link>
-            <span className="text-[#d3c5ae]">|</span>
-            <Link to={`/${locale}/privacy`} className="text-[#d4a017] hover:underline">Privacy Policy</Link>
+            <Link to={`/${locale}/about`} className="text-[#f6be39] font-bold hover:underline">About us</Link>
+            <span className="text-[#4f4634]">|</span>
+            <Link to={`/${locale}/science`} className="text-[#f6be39] font-bold hover:underline">The Science</Link>
+            <span className="text-[#4f4634]">|</span>
+            <Link to={`/${locale}/privacy`} className="text-[#f6be39] font-bold hover:underline">Privacy Policy</Link>
           </div>
         </div>
       </section>

@@ -72,34 +72,35 @@ export default function Profile() {
 
   return (
     <PageLayout>
-      <div className="min-h-screen bg-[#FAFAF5] py-12 px-6">
-        <div className="max-w-2xl mx-auto">
+      <div className="min-h-screen bg-[#131313] py-12 px-6 relative">
+        <div className="absolute inset-0 glow-gold pointer-events-none" />
+
+        <div className="relative z-10 max-w-2xl mx-auto">
           {/* User Info Card */}
-          <div className="bg-white rounded-2xl shadow-sm border border-[#E8E4DF] p-8 mb-8">
+          <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 p-8 mb-8 shadow-2xl">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-full bg-[#d4a017] flex items-center justify-center text-white text-xl font-bold font-['Plus_Jakarta_Sans']">
+              <div className="w-14 h-14 rounded-full metallic-gold flex items-center justify-center text-[#402d00] text-xl font-bold font-['Plus_Jakarta_Sans']">
                 {user.name?.charAt(0).toUpperCase()}
               </div>
               <div>
-                <h1 className="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#1c1b1b]">
+                <h1 className="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#e5e2e1]">
                   {user.name}
                 </h1>
-                <p className="text-[#4f4634] text-sm">{user.email}</p>
+                <p className="text-[#d3c5ae] text-sm">{user.email}</p>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to={`/${locale}/assessment/intro`}
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
-                style={{ background: 'linear-gradient(135deg, #D4A017 0%, #C4920F 100%)' }}
+                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl metallic-gold text-[#402d00] font-bold text-sm shadow-xl hover:shadow-[#f6be39]/20 transition-all active:scale-95"
               >
                 Take New Assessment
                 <ArrowRight size={16} />
               </Link>
               <button
                 onClick={handleLogout}
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#E8E4DF] text-[#4f4634] font-semibold text-sm hover:bg-[#f6f3f2] transition-colors"
+                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#4f4634]/30 text-[#d3c5ae] font-semibold text-sm hover:border-[#f6be39]/40 hover:text-[#f6be39] transition-colors"
               >
                 <LogOut size={16} />
                 Sign Out
@@ -108,22 +109,22 @@ export default function Profile() {
           </div>
 
           {/* Assessment History */}
-          <div className="bg-white rounded-2xl shadow-sm border border-[#E8E4DF] p-8">
-            <h2 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-[#1c1b1b] mb-6">
+          <div className="bg-[#2a2a2a] rounded-2xl border border-[#4f4634]/20 p-8 shadow-2xl">
+            <h2 className="font-['Plus_Jakarta_Sans'] text-xl font-bold text-[#e5e2e1] mb-6">
               Assessment History
             </h2>
 
             {loadingHistory ? (
               <div className="flex items-center justify-center py-12">
-                <div className="w-6 h-6 border-2 border-[#d4a017] border-t-transparent rounded-full animate-spin" />
+                <div className="w-6 h-6 border-2 border-[#f6be39] border-t-transparent rounded-full animate-spin" />
               </div>
             ) : history.length === 0 ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#f6f3f2] flex items-center justify-center">
-                  <Clock size={28} className="text-[#817662]" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <Clock size={28} className="text-[#9b8f7a]" />
                 </div>
-                <p className="text-[#4f4634] text-sm mb-1">No assessments yet</p>
-                <p className="text-[#817662] text-xs">
+                <p className="text-[#e5e2e1] text-sm mb-1 font-bold">No assessments yet</p>
+                <p className="text-[#9b8f7a] text-xs">
                   Take your first Manas Prakriti assessment to see your results here.
                 </p>
               </div>
@@ -133,33 +134,33 @@ export default function Profile() {
                   <Link
                     key={item.assessment_id}
                     to={`/${locale}/results/${item.assessment_id}`}
-                    className="flex items-center gap-4 p-4 rounded-xl border border-[#E8E4DF] hover:border-[#d4a017]/30 hover:bg-[#fdf9f0] transition-all duration-200 group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-[#1c1b1b] border border-[#4f4634]/20 hover:border-[#f6be39]/30 transition-all duration-200 group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-[#d4a017]/10 flex items-center justify-center shrink-0">
-                      <Award size={20} className="text-[#d4a017]" />
+                    <div className="w-10 h-10 rounded-full bg-[#f6be39]/10 border border-[#f6be39]/20 flex items-center justify-center shrink-0">
+                      <Award size={20} className="text-[#f6be39]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-sm text-[#1c1b1b]">
+                      <p className="font-bold text-sm text-[#e5e2e1]">
                         {item.prakriti_type}
                         {item.archetype_title && (
-                          <span className="text-[#817662] font-normal ml-1.5">
+                          <span className="text-[#d3c5ae] font-normal ml-1.5">
                              - {item.archetype_title}
                           </span>
                         )}
                       </p>
                       <div className="flex items-center gap-3 mt-1">
-                        <span className="text-xs text-[#817662]">
+                        <span className="text-xs text-[#9b8f7a]">
                           {item.completed_at ? formatDate(item.completed_at) : ''}
                         </span>
                         {item.sattva_bala && (
-                          <span className="flex items-center gap-1 text-xs text-[#466729]">
+                          <span className="flex items-center gap-1 text-xs text-[#abd288]">
                             <Shield size={12} />
                             {sattvaBalaLabel(item.sattva_bala)}
                           </span>
                         )}
                       </div>
                     </div>
-                    <ArrowRight size={16} className="text-[#d3c5ae] group-hover:text-[#d4a017] transition-colors shrink-0" />
+                    <ArrowRight size={16} className="text-[#9b8f7a] group-hover:text-[#f6be39] transition-colors shrink-0" />
                   </Link>
                 ))}
               </div>

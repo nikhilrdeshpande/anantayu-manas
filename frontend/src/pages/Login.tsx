@@ -30,119 +30,117 @@ export default function Login() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-[#fcf9f8] relative overflow-hidden">
-      {/* Background decorative blurs */}
-      <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#ffdfa0]/20 blur-[120px] rounded-full -z-10" />
-      <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#c6efa1]/20 blur-[100px] rounded-full -z-10" />
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 py-24 bg-[#131313] relative overflow-hidden">
+      {/* Glow background */}
+      <div className="absolute inset-0 glow-gold pointer-events-none" />
 
-      {/* Branding */}
-      <div className="mb-12 text-center">
-        <img src="/Anantayu Logo.png" alt="Anantayu" className="h-16 w-auto mx-auto mb-2" />
-        <p className="text-[#4f4634] tracking-widest uppercase text-xs font-semibold">
-          Manas Prakriti
-        </p>
-      </div>
+      {/* Decorative blur orbs */}
+      <div className="blur-orb top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#f6be39]/10" />
+      <div className="blur-orb bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#7ba05b]/10" />
 
-      {/* Login Card */}
-      <div className="w-full max-w-md bg-white rounded-xl p-8 md:p-12 shadow-[0_8px_40px_rgba(28,27,27,0.04)] border border-[#d3c5ae]/15">
-        <header className="mb-10">
-          <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#1c1b1b] mb-2">
-            Welcome Back
-          </h2>
-          <p className="text-[#4f4634] text-sm">
-            Return to your path of balance and self-discovery.
-          </p>
-        </header>
-
-        {error && (
-          <div className="mb-6 p-3 rounded-lg bg-[#ffdad6] text-[#93000a] text-sm">
-            {error}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Email Field */}
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-xs font-semibold text-[#4f4634] uppercase tracking-wider mb-2"
-            >
-              Email Address
-            </label>
-            <div className="relative flex items-center border-b border-[#d3c5ae]/30 focus-within:border-[#795900] transition-all duration-300">
-              <Mail size={20} className="text-[#817662] absolute left-0" />
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@example.com"
-                required
-                className="w-full pl-8 pb-3 bg-transparent border-none focus:ring-0 focus:outline-none text-[#1c1b1b] placeholder:text-[#d3c5ae] text-base"
-              />
-            </div>
-          </div>
-
-          {/* Password Field */}
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-xs font-semibold text-[#4f4634] uppercase tracking-wider mb-2"
-            >
-              Password
-            </label>
-            <div className="relative flex items-center border-b border-[#d3c5ae]/30 focus-within:border-[#795900] transition-all duration-300">
-              <Lock size={20} className="text-[#817662] absolute left-0" />
-              <input
-                id="password"
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                required
-                className="w-full pl-8 pr-10 pb-3 bg-transparent border-none focus:ring-0 focus:outline-none text-[#1c1b1b] placeholder:text-[#d3c5ae] text-base"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-0 pb-3 text-[#d3c5ae] hover:text-[#4f4634]"
-              >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-              </button>
-            </div>
-          </div>
-
-          {/* Sign In Button */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full relative overflow-hidden font-['Plus_Jakarta_Sans'] font-bold py-4 px-6 rounded-full text-white shadow-lg shadow-[#795900]/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-60 disabled:pointer-events-none"
-            style={{ background: 'linear-gradient(135deg, #795900 0%, #d4a017 100%)' }}
-          >
-            <span className="relative z-10">{loading ? 'Signing In...' : 'Sign In'}</span>
-          </button>
-        </form>
-
-        <div className="mt-10 text-center">
-          <p className="text-[#4f4634] text-sm">
-            New to the sanctuary?{' '}
-            <Link
-              to={`/${locale}/signup`}
-              className="text-[#795900] font-bold hover:underline underline-offset-4 ml-1"
-            >
-              Create Account
-            </Link>
+      <div className="relative z-10 w-full flex flex-col items-center">
+        {/* Branding */}
+        <div className="mb-10 text-center">
+          <span className="text-3xl font-bold tracking-tighter text-[#f6be39] font-['Plus_Jakarta_Sans']">
+            Anantayu
+          </span>
+          <p className="text-[#d3c5ae] tracking-widest uppercase text-[10px] font-bold mt-2">
+            Manas Prakriti
           </p>
         </div>
-      </div>
 
-      {/* Footer */}
-      <footer className="mt-12 text-center max-w-xs">
-        <p className="text-[10px] leading-relaxed text-[#817662] uppercase tracking-[0.2em]">
-          Inspired by the Gunas. <br />
-          Designed for your Prakriti.
-        </p>
-      </footer>
+        {/* Login Card */}
+        <div className="w-full max-w-md bg-[#2a2a2a] rounded-3xl border border-[#4f4634]/20 p-8 md:p-10 shadow-2xl">
+          <header className="mb-8">
+            <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#e5e2e1] mb-2">
+              Welcome Back
+            </h2>
+            <p className="text-[#d3c5ae] text-sm">
+              Return to your path of balance and self-discovery.
+            </p>
+          </header>
+
+          {error && (
+            <div className="mb-6 p-3 rounded-xl bg-[#93000a]/30 border border-[#ffb4ab]/30 text-[#ffdad6] text-sm text-center">
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Email */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
+                Email Address
+              </label>
+              <div className="relative">
+                <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9b8f7a]" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="name@example.com"
+                  required
+                  className="w-full pl-11 pr-4 py-3.5 rounded-xl text-sm focus:ring-2 focus:ring-[#f6be39] focus:outline-none bg-[#1c1b1b] border border-[#4f4634]/30 text-[#e5e2e1] placeholder:text-[#9b8f7a]"
+                />
+              </div>
+            </div>
+
+            {/* Password */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-widest mb-2 text-[#d3c5ae]">
+                Password
+              </label>
+              <div className="relative">
+                <Lock size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9b8f7a]" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter password"
+                  required
+                  className="w-full pl-11 pr-11 py-3.5 rounded-xl text-sm focus:ring-2 focus:ring-[#f6be39] focus:outline-none bg-[#1c1b1b] border border-[#4f4634]/30 text-[#e5e2e1] placeholder:text-[#9b8f7a]"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9b8f7a] hover:text-[#f6be39] transition-colors"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+
+            {/* Sign In Button */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full mt-2 py-4 rounded-xl metallic-gold text-[#402d00] font-bold text-base shadow-xl hover:shadow-[#f6be39]/20 hover:shadow-2xl transition-all active:scale-95 disabled:opacity-60 disabled:pointer-events-none"
+            >
+              {loading ? 'Signing In...' : 'Sign In'}
+            </button>
+          </form>
+
+          <div className="mt-8 text-center">
+            <p className="text-[#d3c5ae] text-sm">
+              New to the sanctuary?{' '}
+              <Link
+                to={`/${locale}/signup`}
+                className="text-[#f6be39] font-bold hover:underline underline-offset-4 ml-1"
+              >
+                Create Account
+              </Link>
+            </p>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-10 text-center max-w-xs">
+          <p className="text-[10px] leading-relaxed text-[#9b8f7a] uppercase tracking-[0.2em]">
+            Inspired by the Gunas.<br />
+            Designed for your Prakriti.
+          </p>
+        </footer>
+      </div>
     </main>
   );
 }
