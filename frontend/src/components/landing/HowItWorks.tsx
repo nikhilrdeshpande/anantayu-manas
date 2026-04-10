@@ -12,67 +12,50 @@ const steps: Step[] = [
   {
     number: '01',
     title: 'Answer Honestly',
-    description:
-      '25 questions about how you actually think, react, and feel. No right answers - just your truth.',
+    description: 'No right or wrong answers. Just 25 questions about how you actually think, react, and feel.',
     icon: MessageCircle,
   },
   {
     number: '02',
     title: 'Get Classified',
-    description:
-      'Our algorithm (from a real PhD thesis) maps you to 1 of 7 Prakriti types based on the Triguna framework from the Ashtanga Hridayam.',
+    description: 'Our PhD-backed algorithm maps your responses to 1 of 7 fundamental Manas Prakriti types.',
     icon: Brain,
   },
   {
     number: '03',
     title: 'Act on It',
-    description:
-      'Get strengths, growth areas, and daily practices for your type. Want more? Unlock the deep assessment for 16 sub-types + a personalized wellness plan.',
+    description: 'Get personalized recommendations for diet, lifestyle, and meditation tailored to your unique profile.',
     icon: Sun,
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="bg-[#f6f3f2] py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a017] mb-3">
-            The Journey
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold font-['Plus_Jakarta_Sans'] text-[#1c1b1b] mb-4">
-            How It Works
-          </h2>
-          <div className="w-16 h-1 bg-[#d4a017] rounded-full mx-auto" />
-        </div>
-
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+    <section className="py-24 md:py-28 bg-[#fcf9f8] text-[#1c1b1b]">
+      <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-center font-['Plus_Jakarta_Sans']">
+          How It Works
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.number}
-                className="group relative bg-white rounded-2xl p-8 border border-[#e5e2e1] hover:-translate-y-2 transition-all duration-300 hover:shadow-xl hover:shadow-[#d4a017]/[0.05] cursor-default"
+                className="bg-white p-10 rounded-2xl relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group card-lift"
               >
-                {/* Large faded number */}
-                <span className="absolute top-4 right-6 text-7xl font-bold font-['Plus_Jakarta_Sans'] text-[#f0eded] select-none group-hover:text-[#d4a017]/10 transition-colors duration-300">
+                {/* Watermark number */}
+                <div className="absolute -top-4 -left-4 text-9xl font-black text-[#1c1b1b]/[0.04] group-hover:text-[#f6be39]/10 transition-colors font-['Plus_Jakarta_Sans'] leading-none select-none">
                   {step.number}
-                </span>
-
-                {/* Icon */}
-                <div className="relative z-10 w-12 h-12 rounded-xl bg-[#d4a017]/10 flex items-center justify-center mb-6 group-hover:bg-[#d4a017]/20 transition-colors duration-300">
-                  <Icon size={22} className="text-[#d4a017]" />
                 </div>
 
-                {/* Text */}
-                <h3 className="relative z-10 text-lg font-bold font-['Plus_Jakarta_Sans'] text-[#1c1b1b] mb-3">
-                  {step.title}
-                </h3>
-                <p className="relative z-10 text-sm text-[#4f4634] leading-relaxed">
-                  {step.description}
-                </p>
+                <div className="relative z-10 flex flex-col gap-6">
+                  <div className="w-12 h-12 rounded-full bg-[#f6be39]/10 flex items-center justify-center">
+                    <Icon size={22} className="text-[#d4a017]" />
+                  </div>
+                  <h3 className="text-2xl font-bold font-['Plus_Jakarta_Sans']">{step.title}</h3>
+                  <p className="text-[#4f4634] leading-relaxed">{step.description}</p>
+                </div>
               </div>
             );
           })}

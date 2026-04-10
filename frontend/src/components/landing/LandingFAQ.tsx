@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { Plus, ArrowRight } from 'lucide-react';
 
 const FAQS = [
   {
@@ -27,40 +27,46 @@ const FAQS = [
 
 export function LandingFAQ() {
   const { locale = 'en' } = useParams();
-  const [expanded, setExpanded] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState<number | null>(0);
 
   return (
-    <section className="py-16 md:py-20 px-6 bg-[#f6f3f2]">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#1c1b1b] font-[family-name:var(--font-heading)] text-center mb-8">
+    <section className="py-24 md:py-28 bg-[#1c1b1b] text-[#e5e2e1]">
+      <div className="container mx-auto px-6 md:px-8 max-w-4xl">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-16 text-center font-['Plus_Jakarta_Sans']">
           Common Questions
         </h2>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           {FAQS.map((faq, i) => (
-            <div key={i} className="bg-white rounded-xl border border-[#e8e4df] overflow-hidden">
+            <div
+              key={i}
+              className="bg-[#2a2a2a] rounded-2xl overflow-hidden border border-[#4f4634]/10 hover:border-[#f6be39]/20 transition-colors"
+            >
               <button
                 onClick={() => setExpanded(expanded === i ? null : i)}
-                className="w-full flex items-center justify-between p-4 text-left"
+                className="w-full p-6 text-left flex justify-between items-center group"
               >
-                <span className="font-medium text-sm text-[#1c1b1b] pr-4">{faq.q}</span>
-                <ChevronDown
-                  size={16}
-                  className={`text-[#817662] transition-transform flex-shrink-0 ${expanded === i ? 'rotate-180' : ''}`}
+                <span className="font-semibold text-[#e5e2e1] pr-4">{faq.q}</span>
+                <Plus
+                  size={20}
+                  className={`text-[#f6be39] transition-transform flex-shrink-0 ${expanded === i ? 'rotate-45' : ''}`}
                 />
               </button>
               {expanded === i && (
-                <div className="px-4 pb-4">
-                  <p className="text-sm text-[#4f4634] leading-relaxed">{faq.a}</p>
+                <div className="px-6 pb-6 text-[#d3c5ae] leading-relaxed text-sm">
+                  {faq.a}
                 </div>
               )}
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-6">
-          <Link to={`/${locale}/faq`} className="text-sm text-[#d4a017] font-medium hover:underline">
-            View all FAQs
+        <div className="text-center mt-10">
+          <Link
+            to={`/${locale}/faq`}
+            className="inline-flex items-center gap-2 text-[#f6be39] text-sm font-semibold hover:underline"
+          >
+            View all FAQs <ArrowRight size={16} />
           </Link>
         </div>
       </div>

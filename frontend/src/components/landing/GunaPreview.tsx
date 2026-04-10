@@ -1,109 +1,85 @@
+import { Leaf, Zap, Mountain } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
 interface Guna {
   name: string;
+  tagline: string;
   description: string;
   color: string;
-  hoverBg: string;
-  borderColor: string;
-  secondaryColor: string;
+  icon: LucideIcon;
 }
 
 const gunas: Guna[] = [
   {
     name: 'Sattva',
-    description:
-      'The quality of purity, harmony, and clarity. Sattva brings peace of mind, wisdom, and a natural inclination towards knowledge and truth.',
-    color: '#7BA05B',
-    hoverBg: '#466729',
-    borderColor: '#7BA05B',
-    secondaryColor: '#466729',
+    tagline: 'Purity and Clarity',
+    description: 'The state of balance, harmony, and enlightenment. It represents the quiet, focused mind capable of deep understanding.',
+    color: '#7ba05b',
+    icon: Leaf,
   },
   {
     name: 'Rajas',
-    description:
-      'The quality of energy, passion, and activity. Rajas drives ambition, desire, and the restless pursuit of goals and experiences.',
-    color: '#D4A017',
-    hoverBg: '#795900',
-    borderColor: '#D4A017',
-    secondaryColor: '#795900',
+    tagline: 'Energy and Action',
+    description: 'The state of motion, passion, and change. When out of balance, it manifests as restlessness, ambition, and anxiety.',
+    color: '#d4a017',
+    icon: Zap,
   },
   {
     name: 'Tamas',
-    description:
-      'The quality of stability, grounding, and rest. Tamas provides the necessary inertia for deep sleep, endurance, and physical strength.',
-    color: '#5B6B7A',
-    hoverBg: '#50606f',
-    borderColor: '#5B6B7A',
-    secondaryColor: '#50606f',
+    tagline: 'Stability and Grounding',
+    description: 'The state of inertia, darkness, and stability. Tamas provides necessary rest but can lead to lethargy when dominant.',
+    color: '#5b6b7a',
+    icon: Mountain,
   },
 ];
 
 export function GunaPreview() {
   return (
-    <section className="bg-white py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left text */}
-          <div className="lg:sticky lg:top-32">
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4a017] mb-3">
-              The Three Qualities
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold font-['Plus_Jakarta_Sans'] text-[#1c1b1b] mb-6 leading-tight">
-              Understanding{' '}
-              <br className="hidden md:block" />
-              Your Gunas
-            </h2>
-            <p className="text-[#4f4634] leading-relaxed mb-6 max-w-md">
-              In Ayurvedic psychology, every mind is a unique blend of three fundamental
-              qualities called <strong>Gunas</strong>. Understanding your dominant Guna reveals
-              your natural mental tendencies and the path to greater balance.
-            </p>
-            <p className="text-sm text-[#4f4634]/60 leading-relaxed max-w-md">
-              Your Prakriti assessment maps your responses to these three qualities,
-              giving you a personalized profile and actionable guidance.
-            </p>
-          </div>
+    <section className="py-24 md:py-28 bg-white text-[#1c1b1b]">
+      <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 font-['Plus_Jakarta_Sans']">
+            The Three Gunas
+          </h2>
+          <p className="text-lg text-[#4f4634]/70 max-w-2xl mx-auto">
+            The fundamental forces that shape your consciousness and daily experience.
+          </p>
+        </div>
 
-          {/* Right cards */}
-          <div className="space-y-5">
-            {gunas.map((guna) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {gunas.map((guna) => {
+            const Icon = guna.icon;
+            return (
               <div
                 key={guna.name}
-                className="group relative bg-[#fcf9f8] rounded-2xl p-7 border border-[#e5e2e1] transition-all duration-400 hover:text-white cursor-default overflow-hidden"
+                className="group border-2 rounded-2xl p-8 flex flex-col h-full transition-all duration-300 hover:-translate-y-1"
                 style={{
-                  borderBottomWidth: '6px',
-                  borderBottomColor: guna.borderColor,
+                  borderColor: guna.color,
+                  backgroundColor: 'transparent',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = guna.hoverBg;
-                  e.currentTarget.style.borderColor = guna.hoverBg;
-                  e.currentTarget.style.borderBottomColor = guna.color;
+                  e.currentTarget.style.backgroundColor = `${guna.color}0d`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '';
-                  e.currentTarget.style.borderColor = '';
-                  e.currentTarget.style.borderBottomColor = guna.borderColor;
+                  e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
-                {/* Guna dot + name */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: guna.color }}
-                  />
-                  <h3
-                    className="text-xl font-bold font-['Plus_Jakarta_Sans'] transition-colors duration-400"
-                    style={{ color: guna.color }}
-                  >
-                    {guna.name}
-                  </h3>
+                <div className="mb-6" style={{ color: guna.color }}>
+                  <Icon size={36} />
                 </div>
-
-                <p className="text-sm leading-relaxed text-[#4f4634] group-hover:text-white/80 transition-colors duration-400">
+                <h3 className="text-3xl font-bold mb-3 font-['Plus_Jakarta_Sans']">
+                  {guna.name}
+                </h3>
+                <p className="text-base font-medium mb-6" style={{ color: guna.color }}>
+                  {guna.tagline}
+                </p>
+                <p className="text-[#4f4634]/70 leading-relaxed mb-8 flex-grow">
                   {guna.description}
                 </p>
+                <div className="h-1 w-12 rounded-full" style={{ backgroundColor: `${guna.color}4d` }} />
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

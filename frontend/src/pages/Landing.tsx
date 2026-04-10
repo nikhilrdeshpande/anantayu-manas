@@ -1,10 +1,11 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { ArrowRight, GraduationCap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Hero } from '../components/landing/Hero';
 import { SocialProofBar } from '../components/landing/SocialProofBar';
 import { HowItWorks } from '../components/landing/HowItWorks';
 import { GunaPreview } from '../components/landing/GunaPreview';
 import { ComparisonSection } from '../components/landing/ComparisonSection';
+import { ResearchCredibility } from '../components/landing/ResearchCredibility';
 import { DeepAssessmentTeaser } from '../components/landing/DeepAssessmentTeaser';
 import { LandingFAQ } from '../components/landing/LandingFAQ';
 import { PageLayout } from '../components/layout/PageLayout';
@@ -25,69 +26,34 @@ export default function Landing() {
       <HowItWorks />
       <GunaPreview />
       <ComparisonSection />
-
-      {/* Research Credibility Section */}
-      <section className="py-16 md:py-20 bg-[#f6f3f2] px-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl border border-[#d3c5ae] p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
-            <div className="w-14 h-14 rounded-2xl bg-[#fdf6e3] flex items-center justify-center flex-shrink-0">
-              <GraduationCap size={28} className="text-[#d4a017]" />
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-[#1c1b1b] font-[family-name:var(--font-heading)] mb-1">
-                Built on Real Research
-              </h2>
-              <p className="text-[#d4a017] text-sm font-medium mb-3">
-                Dr. Prasad Akolkar - PhD, Ayurvedic Psychology, University of Mumbai
-              </p>
-              <p className="text-[#4f4634] text-sm leading-relaxed mb-4">
-                This isn't a quiz someone made over a weekend. The Manas Prakriti assessment is based on
-                <em> "Manasa Vijnana"</em>, a doctoral thesis that maps the classical Ashtanga Hridayam text
-                to a modern personality classification system with 16 distinct sub-types. Every question,
-                every scoring rule, every classification threshold traces to published research.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-4">
-                {['University of Mumbai', 'Ashtanga Hridayam', '16 Sub-types', '47 Behavioral Traits'].map((badge) => (
-                  <span key={badge} className="bg-[#fdf6e3] text-[#795900] text-xs px-3 py-1 rounded-full font-medium">
-                    {badge}
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center gap-4 text-sm">
-                <Link to={`/${locale}/about`} className="text-[#d4a017] font-medium hover:underline flex items-center gap-1">
-                  About us <ArrowRight size={14} />
-                </Link>
-                <Link to={`/${locale}/science`} className="text-[#d4a017] font-medium hover:underline flex items-center gap-1">
-                  The science <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <ResearchCredibility />
       <DeepAssessmentTeaser />
       <LandingFAQ />
 
       {/* Final CTA Section */}
-      <section className="py-20 md:py-28 bg-[#fcf9f8] px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] text-[#1c1b1b] tracking-tight mb-4">
-            Stop Reading About Yourself.{' '}
-            <span className="text-[#795900]">Start Understanding Yourself.</span>
+      <section className="py-32 md:py-40 bg-[#fcf9f8] text-[#1c1b1b] text-center relative overflow-hidden">
+        {/* Decorative blur orbs */}
+        <div className="blur-orb -bottom-24 -left-24 w-96 h-96 bg-[#f6be39]/10" />
+        <div className="blur-orb -top-24 -right-24 w-96 h-96 bg-[#7ba05b]/10" />
+
+        <div className="container mx-auto px-6 md:px-8 relative z-10">
+          <h2 className="text-5xl lg:text-7xl font-extrabold mb-8 max-w-4xl mx-auto leading-tight font-['Plus_Jakarta_Sans']">
+            Stop Reading About Yourself.<br />
+            Start <span className="text-[#d4a017]">Understanding</span> Yourself.
           </h2>
-          <p className="text-[#4f4634] text-lg max-w-lg mx-auto leading-relaxed mb-8">
+          <p className="text-xl text-[#1c1b1b]/60 mb-12 max-w-2xl mx-auto">
             25 questions. 3 minutes. A personality profile rooted in 3,000 years of Ayurvedic science. Free.
           </p>
           <Link
             to={`/${locale}/assessment/intro`}
-            className="group inline-flex items-center gap-3 rounded-full px-12 py-5 text-lg font-bold text-white shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
-            style={{ background: 'linear-gradient(135deg, #795900 0%, #d4a017 100%)' }}
+            className="inline-flex items-center gap-3 metallic-gold px-12 py-6 rounded-2xl text-[#402d00] font-bold text-xl shadow-2xl hover:shadow-[#f6be39]/30 hover:shadow-2xl transition-all hover:scale-105 active:scale-95"
           >
             Take the Free Assessment
-            <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={24} />
           </Link>
-          <p className="text-xs text-[#817662] mt-4">No credit card. No spam. Just self-knowledge.</p>
+          <p className="text-xs text-[#1c1b1b]/50 mt-6 uppercase tracking-widest font-medium">
+            No credit card. No spam. Just self-knowledge.
+          </p>
         </div>
       </section>
     </PageLayout>

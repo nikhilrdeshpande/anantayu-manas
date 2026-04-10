@@ -1,23 +1,26 @@
-import { BookOpen, Brain, Shield, Sparkles } from 'lucide-react';
-
-const FACTS = [
-  { icon: Brain, label: '25 Questions' },
-  { icon: Sparkles, label: '7 Prakriti Types' },
-  { icon: BookOpen, label: '3,000+ Year-Old Science' },
-  { icon: Shield, label: 'PhD-Backed' },
-];
-
 export function SocialProofBar() {
   return (
-    <div className="bg-[#1A1A1A] py-4 px-6">
-      <div className="max-w-4xl mx-auto flex items-center justify-center gap-6 md:gap-10 flex-wrap">
-        {FACTS.map((f, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <f.icon size={14} className="text-[#d4a017]" />
-            <span className="text-xs text-white/70 font-medium">{f.label}</span>
+    <section className="bg-[#1c1b1b] py-12 border-y border-[#4f4634]/10">
+      <div className="container mx-auto px-6 md:px-8 max-w-7xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="space-y-1">
+            <div className="text-3xl font-bold text-[#f6be39] font-['Plus_Jakarta_Sans']">25</div>
+            <div className="text-xs uppercase tracking-widest text-[#d3c5ae] font-medium">Questions</div>
           </div>
-        ))}
+          <div className="space-y-1">
+            <div className="text-3xl font-bold text-[#f6be39] font-['Plus_Jakarta_Sans']">7</div>
+            <div className="text-xs uppercase tracking-widest text-[#d3c5ae] font-medium">Prakriti Types</div>
+          </div>
+          <div className="space-y-1">
+            <div className="text-3xl font-bold text-[#f6be39] font-['Plus_Jakarta_Sans']">3,000+</div>
+            <div className="text-xs uppercase tracking-widest text-[#d3c5ae] font-medium">Year-Old Science</div>
+          </div>
+          <div className="space-y-1">
+            <div className="text-3xl font-bold text-[#f6be39] font-['Plus_Jakarta_Sans']">PhD-Backed</div>
+            <div className="text-xs uppercase tracking-widest text-[#d3c5ae] font-medium">Validation</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
