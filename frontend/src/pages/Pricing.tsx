@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Check, Shield, Brain, Sparkles, BookOpen, Leaf, Target, Star, ChevronDown, Lock } from 'lucide-react';
+import { Check, Shield, Brain, Sparkles, BookOpen, Leaf, Target, Star, ChevronDown, Lock } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { useAuthStore } from '../stores/auth-store';
 import { usePurchaseStore } from '../stores/purchase-store';

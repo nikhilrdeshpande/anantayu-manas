@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Share2, MessageCircle, Check, Loader2, Download } from 'lucide-react';
+import { useParams } from 'react-router-dom';
+import { Share2, MessageCircle, Check, Loader2, Download } from 'lucide-react';
 import { PageLayout } from '../components/layout/PageLayout';
 import { GunaChart } from '../components/results/GunaChart';
 import { GunaBar } from '../components/results/GunaBar';
@@ -60,7 +60,6 @@ const SECTION_LABELS = [
 ];
 
 export default function DeepResults() {
-  const navigate = useNavigate();
   const { locale = 'en', id } = useParams();
   const { user } = useAuthStore();
   const { serverResult: storeResult } = useAssessmentStore();
