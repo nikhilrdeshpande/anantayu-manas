@@ -26,55 +26,16 @@ export function AnswerSelector({ currentSection, selectedAnswer, onSelect }: Ans
       {buttons.map(({ value, label }) => {
         const isSelected = selectedAnswer === value;
 
-        // YES: filled with section color
-        if (value === 'yes') {
-          return (
-            <button
-              key={value}
-              onClick={() => onSelect(value)}
-              className="w-full py-4 rounded-xl font-bold text-base tracking-wider transition-all duration-150 active:scale-[0.97] cursor-pointer"
-              style={{
-                backgroundColor: colors.main,
-                color: '#FFFFFF',
-                boxShadow: isSelected
-                  ? `0 8px 24px ${colors.main}55`
-                  : `0 4px 12px ${colors.main}33`,
-                opacity: isSelected ? 1 : 0.92,
-              }}
-            >
-              {label}
-            </button>
-          );
-        }
-
-        // SOMETIMES: bordered with section color
-        if (value === 'sometimes') {
-          return (
-            <button
-              key={value}
-              onClick={() => onSelect(value)}
-              className="w-full py-4 rounded-xl font-bold text-base tracking-wider transition-all duration-150 active:scale-[0.97] cursor-pointer"
-              style={{
-                backgroundColor: isSelected ? `${colors.main}1a` : 'transparent',
-                color: colors.main,
-                border: `2px solid ${colors.main}`,
-              }}
-            >
-              {label}
-            </button>
-          );
-        }
-
-        // NO: subtle dark
         return (
           <button
             key={value}
             onClick={() => onSelect(value)}
             className="w-full py-4 rounded-xl font-bold text-base tracking-wider transition-all duration-150 active:scale-[0.97] cursor-pointer"
             style={{
-              backgroundColor: isSelected ? 'rgba(255,255,255,0.08)' : 'transparent',
-              color: isSelected ? '#e5e2e1' : '#9b8f7a',
-              border: `2px solid ${isSelected ? '#9b8f7a' : '#4f4634'}`,
+              backgroundColor: isSelected ? `${colors.main}1f` : 'transparent',
+              color: isSelected ? colors.main : '#d3c5ae',
+              border: `2px solid ${isSelected ? colors.main : '#4f4634'}`,
+              boxShadow: isSelected ? `0 0 0 4px ${colors.main}1a` : 'none',
             }}
           >
             {label}
